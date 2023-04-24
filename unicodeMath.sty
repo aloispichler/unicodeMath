@@ -1,0 +1,413 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{unicodeMath}[2023/05/01 unicode character input]
+
+%	mapping unicode characters to math
+%	created: 2023
+%	author©: Alois Pichler
+
+%	/usr/share/texmf-dist/tex/latex/unicodeMath/unicodeMath.sty
+%	register the package with sudo texhash
+
+%	https://unicode.scarfboy.com/
+%	https://jwodder.github.io/kbits/posts/unicode-latex/
+%	https://docs.julialang.org/en/v1/manual/unicode-input/
+%	https://www.compart.com/en/unicode/
+%	https://gist.github.com/bgeron/72ebbacf5930537022079d9953f15713
+%
+%	\usepackage{newunicodechar}
+%	\usepackage{~/Dropbox/LaTeXDocsAndPapers/myUnicode.sty}
+
+\usepackage{ifxetex,ifluatex}
+
+\ifxetex\else
+\ifluatex\else% only for pdflatex 
+  \RequirePackage[utf8]{inputenc}%	define the macro DeclareUnicodeCharacter
+  \RequirePackage{amsmath,mathtools,amssymb}
+  \RequirePackage{dsfont}
+
+%	Greek letters
+\DeclareUnicodeCharacter{3B1}{\alpha}	% α
+\DeclareUnicodeCharacter{3B2}{\beta}	% β
+\DeclareUnicodeCharacter{393}{\Gamma}	% Γ
+\DeclareUnicodeCharacter{3B3}{\gamma}	% γ
+\DeclareUnicodeCharacter{394}{\Delta}	% Δ, Laplacian Δ= ∇²
+\DeclareUnicodeCharacter{3B4}{\delta}	% δ
+\DeclareUnicodeCharacter{3B5}{\varepsilon}	% ε
+\DeclareUnicodeCharacter{3F5}{\epsilon}	% ϵ
+\DeclareUnicodeCharacter{3B6}{\zeta}	% ζ
+\DeclareUnicodeCharacter{3B7}{\eta}		% η
+\DeclareUnicodeCharacter{398}{\Theta}	% Θ
+\DeclareUnicodeCharacter{3B8}{\theta}	% θ
+\DeclareUnicodeCharacter{3D1}{\vartheta}% ϑ
+\DeclareUnicodeCharacter{3B9}{\iota}	% ι
+\DeclareUnicodeCharacter{3BA}{\kappa}	% κ
+\DeclareUnicodeCharacter{39B}{\Lambda}	% Λ
+\DeclareUnicodeCharacter{3BB}{\lambda}	% λ
+\DeclareUnicodeCharacter{3BC}{\mu}		% μ
+\DeclareUnicodeCharacter{3BD}{\nu}		% ν
+\DeclareUnicodeCharacter{39E}{\Xi}		% Ξ
+\DeclareUnicodeCharacter{3BE}{\xi}		% ξ
+%\newunicodechar{ξ}{{\xi}}	% ξ
+\DeclareUnicodeCharacter{3A0}{\Pi}		% Π
+\DeclareUnicodeCharacter{3C0}{\pi}		% π
+\DeclareUnicodeCharacter{3D6}{\varpi}	% ϖ
+\DeclareUnicodeCharacter{3C1}{\rho}		% ρ
+\DeclareUnicodeCharacter{3F1}{\varrho}	% ϱ
+\DeclareUnicodeCharacter{3A3}{\Sigma}	% Σ
+\DeclareUnicodeCharacter{3C2}{\varsigma}% ς
+\DeclareUnicodeCharacter{3C3}{\sigma}	% σ
+\DeclareUnicodeCharacter{3C4}{\tau}		% τ
+\DeclareUnicodeCharacter{3C5}{\upsilon}	% υ
+\DeclareUnicodeCharacter{3A6}{\Phi}		% Φ
+\DeclareUnicodeCharacter{3D5}{\phi}		% ϕ
+\DeclareUnicodeCharacter{3C6}{\varphi}	% φ
+\DeclareUnicodeCharacter{3A7}{\Chi}		% Χ
+\DeclareUnicodeCharacter{3C7}{\chi}		% χ
+\DeclareUnicodeCharacter{3A8}{\Psi}		% Ψ
+\DeclareUnicodeCharacter{3C8}{\psi}		% ψ
+\DeclareUnicodeCharacter{3A9}{\Omega}	% Ω
+\DeclareUnicodeCharacter{3C9}{\omega}	% ω
+
+%	other letters, symbols and special characters
+\DeclareUnicodeCharacter{2001}{\qquad}	%  2M space
+\DeclareUnicodeCharacter{2003}{\quad}	%  M space (= 18mu)
+\DeclareUnicodeCharacter{2002}{\ }		%  equivalent of regular space in normal text
+\DeclareUnicodeCharacter{2004}{~}		%  no-break space
+\DeclareUnicodeCharacter{2005}{\;}		%  thick space, short blank (= 3mu)
+\DeclareUnicodeCharacter{2006}{\:}		%  medium space, short blank (= 3mu)
+\DeclareUnicodeCharacter{2009}{\,}		%  thin space, short blank (= 3mu)
+\DeclareUnicodeCharacter{2011}{\nobreakdash-}	% ‑, non-breaking hyphen
+\DeclareUnicodeCharacter{2013}{--}	% –, en dash
+\DeclareUnicodeCharacter{2014}{---}	% —, em dash
+\DeclareUnicodeCharacter{2030}{\perthousand}	% ‰ permille
+\DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
+
+%	sub and superscripts
+\DeclareUnicodeCharacter{2070}{^0}	% ⁰, superscripts
+\DeclareUnicodeCharacter{0B9}{^1}	% ¹
+\DeclareUnicodeCharacter{0B2}{^2}	% ²
+\DeclareUnicodeCharacter{0B3}{^3}	% ³
+\DeclareUnicodeCharacter{0BD}{\nicefrac12}	% ½ nicefrac package
+\DeclareUnicodeCharacter{2074}{^4}	% ⁴
+\DeclareUnicodeCharacter{2075}{^5}	% ⁵
+\DeclareUnicodeCharacter{2076}{^6}	% ⁶
+\DeclareUnicodeCharacter{2077}{^7}	% ⁷
+\DeclareUnicodeCharacter{2078}{^8}	% ⁸
+\DeclareUnicodeCharacter{2079}{^9}	% ⁹
+\DeclareUnicodeCharacter{142A}{^\top}% ᵀ, transpose
+\DeclareUnicodeCharacter{1D48}{^d}	% ᵈ
+\DeclareUnicodeCharacter{207A}{^+}	% ⁺
+\DeclareUnicodeCharacter{207B}{^-}	% ⁻
+\DeclareUnicodeCharacter{2071}{^i}	% ⁱ
+\DeclareUnicodeCharacter{02B2}{^j}	% ʲ
+\DeclareUnicodeCharacter{1D4F}{^k}	% ᵏ
+\DeclareUnicodeCharacter{1D50}{^m}	% ᵐ
+\DeclareUnicodeCharacter{207F}{^n}	% ⁿ
+\DeclareUnicodeCharacter{1D56}{^p}	% ᵖ
+\DeclareUnicodeCharacter{02B3}{^r}	% ʳ
+\DeclareUnicodeCharacter{02E2}{^s}	% ˢ
+\DeclareUnicodeCharacter{1D57}{^t}	% ᵗ
+\DeclareUnicodeCharacter{02E3}{^x}	% ˣ
+\DeclareUnicodeCharacter{02B8}{^y}	% ʸ
+\DeclareUnicodeCharacter{2080}{_0}	% ₀	subscripts
+\DeclareUnicodeCharacter{2081}{_1}	% ₁
+\DeclareUnicodeCharacter{2082}{_2}	% ₂
+\DeclareUnicodeCharacter{2083}{_3}	% ₃
+\DeclareUnicodeCharacter{2084}{_4}	% ₄
+\DeclareUnicodeCharacter{2085}{_5}	% ₅
+\DeclareUnicodeCharacter{2086}{_6}	% ₆
+\DeclareUnicodeCharacter{2087}{_7}	% ₇
+\DeclareUnicodeCharacter{2088}{_8}	% ₈
+\DeclareUnicodeCharacter{2089}{_9}	% ₉
+\DeclareUnicodeCharacter{208A}{_+}	% ₊
+\DeclareUnicodeCharacter{208B}{_-}	% ₋
+\DeclareUnicodeCharacter{1D62}{_i}	% ᵢ
+\DeclareUnicodeCharacter{2C7C}{_j}	% ⱼ
+\DeclareUnicodeCharacter{2096}{_k}	% ₖ
+\DeclareUnicodeCharacter{2098}{_m}	% ₘ
+\DeclareUnicodeCharacter{2099}{_n}	% ₙ
+\DeclareUnicodeCharacter{209A}{_p}	% ₚ
+\DeclareUnicodeCharacter{1D63}{_r}	% ᵣ
+\DeclareUnicodeCharacter{209B}{_s}	% ₛ
+\DeclareUnicodeCharacter{209C}{_t}	% ₜ
+
+%	math symbols
+\DeclareUnicodeCharacter{2026}{\ldots}		% …, cf. \cdots
+\DeclareUnicodeCharacter{2027}{\cdot}		% ‧
+\DeclareUnicodeCharacter{2032}{^\prime}		% ′
+\DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ 
+\DeclareUnicodeCharacter{2102}{\mathbb C}	% ℂ
+\DeclareUnicodeCharacter{210D}{\mathbb H}	% ℍ
+\DeclareUnicodeCharacter{2115}{\mathbb N}	% ℕ, natural numbers
+\DeclareUnicodeCharacter{2119}{\mathbb P}	% ℙ, primes
+\DeclareUnicodeCharacter{211A}{\mathbb Q}	% ℚ, rationals
+\DeclareUnicodeCharacter{211D}{\mathbb R}	% ℝ, reals
+\DeclareUnicodeCharacter{1D54F}{\mathbb X}	% 𝕏
+\DeclareUnicodeCharacter{2124}{\mathbb Z}	% ℤ, integers
+\DeclareUnicodeCharacter{2135}{\aleph}		% ℵ
+\DeclareUnicodeCharacter{215F}{\frac1}		% ⅟
+\DeclareUnicodeCharacter{2192}{\to}			% →
+\DeclareUnicodeCharacter{21A6}{\mapsto}		% ↦
+\DeclareUnicodeCharacter{2202}{{\partial}}	% ∂
+\DeclareUnicodeCharacter{2205}{\emptyset}	% ∅
+\DeclareUnicodeCharacter{2207}{\nabla}		% ∇
+\DeclareUnicodeCharacter{2208}{\in}			% ∈
+\DeclareUnicodeCharacter{2209}{\notin}		% ∉
+\DeclareUnicodeCharacter{220F}{\prod}		% ∏
+\DeclareUnicodeCharacter{2211}{\sum}		% ∑
+\DeclareUnicodeCharacter{2216}{\setminus}	% ∖
+\DeclareUnicodeCharacter{2218}{\circ}		% ∘
+\DeclareUnicodeCharacter{221A}{\sqrt}		% √
+\DeclareUnicodeCharacter{221E}{\infty}		% ∞
+\DeclareUnicodeCharacter{2225}{\|}			% ∥
+\DeclareUnicodeCharacter{2229}{\cap}		% ∩
+\DeclareUnicodeCharacter{222A}{\cup}		% ∪
+\DeclareUnicodeCharacter{222B}{\int}		% ∫
+\DeclareUnicodeCharacter{222C}{\iint}		% ∬
+\DeclareUnicodeCharacter{2248}{\approx}		% ≈
+\DeclareUnicodeCharacter{2254}{\coloneqq}	% ≔
+\DeclareUnicodeCharacter{2255}{\eqqcolon}	% ≕
+\DeclareUnicodeCharacter{A789}{\colon}		% ꞉
+\DeclareUnicodeCharacter{2260}{\ne}			% ≠
+\DeclareUnicodeCharacter{2264}{\le}			% ≤
+\DeclareUnicodeCharacter{2265}{\ge}			% ≥
+\DeclareUnicodeCharacter{226A}{\ll}			% ≪
+\DeclareUnicodeCharacter{2282}{\subset}		% ⊂
+\DeclareUnicodeCharacter{2283}{\supset}		% ⊃
+\DeclareUnicodeCharacter{22C2}{\bigcap}		% ⋂
+\DeclareUnicodeCharacter{22C3}{\bigcup}		% ⋃
+\DeclareUnicodeCharacter{2297}{\otimes}		% ⊗
+\DeclareUnicodeCharacter{2A2F}{\times}		% ⨯
+\DeclareUnicodeCharacter{22EF}{\cdots}		% ⋯, cf. \ldots
+\DeclareUnicodeCharacter{2300}{\diameter}	% ⌀
+\DeclareUnicodeCharacter{23CE}{\\ }			% ⏎ return symbol↵
+\DeclareUnicodeCharacter{FF08}{\left(}		% （
+\DeclareUnicodeCharacter{FF09}{\right)}		% ）
+\DeclareUnicodeCharacter{2768}{\Bigl(}		% ❨
+\DeclareUnicodeCharacter{2769}{\Bigr)}		% ❩
+\DeclareUnicodeCharacter{27EE}{\bigl(}		% ⟮
+\DeclareUnicodeCharacter{27EF}{\bigr)}		% ⟯
+\DeclareUnicodeCharacter{FE5B}{\{}			% ﹛
+\DeclareUnicodeCharacter{FE5C}{\}}			% ﹜
+
+%	math characters
+\DeclareUnicodeCharacter{20AC}{\euro }		% €
+\DeclareUnicodeCharacter{217E}{\mathrm d}	% ⅾ \diff, \sansd
+\DeclareUnicodeCharacter{1D53C}{\E}		    % 𝔼, expectation, dsfont
+
+%	script font
+\DeclareUnicodeCharacter{212C}{\mathscr B}	% ℬ
+\DeclareUnicodeCharacter{2131}{\mathscr F}	% ℱ
+\DeclareUnicodeCharacter{1D4A2}{\mathscr G}	% 𝒢
+\DeclareUnicodeCharacter{210B}{\mathscr H}	% ℋ
+\DeclareUnicodeCharacter{2112}{\mathscr L}	% ℒ
+\DeclareUnicodeCharacter{2113}{\ell}		% ℓ
+\DeclareUnicodeCharacter{2118}{\mathscr P}	% ℘
+\DeclareUnicodeCharacter{211B}{\mathscr R}	% ℛ
+\DeclareUnicodeCharacter{1D4B3}{\mathscr X}	% 𝒳
+\DeclareUnicodeCharacter{1D4B4}{\mathscr Y}	% 𝒴
+\DeclareUnicodeCharacter{1D4B5}{\mathscr Z}	% 𝒵
+
+%	calligraphic font: mathematical bold script capital
+\DeclareUnicodeCharacter{1D4D0}{{\mathcal A}}	% 𝓐
+\DeclareUnicodeCharacter{1D4D1}{{\mathcal B}}	% 𝓑 \bscrB, \calB
+\DeclareUnicodeCharacter{1D4D2}{{\mathcal C}}	% 𝓒
+\DeclareUnicodeCharacter{1D4D3}{{\mathcal D}}	% 𝓓
+\DeclareUnicodeCharacter{1D4D4}{{\mathcal E}}	% 𝓔
+\DeclareUnicodeCharacter{1D4D5}{{\mathcal F}}	% 𝓕 \bscrF, \calF
+\DeclareUnicodeCharacter{1D4D6}{{\mathcal G}}	% 𝓖 \bscrF, \calF
+\DeclareUnicodeCharacter{1D4D7}{{\mathcal H}}	% 𝓗
+\DeclareUnicodeCharacter{1D4D8}{{\mathcal I}}	% 𝓘
+\DeclareUnicodeCharacter{1D4D9}{{\mathcal J}}	% 𝓙
+\DeclareUnicodeCharacter{1D4DA}{{\mathcal K}}	% 𝓚
+\DeclareUnicodeCharacter{1D4DB}{{\mathcal L}}	% 𝓛
+\DeclareUnicodeCharacter{1D4DC}{{\mathcal M}}	% 𝓜
+\DeclareUnicodeCharacter{1D4DD}{{\mathcal N}}	% 𝓝
+\DeclareUnicodeCharacter{1D4DE}{{\mathcal O}}	% 𝓞 \bscrO, \calO
+\DeclareUnicodeCharacter{1D4DF}{{\mathcal P}}	% 𝓟
+\DeclareUnicodeCharacter{1D4E0}{{\mathcal Q}}	% 𝓠 \bscrQ, \calQ
+\DeclareUnicodeCharacter{1D4E1}{{\mathcal R}}	% 𝓡
+\DeclareUnicodeCharacter{1D4E2}{{\mathcal S}}	% 𝓢
+\DeclareUnicodeCharacter{1D4E3}{{\mathcal T}}	% 𝓣
+\DeclareUnicodeCharacter{1D4E4}{{\mathcal U}}	% 𝓤
+\DeclareUnicodeCharacter{1D4E5}{{\mathcal V}}	% 𝓥
+\DeclareUnicodeCharacter{1D4E6}{{\mathcal W}}	% 𝓦
+\DeclareUnicodeCharacter{1D4E7}{{\mathcal X}}	% 𝓧 \bscrX, \calX
+\DeclareUnicodeCharacter{1D4E8}{{\mathcal Y}}	% 𝓨
+\DeclareUnicodeCharacter{1D4E9}{{\mathcal Z}}	% 𝓩
+
+%	mathematical fraktur
+\DeclareUnicodeCharacter{1D51B}{\mathfrak X}% 𝔛
+
+%	hat: substituted by mathematical italic
+\DeclareUnicodeCharacter{00C2}{\hat A}	% Â
+\DeclareUnicodeCharacter{1D435}{\hat B}	% 𝐵
+\DeclareUnicodeCharacter{0108}{\hat C}	% Ĉ
+\DeclareUnicodeCharacter{1D437}{\hat D}	% 𝐷
+\DeclareUnicodeCharacter{00CA}{\hat E}	% Ê
+\DeclareUnicodeCharacter{1D439}{\hat F}	% 𝐹
+\DeclareUnicodeCharacter{011C}{\hat G}	% Ĝ
+\DeclareUnicodeCharacter{0124}{\hat H}	% Ĥ
+\DeclareUnicodeCharacter{00CE}{\hat I}	% Î
+\DeclareUnicodeCharacter{0134}{\hat J}	% Ĵ
+\DeclareUnicodeCharacter{1D43E}{\hat K}	% 𝐾
+\DeclareUnicodeCharacter{1D33F}{\hat L}	% 𝐿
+\DeclareUnicodeCharacter{1D440}{\hat M}	% 𝑀
+\DeclareUnicodeCharacter{1D441}{\hat N}	% 𝑁
+\DeclareUnicodeCharacter{00D4}{\hat O}	% Ô
+\DeclareUnicodeCharacter{1D443}{\hat P}	% 𝑃
+\DeclareUnicodeCharacter{1D444}{\hat Q}	% 𝑄
+\DeclareUnicodeCharacter{1D445}{\hat R}	% 𝘙
+\DeclareUnicodeCharacter{015C}{\hat S}	% Ŝ
+\DeclareUnicodeCharacter{1D447}{\hat T}	% 𝑇
+\DeclareUnicodeCharacter{00DB}{\hat U}	% Û
+\DeclareUnicodeCharacter{1D449}{\hat V}	% 𝑉
+\DeclareUnicodeCharacter{0174}{\hat W}	% Ŵ
+\DeclareUnicodeCharacter{1D44B}{\hat X}	% 𝑋
+\DeclareUnicodeCharacter{0176}{\hat X}	% Ŷ
+\DeclareUnicodeCharacter{1D44D}{\hat Z}	% 𝑍
+
+\DeclareUnicodeCharacter{00E2}{\hat a}	% â
+\DeclareUnicodeCharacter{1D44F}{\hat b}	% 𝑏
+\DeclareUnicodeCharacter{0109}{\hat c}	% ĉ
+\DeclareUnicodeCharacter{1D451}{\hat d}	% 𝑑
+\DeclareUnicodeCharacter{00EA}{\hat e}	% ê
+\DeclareUnicodeCharacter{1D453}{\hat f}	% 𝑓
+\DeclareUnicodeCharacter{011D}{\hat g}	% ĝ
+\DeclareUnicodeCharacter{0125}{\hat h}	% ĥ
+\DeclareUnicodeCharacter{00EE}{\hat i}	% î
+\DeclareUnicodeCharacter{0135}{\hat j}	% ĵ
+\DeclareUnicodeCharacter{1D458}{\hat k}	% 𝑘
+\DeclareUnicodeCharacter{1D459}{\hat l}	% 𝑙
+\DeclareUnicodeCharacter{1D45A}{\hat m}	% 𝑚
+\DeclareUnicodeCharacter{1D45B}{\hat n}	% 𝑛
+\DeclareUnicodeCharacter{00F4}{\hat o}	% ô
+\DeclareUnicodeCharacter{1D45D}{\hat p}	% 𝑝
+\DeclareUnicodeCharacter{1D45E}{\hat q}	% 𝑞
+\DeclareUnicodeCharacter{1D45F}{\hat r}	% 𝑟
+\DeclareUnicodeCharacter{015D}{\hat s}	% ŝ
+\DeclareUnicodeCharacter{1D461}{\hat t}	% 𝑡
+\DeclareUnicodeCharacter{00FB}{\hat u}	% û
+\DeclareUnicodeCharacter{1D463}{\hat v}	% 𝑣
+\DeclareUnicodeCharacter{0175}{\hat w}	% ŵ
+\DeclareUnicodeCharacter{1D465}{\hat x}	% 𝑥
+\DeclareUnicodeCharacter{0177}{\hat y}	% ŷ
+\DeclareUnicodeCharacter{1D467}{\hat z}	% 𝑧
+
+\DeclareUnicodeCharacter{1D6E4}{\hat\Gamma}	% 𝛤
+\DeclareUnicodeCharacter{1D6E5}{\hat\Delta}	% 𝛥
+\DeclareUnicodeCharacter{1D6E9}{\hat\Theta}	% 𝛩
+\DeclareUnicodeCharacter{1D6EC}{\hat\Lambda}% 𝛬
+\DeclareUnicodeCharacter{1D6EF}{\hat\Xi}	% 𝛯
+\DeclareUnicodeCharacter{1D6F1}{\hat\Pi}	% 𝛱
+\DeclareUnicodeCharacter{1D6F3}{\hat\vartheta}% 𝛳
+\DeclareUnicodeCharacter{1D6F4}{\hat\Sigma}	% 𝛴
+\DeclareUnicodeCharacter{1D6F7}{\hat\Phi}	% 𝛷
+\DeclareUnicodeCharacter{1D6F9}{\hat\Psi}	% 𝛹
+\DeclareUnicodeCharacter{1D6FA}{\hat\Omega}	% 𝛺
+
+\DeclareUnicodeCharacter{1D6FC}{\hat\alpha}	% 𝛼
+\DeclareUnicodeCharacter{1D6FD}{\hat\beta}	% 𝛽
+\DeclareUnicodeCharacter{1D6FE}{\hat\gamma}	% 𝛾
+\DeclareUnicodeCharacter{1D6FF}{\hat\delta}	% 𝛿
+\DeclareUnicodeCharacter{1D700}{\hat\epsilon}% 𝜀
+\DeclareUnicodeCharacter{1D701}{\hat\zeta}	% 𝜁
+\DeclareUnicodeCharacter{1D702}{\hat\eta}	% 𝜂
+\DeclareUnicodeCharacter{1D703}{\hat\theta}	% 𝜃
+\DeclareUnicodeCharacter{1D704}{\hat\iota}	% 𝜄
+\DeclareUnicodeCharacter{1D705}{\hat\kappa}	% 𝜅
+\DeclareUnicodeCharacter{1D706}{\hat\lambda}% 𝜆
+\DeclareUnicodeCharacter{1D707}{\hat\mu}	% 𝜇
+\DeclareUnicodeCharacter{1D708}{\hat\nu}	% 𝜈
+\DeclareUnicodeCharacter{1D709}{\hat\xi}	% 𝜉
+\DeclareUnicodeCharacter{1D70B}{\hat\pi}	% 𝜋
+\DeclareUnicodeCharacter{1D70C}{\hat\rho}	% 𝜌
+\DeclareUnicodeCharacter{1D70D}{\hat\varsigma}% 𝜍
+\DeclareUnicodeCharacter{1D70E}{\hat\sigma}	% 𝜎
+\DeclareUnicodeCharacter{1D70F}{\hat\tau}	% 𝜏
+\DeclareUnicodeCharacter{1D710}{\hat\upsilon}% 𝜐
+\DeclareUnicodeCharacter{1D711}{\hat\phi}	% 𝜑
+\DeclareUnicodeCharacter{1D712}{\hat\chi}	% 𝜒
+\DeclareUnicodeCharacter{1D713}{\hat\psi}	% 𝜓
+\DeclareUnicodeCharacter{1D714}{\hat\omega}	% 𝜔
+
+%	tilde: substituted by sans-serif bold italic
+\DeclareUnicodeCharacter{00C3}{\tilde A}	% Ã
+\DeclareUnicodeCharacter{1D63D}{\tilde B}	% 𝘽
+\DeclareUnicodeCharacter{1D63E}{\tilde C}	% 𝘾
+\DeclareUnicodeCharacter{1D63F}{\tilde D}	% 𝘿
+\DeclareUnicodeCharacter{1EBC}{\tilde E}	% Ẽ
+\DeclareUnicodeCharacter{1D641}{\tilde F}	% 𝙁
+\DeclareUnicodeCharacter{1D642}{\tilde G}	% 𝙂
+\DeclareUnicodeCharacter{1D643}{\tilde H}	% 𝙃
+\DeclareUnicodeCharacter{0128}{\tilde I}	% Ĩ
+\DeclareUnicodeCharacter{1D645}{\tilde J}	% 𝙅
+\DeclareUnicodeCharacter{1D646}{\tilde K}	% 𝙆
+\DeclareUnicodeCharacter{1D647}{\tilde L}	% 𝙇
+\DeclareUnicodeCharacter{1D648}{\tilde M}	% 𝙈
+\DeclareUnicodeCharacter{00D1}{\tilde N}	% Ñ
+\DeclareUnicodeCharacter{00D5}{\tilde O}	% Õ
+\DeclareUnicodeCharacter{A752}{{\tilde P}}	% Ꝓ
+\DeclareUnicodeCharacter{1D64C}{\tilde Q}	% 𝙌
+\DeclareUnicodeCharacter{1D64D}{\tilde R}	% 𝙍
+\DeclareUnicodeCharacter{1D64E}{\tilde S}	% 𝙎
+\DeclareUnicodeCharacter{1D64F}{\tilde T}	% 𝙏
+\DeclareUnicodeCharacter{0168}{\tilde U}	% Ũ
+\DeclareUnicodeCharacter{1E7C}{\tilde V}	% Ṽ
+\DeclareUnicodeCharacter{1D652}{\tilde W}	% 𝙒
+\DeclareUnicodeCharacter{1D653}{\tilde X}	% 𝙓
+\DeclareUnicodeCharacter{1EF8}{\tilde Y}	% Ỹ
+\DeclareUnicodeCharacter{1D655}{\tilde Z}	% 𝙕
+\DeclareUnicodeCharacter{00E3}{\tilde a}	% ã
+\DeclareUnicodeCharacter{1D657}{\tilde b}	% 𝙗
+\DeclareUnicodeCharacter{1D658}{\tilde c}	% 𝙘
+\DeclareUnicodeCharacter{1D659}{\tilde d}	% 𝙙
+\DeclareUnicodeCharacter{1EBD}{\tilde e}	% ẽ
+\DeclareUnicodeCharacter{1D65B}{\tilde f}	% 𝙛
+\DeclareUnicodeCharacter{1D65C}{\tilde g}	% 𝙜
+\DeclareUnicodeCharacter{1D65D}{\tilde h}	% 𝙝
+\DeclareUnicodeCharacter{0129}{\tilde i}	% ĩ
+\DeclareUnicodeCharacter{1D65F}{\tilde j}	% 𝙟
+\DeclareUnicodeCharacter{1D660}{\tilde k}	% 𝙠
+\DeclareUnicodeCharacter{1D661}{\tilde l}	% 𝙡
+\DeclareUnicodeCharacter{1D662}{\tilde m}	% 𝙢
+\DeclareUnicodeCharacter{00F1}{\tilde n}	% ñ
+\DeclareUnicodeCharacter{00F5}{\tilde o}	% õ
+\DeclareUnicodeCharacter{1D665}{\tilde p}	% 𝙥
+\DeclareUnicodeCharacter{1D666}{\tilde q}	% 𝙦
+\DeclareUnicodeCharacter{1D667}{\tilde r}	% 𝙧
+\DeclareUnicodeCharacter{1D668}{\tilde s}	% 𝙨
+\DeclareUnicodeCharacter{1D669}{\tilde t}	% 𝙩
+\DeclareUnicodeCharacter{0169}{\tilde u}	% ũ
+\DeclareUnicodeCharacter{1E7D}{\tilde v}	% ṽ
+\DeclareUnicodeCharacter{1D66C}{\tilde w}	% 𝙬 
+\DeclareUnicodeCharacter{1D66D}{\tilde x}	% 𝙭
+\DeclareUnicodeCharacter{1EF9}{\tilde y}	% ỹ
+\DeclareUnicodeCharacter{1D66F}{\tilde z}	% 𝙯
+
+\DeclareUnicodeCharacter{1D7AA}{\tilde\alpha}	% 𝞪
+\DeclareUnicodeCharacter{1D7AB}{\tilde\beta}	% 𝞫
+\DeclareUnicodeCharacter{1D7AC}{\tilde\gamma}	% 𝞬
+\DeclareUnicodeCharacter{1D7AD}{\tilde\delta}	% 𝞭
+\DeclareUnicodeCharacter{1D7AE}{\tilde\epsilon}	% 𝞮
+\DeclareUnicodeCharacter{1D7AF}{\tilde\zeta}	% 𝞯
+\DeclareUnicodeCharacter{1D7B0}{\tilde\eta}		% 𝞰
+\DeclareUnicodeCharacter{1D7B1}{\tilde\theta}	% 𝞱
+\DeclareUnicodeCharacter{1D7B2}{\tilde\iota}	% 𝞲
+\DeclareUnicodeCharacter{1D7B3}{\tilde\kappa}	% 𝞳
+\DeclareUnicodeCharacter{1D7B4}{\tilde\lambda}	% 𝞴
+\DeclareUnicodeCharacter{1D7B5}{\tilde\mu}		% 𝞵
+\DeclareUnicodeCharacter{1D7B6}{\tilde\nu}		% 𝞶
+\DeclareUnicodeCharacter{1D7B7}{\tilde\xi}		% 𝞷
+\DeclareUnicodeCharacter{1D7B9}{\tilde\pi}		% 𝞹
+\DeclareUnicodeCharacter{1D7BA}{\tilde\rho}		% 𝞺
+\DeclareUnicodeCharacter{1D7BB}{\tilde\varsigma}% 𝞻
+\DeclareUnicodeCharacter{1D7BC}{\tilde\sigma}	% 𝞼
+\DeclareUnicodeCharacter{1D7BD}{\tilde\tau}		% 𝞽
+\DeclareUnicodeCharacter{1D7BE}{\tilde\upsilon}	% 𝞾
+\DeclareUnicodeCharacter{1D7BF}{\tilde\phi}		% 𝞿
+\DeclareUnicodeCharacter{1D7C0}{\tilde\chi}		% 𝟀
+\DeclareUnicodeCharacter{1D7C1}{\tilde\psi}		% 𝟁
+\DeclareUnicodeCharacter{1D7C2}{\tilde\omega}	% 𝟂
+
+\fi\fi
