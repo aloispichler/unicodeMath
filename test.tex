@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{unicodeMath}
+
+\title{Writing Unicode in \LaTeX{}}
+
+\begin{document}
+	\maketitle
+	The vorticity $ω$ is defined as $ω ≔ ∇⨯ u$.
+
+	The derivative of the function
+	\begin{align}
+		f∶& ℝ₊→ ℝ ⏎
+		  &x↦ √x= x^{½}
+	\end{align}
+	is
+	\begin{align}
+		f∶& ℝ₊→ ℝ ⏎
+		  &x↦ ⅟{2√x}.
+	\end{align}
+
+	The solutions of the quadratic equation
+	\[	α x²+ β x+ γ= 0 \]
+	are
+	\[	x_±= -\frac{β ∓ √{β² - 4αγ}}{2α}.\]
+
+	For $s∈ ℂ$ and $ℜ (s)≥ 1$ it holds that
+	\[	ζ(s) Γ(s)= ∫₀^∞ \frac{x^{s-1}}{eˣ-1} ⅾx,\]
+	where Euler’s integral of the second kind is
+	\[	Γ(s)= ∫₀^∞ x^{s-1} e^{-x} ⅾx,\]
+	and Riemann’s $ζ$‑function is
+	\[	ζ(s)= ∑_{n∈ℕ} ⅟{nˢ}.\]
+\end{document}
