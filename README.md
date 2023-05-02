@@ -1,4 +1,5 @@
-# unicodeMath
+# unicodeMath – write readable LaTeX code
+
 Write readable LaTeX code with the package unicodeMath.
 The package maps unicode characters in LaTeX documents.
 
@@ -13,4 +14,4 @@ The package maps unicode characters in LaTeX documents.
         \[	x_±= -\frac{β ∓ √{β² - 4αγ}}{2α}.\]   
     \end{document}
 
-The package as well provides snippets in VS-Code and UltiSnips for (n)vim.
+The package as well provides snippets for VS-Code and LuaSnips for (n)vim.
