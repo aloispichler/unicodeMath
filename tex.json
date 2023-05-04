@@ -1,0 +1,501 @@
+{
+    "Template": {
+        "prefix": ["template", "\\template"], 
+        "body": [
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\documentclass{article}", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\usepackage{geometry}", 
+            "\\usepackage{graphicx}", 
+            "\\usepackage{amssymb}", 
+            "\\usepackage{amsmath}", 
+            "\\usepackage{amsthm}", 
+            "\\usepackage{empheq}", 
+            "\\usepackage{mdframed}", 
+            "\\usepackage{booktabs}", 
+            "\\usepackage{lipsum}", 
+            "\\usepackage{graphicx}", 
+            "\\usepackage{color}", 
+            "\\usepackage{psfrag}", 
+            "\\usepackage{pgfplots}", 
+            "\\usepackage{bm}", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "", 
+            "${3:% Other Settings}", 
+            "", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\geometry{a4paper}", 
+            "", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\definecolor{ocre}{RGB}{243,102,25}", 
+            "\\definecolor{mygray}{RGB}{243,243,244}", 
+            "\\definecolor{deepGreen}{RGB}{26,111,0}",
+            "\\definecolor{shallowGreen}{RGB}{235,255,255}",
+            "\\definecolor{deepBlue}{RGB}{61,124,222}",
+            "\\definecolor{shallowBlue}{RGB}{235,249,255}", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\newcommand\\orangebox[1]{\\fcolorbox{ocre}{mygray}{\\hspace{1em}#1\\hspace{1em}}}", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}", 
+            "\\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}", 
+            "\\theoremstyle{mytheoremstyle}", 
+            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]", 
+            "\\theoremstyle{mytheoremstyle}", 
+            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]", 
+            "\\theoremstyle{myproblemstyle}", 
+            "\\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\usepgfplotslibrary{colorbrewer}", 
+            "\\pgfplotsset{width=8cm,compat=1.9}", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "\\title{${1:Title}}", 
+            "\\author{${2:Haoyun Qin}}", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
+            "", 
+            "\\begin{document}",
+            "    \\maketitle",
+            "    $0",
+            "\\end{document}"
+        ],
+        "description": "Use the default template which includes a variety of packages and declared-commands. The template will also automatically generate the title and author, as well as date, and will format the document."
+    },
+    "Inline Summation": {
+        "prefix": ["sum inline", "sum inline"],
+        "body": [
+            "\\sum_{${1:i=1}}^{$2}$3"
+        ],
+        "description": "Insert an inline summation notation."
+    },
+    "Inline Math": {
+        "prefix": ["$$", "mathinline", "\\mathinline"],
+        "body": [
+            "$${1:$TM_SELECTED_TEXT}$"
+        ],
+        "description": "Inline Math Environment."
+    },
+    "Centered Math": {
+        "prefix": ["\\[\\]", "mathcentered", "\\mathcentered"],
+        "body": [
+            "\\[\t${1:$TM_SELECTED_TEXT} \\]\n"
+        ],
+        "description": "Insert centered Math Environment."
+    },
+    "equation": {
+        "prefix": [ "equation", "\\equation" , "\\begin{equation}\\end{equation}"],
+        "body": [
+            "\\begin{equation}\\label{eq:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{equation}"
+        ],
+        "description": "Equation environment."
+    },
+     "environment": {
+        "prefix": ["begin{", "\\begin{" ],
+        "body": [
+            "\\begin{${1:equation}}\n\t${0:$TM_SELECTED_TEXT}\n\\end{$1}"
+        ],
+        "description": "Environment."
+    },
+    "Section": {
+        "prefix": ["section{", "\\section{"],
+        "body": "%	╭───────────────────────────────────────────────\n%	│	$1\n\\section{${1:Introduction}}\\label{sec:$1}\n$0",
+        "description": "Insert a new section."
+    },
+    "Subsection": {
+        "prefix": ["subsection", "\\subsection"],
+        "body": [
+            "\\subsection{$1}\\label{sec:$1}\n$0"
+        ],
+        "description": "Insert a new subsection."
+    },
+    "Header": {
+        "prefix": ["header", "\\header", "##"],
+        "body": "\\section*{$1}$0",
+        "description": "Insert a section without index."
+    },
+    "Header Small": {
+        "prefix": ["headersmall", "\\headersmall", "###"],
+        "body": "\\subsection*{$1}$0",
+        "description": "Insert a subsection without index."
+    },
+    "emphasize": {
+        "prefix": ["\\emph", "*"], 
+        "body": "\\emph{${1:$TM_SELECTED_TEXT}}$0",
+        "description": "Emphasize text."
+    },
+    "Italic Text": {
+        "prefix": ["italic", "\\italic", "*"], 
+        "body": "\\textit{$1}$0",
+        "description": "Insert italic text."
+    },
+    "Bold Text": {
+        "prefix": ["bold", "\\bold", "**"],
+        "body": "\\textbf{$1}$0",
+        "description": "Insert bold text."
+    },
+    "Bold Italic Text": {
+        "prefix": ["bolditalic", "\\bolditalic", "***"],
+        "body": "\\textbf{\\textit{$1}}$0",
+        "description": "Insert bold italic text."
+    },
+    "Enumerate": {
+        "prefix": ["- ", "\\enumerate", "enumerate"],
+        "body": [
+            "\\begin{enumerate}",
+            "\t\\item $1",
+            "\\end{enumerate}\n$0"
+        ]
+    },
+    "Itemize": {
+        "prefix": ["1. ", "\\itemize", "itemize"],
+        "body": [
+            "\\begin{itemize}",
+            "\t\\item $1",
+            "\\end{itemize}\n$0"
+        ]
+    },
+    "Description": {
+        "prefix": ["\\description", "description"],
+        "body": [
+            "\\begin{description}",
+            "\t\\item[$1]\t$2",
+            "\\end{description}\n$0"
+        ]
+    },
+    "Theorem": {
+        "prefix": ["theorem", "\\theorem"],
+        "body": [
+            "\\begin{theorem}\\label{thm:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{theorem}\n"
+        ],
+        "description": "Insert a theorem."
+    },
+    "Proof": {
+        "prefix": ["proof", "\\proof"],
+        "body": [
+            "\\begin{proof}",
+            "\t$0",
+            "\\end{proof}\n"
+        ],
+        "description": "Insert a proof."
+    },
+    "Proposition": {
+        "prefix": ["proposition", "\\proposition"],
+        "body": [
+            "\\begin{proposition}\\label{prop:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{proposition}\n"
+        ],
+        "description": "Insert a Proposition."
+    },
+    "Corollary": {
+        "prefix": ["corollary", "\\corollary"],
+        "body": [
+            "\\begin{corollary}\\label{cor:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{corollary}\n"
+        ],
+        "description": "Insert a Corollary."
+    },
+    "Lemma": {
+        "prefix": ["lemma", "\\lemma"],
+        "body": [
+            "\\begin{lemma}\\label{cor:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{lemma}\n"
+        ],
+        "description": "Insert a Lemma."
+    },
+    "Remark": {
+        "prefix": ["remark", "\\remark"],
+        "body": [
+            "\\begin{remark}\\label{rem:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{remark}"
+        ],
+        "description": "Insert a Remark."
+    },
+    "Problem": {
+        "prefix": ["problem", "\\problem"],
+        "body": [
+            "\\begin{problem}\\label{prob:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{problem}"
+        ],
+        "description": "Insert a Problem."
+    },
+    "Definition": {
+        "prefix": ["definition", "\\definition"],
+        "body": [
+            "\\begin{definition}\\label{def:${TM_LINE_NUMBER}}",
+            "\t$0",
+            "\\end{definition}"
+        ],
+        "description": "Insert a Definition."
+    },
+    "Fraction": {
+        "prefix": ["fractioninline", "\\fractioninline"],
+        "body": ["\\frac{$1}{$2}$0"],
+        "description": ["Insert inline fraction notation."]
+    },
+    "binom": {
+        "prefix": ["binom", "\\binom", "choose", "\\choose" ],
+        "body": ["\\binom{${1:n}}{${2:k}} $0"],
+        "description": "binomial coefficient"
+    },
+    "vector": {
+        "prefix": ["vector", "\\vector" ],
+        "body": ["\\begin{pmatrix} $1 \\\\\\\\ \\vdots \\\\\\\\ ${2:$1}\\end{pmatrix} $0"],
+        "description": "vector"
+    },
+    "matrix": {
+        "prefix": ["matrix", "\\matrix"],
+        "body": ["\\left(\\begin{array}{rrr}\n\t$1 & \\dots & $1 \\\\\\\\\n\t\\vdots & \\ddots & \\vdots\\\\\\\\\n\t$1 & \\dots & $1\n\\end{array}\\right)\n$0"],
+        "description": "array"
+    },
+    "stack": {
+        "prefix": ["stack", "above", "below" ],
+        "body": ["\\stackrel{${1:above}}{${2:below}} $0"],
+        "description": "stackrel"
+    },
+    "substack": {
+        "prefix": ["substack", "\\substack" ],
+        "body": ["\\substack{${1:above}\\\\\\\\${2:below}} $0"],
+        "description": "substack"
+    },
+    "cases": {
+        "prefix": ["cases", "\\cases"],
+        "body": ["\\begin{cases}\n\t$1 & ${2:\\text{if }} \\\\\\\\\n\t$3 & ${4:\\text{else}}\n\\end{cases}\n$0"],
+        "description": "cases"
+    },
+    "si": {
+        "prefix": ["siunits", "\\siunits"],
+        "body": ["\\SI{${1:12.3\\pm 4}}{${2:\\kilo\\gramm\\metre\\per\\square\\second}} $0"],
+        "description": "si"
+    },
+    "interior": {
+        "prefix": ["interior", "\\interior"],
+        "body": ["\\mathring{$1} $0"],
+        "description": "interior of set"
+    },
+    "Indent": {
+        "prefix": ["tab", "\\tab", "indent" ],
+        "body": ["\\indent "],
+        "description": "The equivalent of \"\\t\", also known as \"Tab\""
+    },
+    "includegraphics": {
+        "prefix": ["includegraphics", "\\includegraphics" ],
+        "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n$0"],
+        "description": "Include a graphic."
+    },
+    "Frame": {
+        "prefix": ["frame", "\\frame", "slide", "\\slide" ],
+        "body": ["\\begin{frame}{${1:Frame title}}\n\t\\framesubtitle{Subtitle}\n\tcontent\n\\end{frame}"],
+        "description": "Create a new frame."
+    },
+    "Highlight box": {
+        "prefix": ["highlight", "\\hlbox", "hlbox" ],
+        "body": ["\\hlbox${1:<1->}${2:[yellow]}{${3:Content}} $0"],
+        "description": "Create a highlight box."
+    },
+    "Highlight tikz": {
+        "prefix": ["highlight tikz", "\\highlight tikz", "\\hlbox tikz", "hlbox tikz" ],
+        "body": ["\\tikz[baseline]\\node[xshift=0em,yshift=0em,rotate=0,rectangle, red,fill=yellow, rounded corners, inner sep=0.5em,anchor=base]{${1:includegraphics or text here}};"],
+        "description": "Create a highlight box."
+    },
+    "textlock": {
+        "prefix": ["textblock", "\\textblock", "position", "\\position"],
+        "body": ["\\begin{tikzpicture}[remember picture, overlay]\n\t\\node[xshift=0.0em,yshift=0.0em,scale=1.0, rotate=0, red,fill=yellow!50,rounded corners,opacity=1.0,anchor=west]\n\t{${1:includegraphics or text here}};\n\\end{tikzpicture}"],
+        "description": "Create a textblock."
+    },
+    "column": {
+        "prefix": ["column", "\\column" ],
+        "body": ["\\begin{column}{0.5\\textwidth}\n\t${1:content}\n\\end{column}\n$0"],
+        "description": "Create columns."
+    },
+     "columns": {
+        "prefix": ["columns", "\\columns" ],
+        "body": ["\\begin{columns}[t]%top, Top, center, bottom \n\t\\begin{column}{0.5\\textwidth}\n\t\t${1:content column 1}\n\t\\end{column}\n\t\\begin{column}{0.5\\textwidth}\n\t\tcontent column 2\n\t\\end{column}\n\\end{columns}\n$0"],
+        "description": "Create columns."
+    },
+    "table": {
+        "prefix": ["table", "\\table" ],
+        "body": ["\\begin{table}[h]% here, Here, top, page, bottom, !; \\usepackage{booktabs}\n\t\\centering\n\t\\begin{tabular}{lrr}\n\t\t\\toprule\n\t\t\\multicolumn{2}{c}{Studium}\\\\\\\\\\cmidrule{1-2}\n\t\t${1:Fach} & Dauer & Einkommen\\\\\\\\\n\t\t\\midrule\n\t\tMST & 6 & 8.20 \\\\\\\\\n\t\tVWL & 14 & 10.00\\\\\\\\\n\t\t\\bottomrule\n\t\\end{tabular}\n\t\\caption{Caption\\label{tab:0}}\n\\end{table}\n$0"],
+        "description": "Create a table."
+    },
+    "figure": {
+        "prefix": ["figure", "\\figure" ],
+        "body": ["\\begin{figure}[h]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}\n$0"],
+        "description": "Create a figure."
+    },
+    "subfigure": {
+        "prefix": ["subfigure", "\\subfigure", "subfloat", "\\subfloat" ],
+        "body": ["\\begin{figure}[h]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}\n$0"],
+        "description": "Add a figure with subfigures."
+    },
+    "Create 2D Plot environment": {
+        "prefix": ["plotenvironment2d", "\\plotenvironment2d"],
+        "body": [
+            "\\begin{tikzpicture}",
+            "\\begin{axis}[",
+            "legend pos=outer north east,",
+            "title=${1:Example},",
+            "axis lines =${2| box, left, middle, center, right, none|},",
+            "xlabel = \\$x\\$,",
+            "ylabel = \\$y\\$,",
+            "variable = t,",
+            "trig format plots = rad,",
+            "]",
+            "$3",
+            "\\end{axis}",
+            "\\end{tikzpicture}$0"
+        ],
+        "description": "Create a 2DPlot Environment of pgfplots. The style declarations are already included in the snippet."
+    },
+    "Plot 2D Graph": {
+        "prefix": ["plotgraph2d", "\\plotgraph2d"],
+        "body": [
+            "\\addplot [",
+            "\tdomain=${1:-10}:${2:10}," ,
+            "\tsamples=70,", 
+            "\tcolor=${3:blue},",
+            "\t]",
+            "\t{${4:x^2 + 2*x + 1}};",
+            "\\addlegendentry{$${5:x^2 + 2x + 1}$}",
+            "$0"
+        ],
+        "description": "Plot a 2D Graph in the 2D graph environment, noted that this can also be used in the 3D environment."
+    },
+    "Plot Circle 2D": {
+        "prefix": ["plotcircle2d", "\\plotcircle2d"],
+        "body": [
+            "\\addplot [",
+            "\tdomain=0:2*3.14159265," ,
+            "\tsamples=70,", 
+            "\tcolor=${4:blue},",
+            "\t]",
+            "\t({${1:r}*cos(t)+${2:a}},{${1:r}*sin(t)+${3:b}});",
+            "\\addlegendentry{$(x-${2:a})^2+(y-${3:b})^2=${1:r}^2$}$0"
+        ],
+        "description": "Plot a 2D Circle in the 2D graph environment, noted that this can also be used in the 3D environment."
+    },
+    "Plot Line 2D": {
+        "prefix": ["plotline2d", "\\plotline2d"],
+        "body": [
+            "\\addplot [",
+            "\tdomain=${4:x1}:${5:x2}," ,
+            "\tsamples=70,", 
+            "\tcolor=${3:blue},",
+            "\t]",
+            "\t{${1:a}*x+${2:b}};",
+            "\\addlegendentry{$ y=${1:a}x+${2:b}$}$0"
+        ],
+        "description": "Plot a 2D Line in the 2D graph environment, noted that this can also be used in the 3D environment."
+    },
+    "Plot Ellipse 2D": {
+        "prefix": ["plotellipse2d", "\\plotellipse2d"],
+        "body": [
+            "\\addplot [",
+            "\tdomain=0:2*3.14159265," ,
+            "\tsamples=70,", 
+            "\tcolor=${5:blue},",
+            "\t]",
+            "\t({${1:a}*cos(t)+${3:x}},{${2:b}*sin(t)+${4:y}});",
+            "\\addlegendentry{$\\frac{(x-${3:x})^2}{${1:a}^2}+\\frac{(y-${4:y})^2}{${2:b}^2}=1$}$0"
+        ],
+        "description": "Plot a 2D Ellipse in the 2D graph environment, noted that this can also be used in the 3D environment."
+    },
+    "Plot Quadratic Function 2D by Point": {
+        "prefix": ["plotquadraticfunction2dbypoint", "\\plotquadraticfunction2dbypoint"],
+        "body": [
+            "\\addplot [",
+            "\tdomain=${4:x1}:${5:x2}," ,
+            "\tsamples=70,", 
+            "\tcolor=${6:blue},",
+            "\t]",
+            "\t{${1:a}*(x-${2:m})*(x-${2:m})+${3:b}};",
+            "\\addlegendentry{$ y=${1:a}(x-${2:m})^2+${3:b}$}$0"
+        ],
+        "description": "Plot a 2D graph of a quadratic function in the 2D graph environment by the given extrema, noted that this can also be used in the 3D environment."
+    },
+    "Plot Smooth Curve By Point Set": {
+        "prefix": ["plotsmoothcurvebypointset", "\\plotsmoothcurvebypointset"],
+        "body": [
+            "\\addplot+[smooth]",
+            "coordinates",
+            "{",
+            "${1:seperate the coordinates with spaces}",
+            "};$0"
+        ],
+        "description": "Plot a Smooth Curve by point set (2D)."
+    },
+    "Create 3D Plot Environment": {
+        "prefix": ["plotenvironment3d", "\\plotenvironment3d"],
+        "body": [
+            "\\begin{tikzpicture}",
+            "\\begin{axis}[",
+            "legend pos=outer north east,",
+            "title=${1:Example},",
+            "axis lines =${2| box, left, middle, center, right, none|},",
+            "colormap/${3|hot,hot2,jet,blackwhite,bluered,cool,greenyellow,redyellow,violet|},",
+            "xlabel = \\$x\\$,",
+            "ylabel = \\$y\\$,",
+            "zlabel = \\$z\\$,",
+            "variable = t,",
+            "trig format plots = rad,",
+            "]",
+            "$4",
+            "\\end{axis}",
+            "\\end{tikzpicture}$0"
+        ],
+        "description": "Create a 3DPlot Environment of pgfplots. The style declarations are already included in the snippet."
+    },
+    "Plot 3D Graph": {
+        "prefix": ["plotgraph3d", "\\plotgraph3d"],
+        "body": [
+            "\\addplot3[",
+            "\t${1|surf,mesh|},",
+            "\tsamples=50,",
+            "]",
+            "{${2:x^2+y^2}};",
+            "\\addlegendentry{\\$${3:x}\\$}$0"
+        ],
+        "description": "Plot a 3D Graph in the 3D graph environment created."
+    },
+    "Create Align Environment in Text": {
+        "prefix": ["align", "\\align"],
+        "body": [
+            "\\begin{align}",
+            "\t$1\t&= $2\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
+            "\t\t&= $3\t\\label{eq:${TM_LINE_NUMBER}}",
+            "\\end{align}\n$0"
+        ],
+        "description": "Create an align environment."
+    },
+    "Signature": {
+        "prefix": ["signature", "\\signature"], 
+        "body": [
+            "\\begin{tikzpicture}[remember picture,overlay]%\t\\usepackage{tikz}",
+            	"\t\\node[xshift=1.6cm,yshift=0.3cm]",
+            		"\t{\\includegraphics[height=3.0cm]{~/Dropbox/SignatureAloisPichler.pdf}};",
+            "\\end{tikzpicture}\n"
+            ],
+        "description": "Insert problem solving index format."
+    },
+    "Insert Problem Solving Index": {
+        "prefix": ["problemindex", "\\problemindex"], 
+        "body": ["\\noindent\\textbf{$1} $0"],
+        "description": "Insert problem solving index format."
+    }
+}
