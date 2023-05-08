@@ -1,6 +1,6 @@
 # unicodeMath – write readable LaTeX code
 
-Write readable LaTeX code with the package unicodeMath.
+Write readable LaTeX code using the package unicodeMath.
 The package maps unicode characters in LaTeX documents.
 
     \usepackage{unicodeMath}
