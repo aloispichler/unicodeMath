@@ -16,8 +16,9 @@
 %		https://www.compart.com/en/unicode/
 %		https://gist.github.com/bgeron/72ebbacf5930537022079d9953f15713
 %
-%	not uecessary: \usepackage{newunicodechar}
-
+%	not uecessary:
+%		\usepackage{newunicodechar}
+%		\newunicodechar{α}{{\alpha}}	% α, requires the package newunicodechar
 \usepackage{ifxetex,ifluatex}
 
 \ifxetex\else
@@ -27,47 +28,46 @@
   \RequirePackage{dsfont}
 
 %	Greek letters
-\DeclareUnicodeCharacter{3B1}{\alpha}	% α
-\DeclareUnicodeCharacter{3B2}{\beta}	% β
-\DeclareUnicodeCharacter{393}{\Gamma}	% Γ
-\DeclareUnicodeCharacter{3B3}{\gamma}	% γ
-\DeclareUnicodeCharacter{394}{\Delta}	% Δ, Laplacian Δ= ∇²
-\DeclareUnicodeCharacter{3B4}{\delta}	% δ
-\DeclareUnicodeCharacter{3B5}{\varepsilon}% ε
-\DeclareUnicodeCharacter{3F5}{\epsilon}	% ϵ
-\DeclareUnicodeCharacter{3B6}{\zeta}	% ζ
-\DeclareUnicodeCharacter{3B7}{\eta}	% η
-\DeclareUnicodeCharacter{398}{\Theta}	% Θ
-\DeclareUnicodeCharacter{3B8}{\theta}	% θ
-\DeclareUnicodeCharacter{3D1}{\vartheta}% ϑ
-\DeclareUnicodeCharacter{3B9}{\iota}	% ι
-\DeclareUnicodeCharacter{3BA}{\kappa}	% κ
-\DeclareUnicodeCharacter{39B}{\Lambda}	% Λ
-\DeclareUnicodeCharacter{3BB}{\lambda}	% λ
-\DeclareUnicodeCharacter{3BC}{\mu}	% μ
-\DeclareUnicodeCharacter{3BD}{\nu}	% ν
-\DeclareUnicodeCharacter{39E}{\Xi}	% Ξ
-\DeclareUnicodeCharacter{3BE}{\xi}	% ξ
-%\newunicodechar{ξ}{{\xi}}	% ξ
-\DeclareUnicodeCharacter{3A0}{\Pi}	% Π
-\DeclareUnicodeCharacter{3C0}{\pi}	% π
-\DeclareUnicodeCharacter{3D6}{\varpi}	% ϖ
-\DeclareUnicodeCharacter{3C1}{\rho}	% ρ
-\DeclareUnicodeCharacter{3F1}{\varrho}	% ϱ
-\DeclareUnicodeCharacter{3A3}{\Sigma}	% Σ
-\DeclareUnicodeCharacter{3C2}{\varsigma}% ς
-\DeclareUnicodeCharacter{3C3}{\sigma}	% σ
-\DeclareUnicodeCharacter{3C4}{\tau}	% τ
-\DeclareUnicodeCharacter{3C5}{\upsilon}	% υ
-\DeclareUnicodeCharacter{3A6}{\Phi}	% Φ
-\DeclareUnicodeCharacter{3D5}{\phi}	% ϕ
-\DeclareUnicodeCharacter{3C6}{\varphi}	% φ
-\DeclareUnicodeCharacter{3A7}{\Chi}	% Χ
-\DeclareUnicodeCharacter{3C7}{\chi}	% χ
-\DeclareUnicodeCharacter{3A8}{\Psi}	% Ψ
-\DeclareUnicodeCharacter{3C8}{\psi}	% ψ
-\DeclareUnicodeCharacter{3A9}{\Omega}	% Ω
-\DeclareUnicodeCharacter{3C9}{\omega}	% ω
+\DeclareUnicodeCharacter{3B1}{\ensuremath\alpha}	% α
+\DeclareUnicodeCharacter{3B2}{\ensuremath\beta}		% β
+\DeclareUnicodeCharacter{393}{\ensuremath\Gamma}	% Γ
+\DeclareUnicodeCharacter{3B3}{\ensuremath\gamma}	% γ
+\DeclareUnicodeCharacter{394}{\ensuremath\Delta}	% Δ, Laplacian Δ= ∇²
+\DeclareUnicodeCharacter{3B4}{\ensuremath\delta}	% δ
+\DeclareUnicodeCharacter{3B5}{\ensuremath\varepsilon}	% ε
+\DeclareUnicodeCharacter{3F5}{\ensuremath\epsilon}	% ϵ
+\DeclareUnicodeCharacter{3B6}{\ensuremath\zeta}		% ζ
+\DeclareUnicodeCharacter{3B7}{\ensuremath\eta}		% η
+\DeclareUnicodeCharacter{398}{\ensuremath\Theta}	% Θ
+\DeclareUnicodeCharacter{3B8}{\ensuremath\theta}	% θ
+\DeclareUnicodeCharacter{3D1}{\ensuremath\vartheta}	% ϑ
+\DeclareUnicodeCharacter{3B9}{\ensuremath\iota}		% ι
+\DeclareUnicodeCharacter{3BA}{\ensuremath\kappa}	% κ
+\DeclareUnicodeCharacter{39B}{\ensuremath\Lambda}	% Λ
+\DeclareUnicodeCharacter{3BB}{\ensuremath\lambda}	% λ
+\DeclareUnicodeCharacter{3BC}{\ensuremath\mu}		% μ
+\DeclareUnicodeCharacter{3BD}{\ensuremath\nu}		% ν
+\DeclareUnicodeCharacter{39E}{\ensuremath\Xi}		% Ξ
+\DeclareUnicodeCharacter{3BE}{\ensuremath\xi}		% ξ
+\DeclareUnicodeCharacter{3A0}{\ensuremath\Pi}		% Π
+\DeclareUnicodeCharacter{3C0}{\ensuremath\pi}		% π
+\DeclareUnicodeCharacter{3D6}{\ensuremath\varpi}	% ϖ
+\DeclareUnicodeCharacter{3C1}{\ensuremath\rho}		% ρ
+\DeclareUnicodeCharacter{3F1}{\ensuremath\varrho}	% ϱ
+\DeclareUnicodeCharacter{3A3}{\ensuremath\Sigma}	% Σ
+\DeclareUnicodeCharacter{3C2}{\ensuremath\varsigma}	% ς
+\DeclareUnicodeCharacter{3C3}{\ensuremath\sigma}	% σ
+\DeclareUnicodeCharacter{3C4}{\ensuremath\tau}		% τ
+\DeclareUnicodeCharacter{3C5}{\ensuremath\upsilon}	% υ
+\DeclareUnicodeCharacter{3A6}{\ensuremath\Phi}		% Φ
+\DeclareUnicodeCharacter{3D5}{\ensuremath\phi}		% ϕ
+\DeclareUnicodeCharacter{3C6}{\ensuremath\varphi}	% φ
+\DeclareUnicodeCharacter{3A7}{\ensuremath\Chi}		% Χ
+\DeclareUnicodeCharacter{3C7}{\ensuremath\chi}		% χ
+\DeclareUnicodeCharacter{3A8}{\ensuremath\Psi}		% Ψ
+\DeclareUnicodeCharacter{3C8}{\ensuremath\psi}		% ψ
+\DeclareUnicodeCharacter{3A9}{\ensuremath\Omega}	% Ω
+\DeclareUnicodeCharacter{3C9}{\ensuremath\omega}	% ω
 
 %	other letters, symbols and special characters
 \DeclareUnicodeCharacter{2001}{\qquad}	%  2M space
@@ -88,7 +88,7 @@
 \DeclareUnicodeCharacter{0B9}{^1}	% ¹
 \DeclareUnicodeCharacter{0B2}{^2}	% ²
 \DeclareUnicodeCharacter{0B3}{^3}	% ³
-\DeclareUnicodeCharacter{0BD}{\nicefrac12}% ½ nicefrac package
+\DeclareUnicodeCharacter{0BD}{{\nicefrac12}}% ½ nicefrac package
 \DeclareUnicodeCharacter{2074}{^4}	% ⁴
 \DeclareUnicodeCharacter{2075}{^5}	% ⁵
 \DeclareUnicodeCharacter{2076}{^6}	% ⁶
@@ -141,16 +141,16 @@
 \DeclareUnicodeCharacter{2027}{\cdot}		% ‧
 \DeclareUnicodeCharacter{2032}{^\prime}		% ′
 \DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ 
-\DeclareUnicodeCharacter{2102}{\mathbb C}	% ℂ
-\DeclareUnicodeCharacter{210D}{\mathbb H}	% ℍ
+\DeclareUnicodeCharacter{2102}{\ensuremath{\mathbb C}}	% ℂ
+\DeclareUnicodeCharacter{210D}{\ensuremath{\mathbb H}}	% ℍ
 \DeclareUnicodeCharacter{2111}{\Im}		% ℑ, imaginary part
 \DeclareUnicodeCharacter{211C}{\Re}		% ℜ, real part
-\DeclareUnicodeCharacter{2115}{\mathbb N}	% ℕ, natural numbers
-\DeclareUnicodeCharacter{2119}{\mathbb P}	% ℙ, primes
-\DeclareUnicodeCharacter{211A}{\mathbb Q}	% ℚ, rationals
-\DeclareUnicodeCharacter{211D}{\mathbb R}	% ℝ, reals
-\DeclareUnicodeCharacter{1D54F}{\mathbb X}	% 𝕏
-\DeclareUnicodeCharacter{2124}{\mathbb Z}	% ℤ, integers
+\DeclareUnicodeCharacter{2115}{\ensuremath{\mathbb N}}	% ℕ, natural numbers
+\DeclareUnicodeCharacter{2119}{\ensuremath{\mathbb P}}	% ℙ, primes
+\DeclareUnicodeCharacter{211A}{\ensuremath{\mathbb Q}}	% ℚ, rationals
+\DeclareUnicodeCharacter{211D}{\ensuremath{\mathbb R}}	% ℝ, reals
+\DeclareUnicodeCharacter{1D54F}{\ensuremath{\mathbb X}}	% 𝕏
+\DeclareUnicodeCharacter{2124}{\ensuremath{\mathbb Z}}	% ℤ, integers
 \DeclareUnicodeCharacter{2135}{\aleph}		% ℵ
 \DeclareUnicodeCharacter{215F}{\frac1}		% ⅟
 \DeclareUnicodeCharacter{2192}{\to}		% →
@@ -167,6 +167,7 @@
 \DeclareUnicodeCharacter{2211}{\sum}		% ∑
 \DeclareUnicodeCharacter{00B1}{\pm}		% ±
 \DeclareUnicodeCharacter{2213}{\mp}		% ∓
+\DeclareUnicodeCharacter{2215}{\over}		% ∕
 \DeclareUnicodeCharacter{2216}{\setminus}	% ∖
 \DeclareUnicodeCharacter{2218}{\circ}		% ∘
 \DeclareUnicodeCharacter{221A}{\sqrt}		% √
@@ -185,6 +186,7 @@
 \DeclareUnicodeCharacter{2264}{\le}		% ≤
 \DeclareUnicodeCharacter{2265}{\ge}		% ≥
 \DeclareUnicodeCharacter{226A}{\ll}		% ≪
+\DeclareUnicodeCharacter{226B}{\gg}		% ≫
 \DeclareUnicodeCharacter{227A}{\prec}		% ≺
 \DeclareUnicodeCharacter{227B}{\succ}		% ≻
 \DeclareUnicodeCharacter{227C}{\preccurlyeq}	% ≼
@@ -216,52 +218,53 @@
 
 %	math characters
 \DeclareUnicodeCharacter{20AC}{\euro }		% €
-\DeclareUnicodeCharacter{217E}{\mathrm d}	% ⅾ \diff, \sansd
+\DeclareUnicodeCharacter{1D5A3}{\mathrm D}	% 𝖣 \sansD
+\DeclareUnicodeCharacter{1D5BD}{\mathrm d}	% 𝖽 \diff, \sansd, cf. ⅾ𝚍
 \DeclareUnicodeCharacter{1D53C}{\E}		% 𝔼, expectation, dsfont
 \DeclareUnicodeCharacter{1D7D9}{\one}		% 𝟙, one, dsfont
 %	script font
-\DeclareUnicodeCharacter{212C}{\mathscr B}	% ℬ
-\DeclareUnicodeCharacter{2131}{\mathscr F}	% ℱ
-\DeclareUnicodeCharacter{1D4A2}{\mathscr G}	% 𝒢
-\DeclareUnicodeCharacter{210B}{\mathscr H}	% ℋ
-\DeclareUnicodeCharacter{2112}{\mathscr L}	% ℒ
-\DeclareUnicodeCharacter{2113}{\ell}		% ℓ
-\DeclareUnicodeCharacter{2118}{\mathscr P}	% ℘
-\DeclareUnicodeCharacter{211B}{\mathscr R}	% ℛ
-\DeclareUnicodeCharacter{1D4B3}{\mathscr X}	% 𝒳
-\DeclareUnicodeCharacter{1D4B4}{\mathscr Y}	% 𝒴
-\DeclareUnicodeCharacter{1D4B5}{\mathscr Z}	% 𝒵
+\DeclareUnicodeCharacter{212C}{\ensuremath{\mathscr B}}	% ℬ
+\DeclareUnicodeCharacter{2131}{\ensuremath{\mathscr F}}	% ℱ
+\DeclareUnicodeCharacter{1D4A2}{\ensuremath{\mathscr G}}% 𝒢
+\DeclareUnicodeCharacter{210B}{\ensuremath{\mathscr H}}	% ℋ
+\DeclareUnicodeCharacter{2112}{\ensuremath{\mathscr L}}	% ℒ
+\DeclareUnicodeCharacter{2113}{\ensuremath\ell}		% ℓ
+\DeclareUnicodeCharacter{2118}{\ensuremath{\mathscr P}}	% ℘
+\DeclareUnicodeCharacter{211B}{\ensuremath{\mathscr R}}	% ℛ
+\DeclareUnicodeCharacter{1D4B3}{\ensuremath{\mathscr X}}% 𝒳
+\DeclareUnicodeCharacter{1D4B4}{\ensuremath{\mathscr Y}}% 𝒴
+\DeclareUnicodeCharacter{1D4B5}{\ensuremath{\mathscr Z}}% 𝒵
 
 %	calligraphic font: mathematical bold script capital
-\DeclareUnicodeCharacter{1D4D0}{{\mathcal A}}	% 𝓐
-\DeclareUnicodeCharacter{1D4D1}{{\mathcal B}}	% 𝓑 \bscrB, \calB
-\DeclareUnicodeCharacter{1D4D2}{{\mathcal C}}	% 𝓒
-\DeclareUnicodeCharacter{1D4D3}{{\mathcal D}}	% 𝓓
-\DeclareUnicodeCharacter{1D4D4}{{\mathcal E}}	% 𝓔
-\DeclareUnicodeCharacter{1D4D5}{{\mathcal F}}	% 𝓕 \bscrF, \calF
-\DeclareUnicodeCharacter{1D4D6}{{\mathcal G}}	% 𝓖 \bscrF, \calF
-\DeclareUnicodeCharacter{1D4D7}{{\mathcal H}}	% 𝓗
-\DeclareUnicodeCharacter{1D4D8}{{\mathcal I}}	% 𝓘
-\DeclareUnicodeCharacter{1D4D9}{{\mathcal J}}	% 𝓙
-\DeclareUnicodeCharacter{1D4DA}{{\mathcal K}}	% 𝓚
-\DeclareUnicodeCharacter{1D4DB}{{\mathcal L}}	% 𝓛
-\DeclareUnicodeCharacter{1D4DC}{{\mathcal M}}	% 𝓜
-\DeclareUnicodeCharacter{1D4DD}{{\mathcal N}}	% 𝓝
-\DeclareUnicodeCharacter{1D4DE}{{\mathcal O}}	% 𝓞 \bscrO, \calO
-\DeclareUnicodeCharacter{1D4DF}{{\mathcal P}}	% 𝓟
-\DeclareUnicodeCharacter{1D4E0}{{\mathcal Q}}	% 𝓠 \bscrQ, \calQ
-\DeclareUnicodeCharacter{1D4E1}{{\mathcal R}}	% 𝓡
-\DeclareUnicodeCharacter{1D4E2}{{\mathcal S}}	% 𝓢
-\DeclareUnicodeCharacter{1D4E3}{{\mathcal T}}	% 𝓣
-\DeclareUnicodeCharacter{1D4E4}{{\mathcal U}}	% 𝓤
-\DeclareUnicodeCharacter{1D4E5}{{\mathcal V}}	% 𝓥
-\DeclareUnicodeCharacter{1D4E6}{{\mathcal W}}	% 𝓦
-\DeclareUnicodeCharacter{1D4E7}{{\mathcal X}}	% 𝓧 \bscrX, \calX
-\DeclareUnicodeCharacter{1D4E8}{{\mathcal Y}}	% 𝓨
-\DeclareUnicodeCharacter{1D4E9}{{\mathcal Z}}	% 𝓩
+\DeclareUnicodeCharacter{1D4D0}{\ensuremath{\mathcal A}}	% 𝓐
+\DeclareUnicodeCharacter{1D4D1}{\ensuremath{\mathcal B}}	% 𝓑 \bscrB, \calB
+\DeclareUnicodeCharacter{1D4D2}{\ensuremath{\mathcal C}}	% 𝓒
+\DeclareUnicodeCharacter{1D4D3}{\ensuremath{\mathcal D}}	% 𝓓
+\DeclareUnicodeCharacter{1D4D4}{\ensuremath{\mathcal E}}	% 𝓔
+\DeclareUnicodeCharacter{1D4D5}{\ensuremath{\mathcal F}}	% 𝓕 \bscrF, \calF
+\DeclareUnicodeCharacter{1D4D6}{\ensuremath{\mathcal G}}	% 𝓖 \bscrF, \calF
+\DeclareUnicodeCharacter{1D4D7}{\ensuremath{\mathcal H}}	% 𝓗
+\DeclareUnicodeCharacter{1D4D8}{\ensuremath{\mathcal I}}	% 𝓘
+\DeclareUnicodeCharacter{1D4D9}{\ensuremath{\mathcal J}}	% 𝓙
+\DeclareUnicodeCharacter{1D4DA}{\ensuremath{\mathcal K}}	% 𝓚
+\DeclareUnicodeCharacter{1D4DB}{\ensuremath{\mathcal L}}	% 𝓛
+\DeclareUnicodeCharacter{1D4DC}{\ensuremath{\mathcal M}}	% 𝓜
+\DeclareUnicodeCharacter{1D4DD}{\ensuremath{\mathcal N}}	% 𝓝
+\DeclareUnicodeCharacter{1D4DE}{\ensuremath{\mathcal O}}	% 𝓞 \bscrO, \calO
+\DeclareUnicodeCharacter{1D4DF}{\ensuremath{\mathcal P}}	% 𝓟
+\DeclareUnicodeCharacter{1D4E0}{\ensuremath{\mathcal Q}}	% 𝓠 \bscrQ, \calQ
+\DeclareUnicodeCharacter{1D4E1}{\ensuremath{\mathcal R}}	% 𝓡
+\DeclareUnicodeCharacter{1D4E2}{\ensuremath{\mathcal S}}	% 𝓢
+\DeclareUnicodeCharacter{1D4E3}{\ensuremath{\mathcal T}}	% 𝓣
+\DeclareUnicodeCharacter{1D4E4}{\ensuremath{\mathcal U}}	% 𝓤
+\DeclareUnicodeCharacter{1D4E5}{\ensuremath{\mathcal V}}	% 𝓥
+\DeclareUnicodeCharacter{1D4E6}{\ensuremath{\mathcal W}}	% 𝓦
+\DeclareUnicodeCharacter{1D4E7}{\ensuremath{\mathcal X}}	% 𝓧 \bscrX, \calX
+\DeclareUnicodeCharacter{1D4E8}{\ensuremath{\mathcal Y}}	% 𝓨
+\DeclareUnicodeCharacter{1D4E9}{\ensuremath{\mathcal Z}}	% 𝓩
 
 %	mathematical fraktur
-\DeclareUnicodeCharacter{1D51B}{\mathfrak X}% 𝔛
+\DeclareUnicodeCharacter{1D51B}{\ensuremath{\mathfrak X}}% 𝔛
 
 %	hat: substituted by mathematical italic
 \DeclareUnicodeCharacter{00C2}{\hat A}	% Â
