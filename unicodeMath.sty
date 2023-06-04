@@ -28,6 +28,7 @@
   \RequirePackage{dsfont}
 
 %	Greek letters
+\DeclareUnicodeCharacter{0AC}{\ensuremath\neg}		% ¬
 \DeclareUnicodeCharacter{3B1}{\ensuremath\alpha}	% α
 \DeclareUnicodeCharacter{3B2}{\ensuremath\beta}		% β
 \DeclareUnicodeCharacter{393}{\ensuremath\Gamma}	% Γ
@@ -84,7 +85,7 @@
 \DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
 
 %	sub and superscripts
-\DeclareUnicodeCharacter{2070}{^0}	% ⁰, superscripts
+\DeclareUnicodeCharacter{2070}{^0}	% ⁰, superscript 0
 \DeclareUnicodeCharacter{0B9}{^1}	% ¹
 \DeclareUnicodeCharacter{0B2}{^2}	% ²
 \DeclareUnicodeCharacter{0B3}{^3}	% ³
@@ -158,7 +159,10 @@
 \DeclareUnicodeCharacter{2197}{\nearrow}	% ↗
 \DeclareUnicodeCharacter{2198}{\searrow}	% ↘
 \DeclareUnicodeCharacter{21A6}{\mapsto}		% ↦
+\DeclareUnicodeCharacter{2200}{{\forall}}	% ∀
 \DeclareUnicodeCharacter{2202}{{\partial}}	% ∂
+\DeclareUnicodeCharacter{2203}{{\exists}}	% ∃
+\DeclareUnicodeCharacter{2204}{{\nexists}}	% ∄
 \DeclareUnicodeCharacter{2205}{\emptyset}	% ∅
 \DeclareUnicodeCharacter{2207}{\nabla}		% ∇
 \DeclareUnicodeCharacter{2208}{\in}		% ∈
@@ -172,6 +176,10 @@
 \DeclareUnicodeCharacter{2218}{\circ}		% ∘
 \DeclareUnicodeCharacter{221A}{\sqrt}		% √
 \DeclareUnicodeCharacter{221E}{\infty}		% ∞
+\DeclareUnicodeCharacter{2223}{\mid}		% ∣
+\DeclareUnicodeCharacter{2224}{\nmid}		% ∤
+\DeclareUnicodeCharacter{2227}{\land}		% ∧
+\DeclareUnicodeCharacter{2228}{\lor}		% ∨
 \DeclareUnicodeCharacter{2225}{\|}		% ∥
 \DeclareUnicodeCharacter{2229}{\cap}		% ∩
 \DeclareUnicodeCharacter{222A}{\cup}		% ∪
@@ -185,6 +193,8 @@
 \DeclareUnicodeCharacter{2260}{\ne}		% ≠
 \DeclareUnicodeCharacter{2264}{\le}		% ≤
 \DeclareUnicodeCharacter{2265}{\ge}		% ≥
+\DeclareUnicodeCharacter{2268}{\lneqq}		% ≨
+\DeclareUnicodeCharacter{2269}{\gneqq}		% ≩
 \DeclareUnicodeCharacter{226A}{\ll}		% ≪
 \DeclareUnicodeCharacter{226B}{\gg}		% ≫
 \DeclareUnicodeCharacter{227A}{\prec}		% ≺
@@ -193,6 +203,8 @@
 \DeclareUnicodeCharacter{227D}{\succcurlyeq}	% ≽
 \DeclareUnicodeCharacter{2282}{\subset}		% ⊂
 \DeclareUnicodeCharacter{2283}{\supset}		% ⊃
+\DeclareUnicodeCharacter{228A}{\subsetneqq}	% ⊊
+\DeclareUnicodeCharacter{228B}{\supsetneqq}	% ⊋
 \DeclareUnicodeCharacter{22C2}{\bigcap}		% ⋂
 \DeclareUnicodeCharacter{22C3}{\bigcup}		% ⋃
 \DeclareUnicodeCharacter{2297}{\otimes}		% ⊗
