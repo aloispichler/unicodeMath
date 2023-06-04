@@ -70,193 +70,210 @@
         "description": "Use the default template which includes a variety of packages and declared-commands. The template will also automatically generate the title and author, as well as date, and will format the document."
     },
     "Inline Summation": {
-        "prefix": ["\\sum inline"],
-        "body": [ "\\sum_{${1:i=1}}^{${2:\\infty}}$3" ],
+        "prefix": ["sum inline", "sum inline"],
+        "body": [
+            "\\sum_{${1:i=1}}^{$2}$3"
+        ],
         "description": "Insert an inline summation notation."
     },
     "Inline Math": {
-        "prefix": ["$$", "\\mathinline"],
-        "body": [ "$${1:$TM_SELECTED_TEXT}$" ],
+        "prefix": ["$$", "mathinline", "\\mathinline"],
+        "body": [
+            "$${1:$TM_SELECTED_TEXT}$"
+        ],
         "description": "Inline Math Environment."
     },
     "Centered Math": {
-        "prefix": ["\\[\\]", "\\mathcentered"],
-        "body": [ "\\[\t${1:$TM_SELECTED_TEXT} \\]\n" ],
+        "prefix": ["\\[\\]", "mathcentered", "\\mathcentered"],
+        "body": [
+            "\\[\t${1:$TM_SELECTED_TEXT} \\]\n"
+        ],
         "description": "Insert centered Math Environment."
     },
+    "subequation": {
+        "prefix": [ "\\begin{subequation}\\end{subequation}"],
+        "body": [
+            "\\begin{subequation}",
+            "\t\\begin{align}",
+            "\t\t$1\t&= $2\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
+            "\t\t\t&= $3\t\\label{eq:${TM_LINE_NUMBER}}",
+            "\t\\end{align}",
+            "\\end{subequation}"
+        ],
+        "description": "Subequation environment."
+    },
     "equation": {
-        "prefix": [ "\\equation" , "\\begin{equation}\\end{equation}"],
+        "prefix": [ "\\begin{equation}\\end{equation}", "equation", "\\equation"],
         "body": [
             "\\begin{equation}\\label{eq:${TM_LINE_NUMBER}}",
             "\t${1:$TM_SELECTED_TEXT}",
-            "\\end{equation}\n"
+            "\\end{equation}"
         ],
         "description": "Equation environment."
     },
      "environment": {
-        "prefix": ["begin{", "\\begin{}\\end{}" ],
+        "prefix": ["begin{", "\\begin{}" ],
         "body": [
             "\\begin{${1:equation}}\n\t${0:$TM_SELECTED_TEXT}\n\\end{$1}"
         ],
-	"luasnip": {"priority": 2000},
         "description": "Environment."
     },
     "Section": {
-        "prefix": ["section{", "\\section{}"],
-        "body": "%	╭───────────────────────────────────────────────\n%	│	$1\n\\section{${1:Introduction}}\\label{sec:$1}\n",
+        "prefix": ["section{", "\\section{"],
+        "body": "%\t╭───────────────────────────────────────────────\n%\t│\t$1\n\\section{${1:Introduction}}\\label{sec:$1}\n$0",
         "description": "Insert a new section."
     },
     "Subsection": {
         "prefix": ["subsection", "\\subsection"],
         "body": [
-            "\\subsection{$1}\\label{sec:$1}\n"
+            "\\subsection{$1}\\label{sec:$1}\n$0"
         ],
         "description": "Insert a new subsection."
     },
     "Header": {
         "prefix": ["header", "\\header", "##"],
-        "body": "\\section*{$1}",
+        "body": "\\section*{$1}$0",
         "description": "Insert a section without index."
     },
     "Header Small": {
         "prefix": ["headersmall", "\\headersmall", "###"],
-        "body": "\\subsection*{$1}",
+        "body": "\\subsection*{$1}$0",
         "description": "Insert a subsection without index."
     },
     "emphasize": {
         "prefix": ["\\emph", "*"], 
-        "body": "\\emph{${1:$TM_SELECTED_TEXT}}",
+        "body": "\\emph{${1:$TM_SELECTED_TEXT}}$0",
         "description": "Emphasize text."
     },
     "Italic Text": {
         "prefix": ["italic", "\\italic", "*"], 
-        "body": "\\textit{$1}",
+        "body": "\\textit{$1}$0",
         "description": "Insert italic text."
     },
     "Bold Text": {
-        "prefix": ["bold", "\\bold", "**"],
-        "body": "\\textbf{$1}",
+        "prefix": ["bold", "\\bold", "\\textbf{}"],
+        "body": "\\textbf{$1}$0",
         "description": "Insert bold text."
     },
     "Bold Italic Text": {
         "prefix": ["bolditalic", "\\bolditalic", "***"],
-        "body": "\\textbf{\\textit{$1}}",
+        "body": "\\textbf{\\textit{$1}}$0",
         "description": "Insert bold italic text."
     },
     "Enumerate": {
-        "prefix": ["- ", "\\begin{enumerate}"],
+        "prefix": ["- ", "\\enumerate", "enumerate"],
         "body": [
             "\\begin{enumerate}",
             "\t\\item $1",
-            "\\end{enumerate}\n"
+            "\\end{enumerate}\n$0"
         ]
     },
     "Itemize": {
-        "prefix": ["1. ", "\\begin{itemize}"],
+        "prefix": ["1. ", "\\itemize", "itemize"],
         "body": [
             "\\begin{itemize}",
             "\t\\item $1",
-            "\\end{itemize}\n"
+            "\\end{itemize}\n$0"
         ]
     },
     "Description": {
-        "prefix": ["\\begin{description}"],
+        "prefix": ["\\description", "description"],
         "body": [
             "\\begin{description}",
             "\t\\item[$1]\t$2",
-            "\\end{description}\n"
+            "\\end{description}\n$0"
         ]
     },
     "Theorem": {
-        "prefix": ["\\begin{theorem}"],
+        "prefix": ["theorem", "\\theorem"],
         "body": [
             "\\begin{theorem}\\label{thm:${TM_LINE_NUMBER}}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\t$0",
             "\\end{theorem}\n"
         ],
         "description": "Insert a theorem."
     },
     "Proof": {
-        "prefix": ["\\begin{proof}"],
+        "prefix": ["proof", "\\proof"],
         "body": [
             "\\begin{proof}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\t$0",
             "\\end{proof}\n"
         ],
         "description": "Insert a proof."
     },
     "Proposition": {
-        "prefix": ["\\begin{proposition}"],
+        "prefix": ["proposition", "\\proposition"],
         "body": [
             "\\begin{proposition}\\label{prop:${TM_LINE_NUMBER}}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\t$0",
             "\\end{proposition}\n"
         ],
         "description": "Insert a Proposition."
     },
     "Corollary": {
-        "prefix": ["\\begin{corollary}"],
+        "prefix": ["corollary", "\\corollary"],
         "body": [
             "\\begin{corollary}\\label{cor:${TM_LINE_NUMBER}}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\t$0",
             "\\end{corollary}\n"
         ],
         "description": "Insert a Corollary."
     },
     "Lemma": {
-        "prefix": ["\\begin{lemma}"],
+        "prefix": ["lemma", "\\lemma"],
         "body": [
-            "\\begin{lemma}\\label{lem:${TM_LINE_NUMBER}}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\\begin{lemma}\\label{cor:${TM_LINE_NUMBER}}",
+            "\t$0",
             "\\end{lemma}\n"
         ],
         "description": "Insert a Lemma."
     },
     "Remark": {
-        "prefix": ["\\begin{remark}"],
+        "prefix": ["remark", "\\remark"],
         "body": [
             "\\begin{remark}\\label{rem:${TM_LINE_NUMBER}}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\t$0",
             "\\end{remark}"
         ],
         "description": "Insert a Remark."
     },
     "Problem": {
-        "prefix": ["\\begin{problem}"],
+        "prefix": ["problem", "\\problem"],
         "body": [
             "\\begin{problem}\\label{prob:${TM_LINE_NUMBER}}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\t$0",
             "\\end{problem}"
         ],
         "description": "Insert a Problem."
     },
     "Definition": {
-        "prefix": ["\\begin{definition}"],
+        "prefix": ["definition", "\\definition"],
         "body": [
             "\\begin{definition}\\label{def:${TM_LINE_NUMBER}}",
-            "\t${1:$TM_SELECTED_TEXT}",
+            "\t$0",
             "\\end{definition}"
         ],
         "description": "Insert a Definition."
     },
     "Fraction": {
-        "prefix": ["\\frac{}{}", "fractioninline", "\\fractioninline"],
-        "body": ["\\frac{${1:$TM_SELECTED_TEXT}}{$2}"],
+        "prefix": ["fractioninline", "\\fractioninline"],
+        "body": ["\\frac{${1:$TM_SELECTED_TEXT:1}}{$2}$0"],
         "description": ["Insert inline fraction notation."]
     },
     "binom": {
-        "prefix": ["\\binom", "\\choose" ],
-        "body": ["\\binom{${1:n}}{${2:k}}"],
+        "prefix": ["binom", "\\binom", "choose", "\\choose" ],
+        "body": ["\\binom{${1:n}}{${2:k}}$0"],
         "description": "binomial coefficient"
     },
     "vector": {
-        "prefix": ["\\begin{vector}" ],
-        "body": ["\\begin{pmatrix} $1 \\\\\\\\ \\vdots \\\\\\\\ ${2:$1}\\end{pmatrix}"],
+        "prefix": ["vector", "\\vector" ],
+        "body": ["\\begin{pmatrix} $1 \\\\\\\\ \\vdots \\\\\\\\ ${2:$1}\\end{pmatrix} $0"],
         "description": "vector"
     },
     "matrix": {
-        "prefix": ["\\begin{matrix}"],
-        "body": ["\\left(\\begin{array}{rrr}\n\t$1 & \\dots & $1 \\\\\\\\\n\t\\vdots & \\ddots & \\vdots\\\\\\\\\n\t$1 & \\dots & $1\n\\end{array}\\right)\n"],
+        "prefix": ["matrix", "\\matrix"],
+        "body": ["\\left(\\begin{array}{rrr}\n\t$1 & \\dots & $1 \\\\\\\\\n\t\\vdots & \\ddots & \\vdots\\\\\\\\\n\t$1 & \\dots & $1\n\\end{array}\\right)\n$0"],
         "description": "array"
     },
     "stack": {
@@ -270,42 +287,42 @@
         "description": "substack"
     },
     "cases": {
-        "prefix": ["\\begin{cases}"],
-        "body": ["\\begin{cases}\n\t$1 & ${2:\\text{if }} \\\\\\\\\n\t$3 & ${4:\\text{else}}\n\\end{cases}\n"],
+        "prefix": ["cases", "\\cases"],
+        "body": ["\\begin{cases}\n\t$1 & ${2:\\text{if }} \\\\\\\\\n\t$3 & ${4:\\text{else}}\n\\end{cases}$0"],
         "description": "cases"
     },
     "si": {
-        "prefix": ["\\siunits"],
+        "prefix": ["siunits", "\\siunits"],
         "body": ["\\SI{${1:12.3\\pm 4}}{${2:\\kilo\\gramm\\metre\\per\\square\\second}} $0"],
         "description": "si"
     },
     "interior": {
-        "prefix": ["\\interior", "\\mathring"],
+        "prefix": ["interior", "\\interior"],
         "body": ["\\mathring{$1} $0"],
         "description": "interior of set"
     },
     "Indent": {
-        "prefix": ["\\tab", "\\indent" ],
+        "prefix": ["tab", "\\tab", "indent" ],
         "body": ["\\indent "],
         "description": "The equivalent of \"\\t\", also known as \"Tab\""
     },
     "includegraphics": {
-        "prefix": ["\\includegraphics" ],
-        "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n"],
+        "prefix": ["includegraphics", "\\includegraphics" ],
+        "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n$0"],
         "description": "Include a graphic."
     },
     "Frame": {
-        "prefix": ["\\slide", "\\begin{frame}" ],
-        "body": ["\\begin{frame}{${1:Frame title, cont’d}}\n\t\\framesubtitle{Subtitle}\n\tcontent\n\\end{frame}"],
+        "prefix": ["frame", "\\frame", "slide", "\\slide" ],
+        "body": ["\\begin{frame}{${1:Frame title}}\n\t\\framesubtitle{Subtitle}\n\tcontent\n\\end{frame}"],
         "description": "Create a new frame."
     },
     "Highlight box": {
-        "prefix": ["\\highlight", "\\hlbox" ],
-        "body": ["\\hlbox${1:<1->}${2:[yellow]}{${3:Content}}"],
+        "prefix": ["highlight", "\\hlbox", "hlbox" ],
+        "body": ["\\hlbox${1:<1->}${2:[yellow]}{${3:Content}} $0"],
         "description": "Create a highlight box."
     },
     "Highlight tikz": {
-        "prefix": ["\\highlight tikz", "\\hlbox tikz" ],
+        "prefix": ["highlight tikz", "\\highlight tikz", "\\hlbox tikz", "hlbox tikz" ],
         "body": ["\\tikz[baseline]\\node[xshift=0em,yshift=0em,rotate=0,rectangle, red,fill=yellow, rounded corners, inner sep=0.5em,anchor=base]{${1:includegraphics or text here}};"],
         "description": "Create a highlight box."
     },
@@ -314,31 +331,29 @@
         "body": ["\\begin{tikzpicture}[remember picture, overlay]\n\t\\node[xshift=0.0em,yshift=0.0em,scale=1.0, rotate=0, red,fill=yellow!50,rounded corners,opacity=1.0,anchor=west]\n\t{${1:includegraphics or text here}};\n\\end{tikzpicture}"],
         "description": "Create a textblock."
     },
-    "columns": {
-        "prefix": ["\\begin{columns}"],
-        "body": ["\\begin{columns}[t]%top, Top, center, bottom \n\t\\begin{column}{0.5\\textwidth}\n\t\t${1:content column 1}\n\t\\end{column}\n\t\\begin{column}{0.5\\textwidth}\n\t\tcontent column 2\n\t\\end{column}\n\\end{columns}\n"],
-	"luasnip": {"priority": 2000},
+    "column": {
+        "prefix": ["column", "\\column" ],
+        "body": ["\\begin{column}{0.5\\textwidth}\n\t${1:content}\n\\end{column}\n$0"],
         "description": "Create columns."
     },
-    "column": {
-        "prefix": ["\\begin{column}" ],
-        "body": ["\\begin{column}{0.5\\textwidth}\n\t${1:content}\n\\end{column}\n"],
-	"luasnip": {"priority": 1000},
-        "description": "Add one new column."
+     "columns": {
+        "prefix": ["columns", "\\columns" ],
+        "body": ["\\begin{columns}[t]%top, Top, center, bottom \n\t\\begin{column}{0.5\\textwidth}\n\t\t${1:content column 1}\n\t\\end{column}\n\t\\begin{column}{0.5\\textwidth}\n\t\tcontent column 2\n\t\\end{column}\n\\end{columns}\n$0"],
+        "description": "Create columns."
     },
     "table": {
-        "prefix": ["table", "\\table", "\\begin{table}"],
-        "body": ["\\begin{table}[h]% here, Here, top, page, bottom, !; \\usepackage{booktabs}\n\t\\centering\n\t\\begin{tabular}{lrr}\n\t\t\\toprule\n\t\t\\multicolumn{2}{c}{Studium}\\\\\\\\\\cmidrule{1-2}\n\t\t${1:Fach} & Dauer & Einkommen\\\\\\\\\n\t\t\\midrule\n\t\tMST & 6 & 8.20 \\\\\\\\\n\t\tVWL & 14 & 10.00\\\\\\\\\n\t\t\\bottomrule\n\t\\end{tabular}\n\t\\caption{Caption\\label{tab:0}}\n\\end{table}\n"],
+        "prefix": ["table", "\\table" ],
+        "body": ["\\begin{table}[h]% here, Here, top, page, bottom, !; \\usepackage{booktabs}\n\t\\centering\n\t\\begin{tabular}{lrr}\n\t\t\\toprule\n\t\t\\multicolumn{2}{c}{Studium}\\\\\\\\\\cmidrule{1-2}\n\t\t${1:Fach} & Dauer & Einkommen\\\\\\\\\n\t\t\\midrule\n\t\tMST & 6 & 8.20 \\\\\\\\\n\t\tVWL & 14 & 10.00\\\\\\\\\n\t\t\\bottomrule\n\t\\end{tabular}\n\t\\caption{Caption\\label{tab:0}}\n\\end{table}\n$0"],
         "description": "Create a table."
     },
     "figure": {
-        "prefix": ["figure", "\\figure", "\\begin{figure}"],
-        "body": ["\\begin{figure}[h]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}\n"],
+        "prefix": ["figure", "\\figure" ],
+        "body": ["\\begin{figure}[h]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}\n$0"],
         "description": "Create a figure."
     },
     "subfigure": {
         "prefix": ["subfigure", "\\subfigure", "subfloat", "\\subfloat" ],
-        "body": ["\\begin{figure}[h]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}\n"],
+        "body": ["\\begin{figure}[h]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}\n$0"],
         "description": "Add a figure with subfigures."
     },
     "Create 2D Plot environment": {
@@ -356,7 +371,7 @@
             "]",
             "$3",
             "\\end{axis}",
-            "\\end{tikzpicture}"
+            "\\end{tikzpicture}$0"
         ],
         "description": "Create a 2DPlot Environment of pgfplots. The style declarations are already included in the snippet."
     },
@@ -471,12 +486,12 @@
         "description": "Plot a 3D Graph in the 3D graph environment created."
     },
     "Create Align Environment in Text": {
-        "prefix": ["align", "\\align", "\\begin{align}\\end{align}"],
+        "prefix": ["\\begin{align}", "align", "\\align"],
         "body": [
             "\\begin{align}",
-            "\t$1\t&= ${2:$TM_SELECTED_TEXT}\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
+            "\t$1\t&= $2\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
             "\t\t&= $3\t\\label{eq:${TM_LINE_NUMBER}}",
-            "\\end{align}\n"
+            "\\end{align}"
         ],
         "description": "Create an align environment."
     },
