@@ -69,6 +69,11 @@
         ],
         "description": "Use the default template which includes a variety of packages and declared-commands. The template will also automatically generate the title and author, as well as date, and will format the document."
     },
+    "href": {
+        "prefix": ["\\href{}"],
+        "body": [ "\\href{$1}{$1}" ],
+        "description": "hyper reference"
+    },
     "Inline Summation": {
         "prefix": ["\\sum inline"],
         "body": [ "\\sum_{${1:i=1}}^${2:\\infty}$3" ],
@@ -113,12 +118,12 @@
         "description": "Environment."
     },
     "Section": {
-        "prefix": [ "\\section{"],
+        "prefix": [ "\\section{}"],
         "body": "%\t╭───────────────────────────────────────────────\n%\t│\t$1\n\\section{${1:Introduction}}\\label{sec:$1}\n$0",
         "description": "Insert a new section."
     },
     "Subsection": {
-        "prefix": ["subsection", "\\subsection"],
+        "prefix": ["\\subsection{}"],
         "body": [
             "\\subsection{$1}\\label{sec:$1}\n$0"
         ],
