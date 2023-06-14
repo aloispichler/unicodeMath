@@ -7,7 +7,7 @@ The package maps unicode characters in LaTeX documents.
 	\usepackage{unicodeMath}
 	\title{
 		\textbf{What You See Is What You Get}⏎
-			Wriging Unicode in \LaTeX}
+			Writing Unicode in \LaTeX}
 
 	\begin{document}
 	\maketitle
