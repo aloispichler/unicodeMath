@@ -111,7 +111,7 @@
         "description": "Equation environment."
     },
      "environment": {
-        "prefix": ["begin{", "\\begin{}" ],
+        "prefix": ["\\begin{environment}" ],
         "body": [
             "\\begin{${1:equation}}\n\t${0:$TM_SELECTED_TEXT}\n\\end{$1}"
         ],
@@ -130,12 +130,12 @@
         "description": "Insert a new subsection."
     },
     "Header": {
-        "prefix": ["header", "\\header", "##"],
+        "prefix": ["\\header", "##"],
         "body": "\\section*{$1}$0",
         "description": "Insert a section without index."
     },
     "Header Small": {
-        "prefix": ["headersmall", "\\headersmall", "###"],
+        "prefix": ["\\headersmall", "###"],
         "body": "\\subsection*{$1}$0",
         "description": "Insert a subsection without index."
     },
@@ -145,42 +145,42 @@
         "description": "Emphasize text."
     },
     "Italic Text": {
-        "prefix": ["italic", "\\italic", "*"], 
+        "prefix": ["\\italic", "*"], 
         "body": "\\textit{$1}$0",
         "description": "Insert italic text."
     },
     "Bold Text": {
-        "prefix": ["bold", "\\bold", "\\textbf{}"],
+        "prefix": ["\\bold", "\\textbf{}"],
         "body": "\\textbf{$1}$0",
         "description": "Insert bold text."
     },
     "Bold Italic Text": {
-        "prefix": ["bolditalic", "\\bolditalic", "***"],
+        "prefix": ["\\bolditalic", "***"],
         "body": "\\textbf{\\textit{$1}}$0",
         "description": "Insert bold italic text."
     },
     "Enumerate": {
-        "prefix": ["- ", "\\begin{enumerate}\\end{enumerate}"],
+        "prefix": ["-", "*", "\\begin{enumerate}\\end{enumerate}", "\\enumerateItemize", "\\enumerateDescription"],
         "body": [
             "\\begin{enumerate}",
-            "\t\\item $1",
-            "\\end{enumerate}\n$0"
+            "\t\\item ${1:$TM_SELECTED_TEXT}",
+            "\\end{enumerate}$0"
         ]
     },
     "Itemize": {
-        "prefix": ["1. ", "\\begin{itemize}\\end{itemize}", "itemize"],
+        "prefix": ["1. ", "\\begin{itemize}\\end{itemize}", "\\enumerateItemize"],
         "body": [
             "\\begin{itemize}",
-            "\t\\item $1",
-            "\\end{itemize}\n$0"
+            "\t\\item ${1:$TM_SELECTED_TEXT}",
+            "\\end{itemize}$0"
         ]
     },
     "Description": {
-        "prefix": ["\\begin{description}\\end{description}"],
+        "prefix": ["\\begin{description}\\end{description}", "\\enumerateDescription", "\\itemizeDescription"],
         "body": [
             "\\begin{description}",
-            "\t\\item[$1]\t$2",
-            "\\end{description}\n$0"
+            "\t\\item[${1:one}]\t${2:$TM_SELECTED_TEXT}",
+            "\\end{description}$0"
         ]
     },
     "Theorem": {
@@ -256,14 +256,14 @@
         "description": "Definition environment"
     },
     "Fraction": {
-        "prefix": ["fractioninline", "\\fractioninline"],
+        "prefix": ["\\fractioninline"],
         "body": ["\\frac{${1:$TM_SELECTED_TEXT:1}}{$2}$0"],
-        "description": ["Insert inline fraction notation."]
+        "description": ["\\frac, Insert inline fraction notation."]
     },
     "binom": {
-        "prefix": ["binom", "\\binom", "choose", "\\choose" ],
+        "prefix": ["\\binom", "\\choose" ],
         "body": ["\\binom{${1:n}}{${2:k}}$0"],
-        "description": "binomial coefficient"
+        "description": "\\binom{n}{k}, binomial coefficient"
     },
     "vector": {
         "prefix": ["\\begin{vector}" ],
@@ -276,12 +276,12 @@
         "description": "array"
     },
     "stack": {
-        "prefix": ["stack", "above", "below" ],
+        "prefix": ["\\stack", "\\above", "\\below" ],
         "body": ["\\stackrel{${1:above}}{${2:below}} $0"],
         "description": "stackrel"
     },
     "substack": {
-        "prefix": ["substack", "\\substack" ],
+        "prefix": ["\\substack" ],
         "body": ["\\substack{${1:above}\\\\\\\\${2:below}} $0"],
         "description": "substack"
     },
@@ -296,17 +296,17 @@
         "description": "si"
     },
     "interior": {
-        "prefix": ["interior", "\\interior"],
+        "prefix": ["\\interior"],
         "body": ["\\mathring{$1} $0"],
         "description": "interior of set"
     },
     "Indent": {
-        "prefix": ["\\tab", "indent" ],
+        "prefix": ["\\tab", "\\indent" ],
         "body": ["\\indent "],
         "description": "The equivalent of \"\\t\", also known as \"Tab\""
     },
     "includegraphics": {
-        "prefix": ["includegraphics", "\\includegraphics" ],
+        "prefix": ["\\includegraphics" ],
         "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n$0"],
         "description": "Include a graphic."
     },
@@ -316,17 +316,17 @@
         "description": "Create a new frame."
     },
     "Highlight box": {
-        "prefix": ["\\highlight", "\\hlbox", "hlbox" ],
+        "prefix": ["\\highlight", "\\hlbox" ],
         "body": ["\\hlbox${1:<1->}${2:[yellow]}{${3:Content}} $0"],
         "description": "Create a highlight box."
     },
     "Highlight tikz": {
-        "prefix": ["highlight tikz", "\\highlight tikz", "\\hlbox tikz", "hlbox tikz" ],
+        "prefix": ["\\highlight tikz", "\\hlbox tikz" ],
         "body": ["\\tikz[baseline]\\node[xshift=0em,yshift=0em,rotate=0,rectangle, red,fill=yellow, rounded corners, inner sep=0.5em,anchor=base]{${1:includegraphics or text here}};"],
         "description": "Create a highlight box."
     },
     "textlock": {
-        "prefix": ["textblock", "\\textblock", "position", "\\position"],
+        "prefix": ["\\textblock", "\\position"],
         "body": ["\\begin{tikzpicture}[remember picture, overlay]\n\t\\node[xshift=0.0em,yshift=0.0em,scale=1.0, rotate=0, red,fill=yellow!50,rounded corners,opacity=1.0,anchor=west]\n\t{${1:includegraphics or text here}};\n\\end{tikzpicture}"],
         "description": "Create a textblock."
     },
@@ -346,12 +346,12 @@
         "description": "Create a table."
     },
     "figure": {
-        "prefix": ["figure", "\\figure" ],
+        "prefix": "\\figure",
         "body": ["\\begin{figure}[h]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}\n$0"],
         "description": "Create a figure."
     },
     "subfigure": {
-        "prefix": ["subfigure", "\\subfigure", "subfloat", "\\subfloat" ],
+        "prefix": ["\\subfigure", "\\subfloat" ],
         "body": ["\\begin{figure}[h]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}\n$0"],
         "description": "Add a figure with subfigures."
     },
@@ -495,7 +495,7 @@
         "description": "Create an align environment."
     },
     "Signature": {
-        "prefix": ["signature", "\\signature"], 
+        "prefix": ["\\signature"], 
         "body": [
             "\\begin{tikzpicture}[remember picture,overlay]%\t\\usepackage{tikz}",
             	"\t\\node[xshift=1.6cm,yshift=0.3cm]",
