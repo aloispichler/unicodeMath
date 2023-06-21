@@ -267,12 +267,12 @@
     },
     "vector": {
         "prefix": ["\\begin{vector}" ],
-        "body": ["\\begin{pmatrix} $1 \\\\\\\\ \\vdots \\\\\\\\ ${2:$1}\\end{pmatrix} $0"],
+        "body": ["\\begin{pmatrix} $1 \\\\\\\\ \\vdots \\\\\\\\ ${2:$1}\\end{pmatrix}$0"],
         "description": "vector"
     },
     "matrix": {
         "prefix": ["\\begin{matrix}"],
-        "body": ["\\left(\\begin{array}{rrr}\n\t$1 & \\dots & $1 \\\\\\\\\n\t\\vdots & \\ddots & \\vdots\\\\\\\\\n\t$1 & \\dots & $1\n\\end{array}\\right)\n$0"],
+        "body": ["\\left(\\begin{array}{rrr}\n\t$1 & \\dots & $1 \\\\\\\\\n\t\\vdots & \\ddots & \\vdots\\\\\\\\\n\t$1 & \\dots & $1\n\\end{array}\\right)$0"],
         "description": "array"
     },
     "stack": {
@@ -307,7 +307,7 @@
     },
     "includegraphics": {
         "prefix": ["\\includegraphics" ],
-        "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n$0"],
+        "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}$0"],
         "description": "Include a graphic."
     },
     "Frame": {
@@ -347,12 +347,12 @@
     },
     "figure": {
         "prefix": "\\figure",
-        "body": ["\\begin{figure}[h]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}\n$0"],
+        "body": ["\\begin{figure}[h]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}$0"],
         "description": "Create a figure."
     },
     "subfigure": {
         "prefix": ["\\subfigure", "\\subfloat" ],
-        "body": ["\\begin{figure}[h]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}\n$0"],
+        "body": ["\\begin{figure}[h]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}$0"],
         "description": "Add a figure with subfigures."
     },
     "Create 2D Plot environment": {
@@ -500,7 +500,7 @@
             "\\begin{tikzpicture}[remember picture,overlay]%\t\\usepackage{tikz}",
             	"\t\\node[xshift=1.6cm,yshift=0.3cm]",
             		"\t{\\includegraphics[height=3.0cm]{~/Dropbox/SignatureAloisPichler.pdf}};",
-            "\\end{tikzpicture}\n"
+            "\\end{tikzpicture}"
             ],
         "description": "Insert problem solving index format."
     },

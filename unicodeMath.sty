@@ -81,6 +81,7 @@
 \DeclareUnicodeCharacter{2011}{\nobreakdash-}	% ‑, non-breaking hyphen
 \DeclareUnicodeCharacter{2013}{--}	% –, en dash
 \DeclareUnicodeCharacter{2014}{---}	% —, em dash
+\DeclareUnicodeCharacter{2022}{\boldsymbol\cdot}% bullet
 \DeclareUnicodeCharacter{2030}{\perthousand}	% ‰ permille
 \DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
 
@@ -123,6 +124,10 @@
 \DeclareUnicodeCharacter{2089}{_9}	% ₉
 \DeclareUnicodeCharacter{208A}{_+}	% ₊
 \DeclareUnicodeCharacter{208B}{_-}	% ₋
+\DeclareUnicodeCharacter{208D}{\left}	% ₍
+\DeclareUnicodeCharacter{208E}{\right}	% ₎
+\DeclareUnicodeCharacter{2090}{_a}	% ₐ
+\DeclareUnicodeCharacter{2091}{_e}	% ₑ
 \DeclareUnicodeCharacter{2095}{_h}	% ₕ
 \DeclareUnicodeCharacter{1D62}{_i}	% ᵢ
 \DeclareUnicodeCharacter{2C7C}{_j}	% ⱼ
@@ -130,6 +135,7 @@
 \DeclareUnicodeCharacter{2097}{_l}	% ₗ
 \DeclareUnicodeCharacter{2098}{_m}	% ₘ
 \DeclareUnicodeCharacter{2099}{_n}	% ₙ
+\DeclareUnicodeCharacter{2092}{_o}	% ₒ
 \DeclareUnicodeCharacter{209A}{_p}	% ₚ
 \DeclareUnicodeCharacter{1D63}{_r}	% ᵣ
 \DeclareUnicodeCharacter{209B}{_s}	% ₛ
@@ -187,7 +193,7 @@
 \DeclareUnicodeCharacter{222B}{\int}		% ∫
 \DeclareUnicodeCharacter{222C}{\iint}		% ∬
 \DeclareUnicodeCharacter{222D}{\iiint}		% ∭
-\DeclareUnicodeCharacter{2236}{\colon}		% ꞉
+\DeclareUnicodeCharacter{2236}{\colon}		% ∶
 \DeclareUnicodeCharacter{223C}{\sim}		% ∼
 \DeclareUnicodeCharacter{2248}{\approx}		% ≈
 \DeclareUnicodeCharacter{2254}{\coloneqq}	% ≔
@@ -212,8 +218,8 @@
 \DeclareUnicodeCharacter{2297}{\otimes}		% ⊗
 \DeclareUnicodeCharacter{2299}{\odot}		% ⊙
 \DeclareUnicodeCharacter{2A2F}{\times}		% ⨯
-\DeclareUnicodeCharacter{2025}{\dots}		% ‥, cf. \dots
-\DeclareUnicodeCharacter{2026}{\ldots}		% …, exists \textfonts
+\DeclareUnicodeCharacter{2025}{\ldots}		% ‥
+\DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \dots
 \DeclareUnicodeCharacter{22EE}{\vdots}		% ⋮
 \DeclareUnicodeCharacter{22EF}{\cdots}		% ⋯, cf. \cdots
 \DeclareUnicodeCharacter{22F1}{\ddots}		% ⋱
@@ -221,6 +227,8 @@
 \DeclareUnicodeCharacter{2300}{\diameter}	% ⌀
 \DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ return symbol↵
 \DeclareUnicodeCharacter{2423}{\, }		% ␣ small space indicator
+\DeclareUnicodeCharacter{2693}{\label}		% ⚓
+\DeclareUnicodeCharacter{1F517}{\eqref}		% 🔗
 \DeclareUnicodeCharacter{2768}{\left(}		% ❨ medium left parenthesis
 \DeclareUnicodeCharacter{2769}{\right)}		% ❩
 \DeclareUnicodeCharacter{276A}{\bigl(}		% ❪
@@ -240,8 +248,7 @@
 \DeclareUnicodeCharacter{20AC}{\euro }		% €
 \DeclareUnicodeCharacter{216E}{\mathrm D}	% Ⅾ \sansD, römisch 500
 \DeclareUnicodeCharacter{217E}{\mathrm d}	% ⅾ \diff, \sansd, römisch 500
-\DeclareUnicodeCharacter{1D53C}{\E}		% 𝔼, expectation, dsfont
-\DeclareUnicodeCharacter{1D7D8}{\zero}		% 𝟘, zero
+\DeclareUnicodeCharacter{1D53C}{\E}		% 𝔼, expectation, dsfont % \\usepackage{dsfont}
 \DeclareUnicodeCharacter{1D7D9}{\one}		% 𝟙, one, dsfont
 %	script font
 \DeclareUnicodeCharacter{212C}{\ensuremath{\mathscr B}}	% ℬ
