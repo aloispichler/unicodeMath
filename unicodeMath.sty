@@ -15,7 +15,7 @@
 %		https://docs.julialang.org/en/v1/manual/unicode-input/
 %		https://www.compart.com/en/unicode/
 %		https://gist.github.com/bgeron/72ebbacf5930537022079d9953f15713
-%
+%		https://github.com/lervag/vimtex/blob/2b31261b20e44c4b3c79ca7e42e2f9a5cdbe8cd3/autoload/vimtex/syntax/core.vim
 %	not uecessary:
 %		\usepackage{newunicodechar}
 %		\newunicodechar{α}{{\alpha}}	% α, requires the package newunicodechar
@@ -82,6 +82,7 @@
 \DeclareUnicodeCharacter{2013}{--}	% –, en dash
 \DeclareUnicodeCharacter{2014}{---}	% —, em dash
 \DeclareUnicodeCharacter{2022}{\boldsymbol\cdot}% bullet
+\DeclareUnicodeCharacter{25CF}{\bullet}	% bullet
 \DeclareUnicodeCharacter{2030}{\perthousand}	% ‰ permille
 \DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
 
@@ -98,20 +99,52 @@
 \DeclareUnicodeCharacter{2078}{^8}	% ⁸
 \DeclareUnicodeCharacter{2079}{^9}	% ⁹
 \DeclareUnicodeCharacter{1D40}{^\top}	% ᵀ, transpose
+\DeclareUnicodeCharacter{1D43}{^a}	% ᵃ
+\DeclareUnicodeCharacter{1D47}{^b}	% ᵇ
+\DeclareUnicodeCharacter{1D9C}{^c}	% ᶜ
 \DeclareUnicodeCharacter{1D48}{^d}	% ᵈ
+\DeclareUnicodeCharacter{1D49}{^e}	% ᵉ
+\DeclareUnicodeCharacter{1DA0}{^f}	% ᶠ
+\DeclareUnicodeCharacter{1D4D}{^g}	% ᵍ
+\DeclareUnicodeCharacter{02B0}{^h}	% ʰ
 \DeclareUnicodeCharacter{207A}{^+}	% ⁺
 \DeclareUnicodeCharacter{207B}{^-}	% ⁻
 \DeclareUnicodeCharacter{2071}{^i}	% ⁱ
 \DeclareUnicodeCharacter{02B2}{^j}	% ʲ
 \DeclareUnicodeCharacter{1D4F}{^k}	% ᵏ
+\DeclareUnicodeCharacter{02E1}{^l}	% ˡ
 \DeclareUnicodeCharacter{1D50}{^m}	% ᵐ
 \DeclareUnicodeCharacter{207F}{^n}	% ⁿ
+\DeclareUnicodeCharacter{1D52}{^o}	% ᵒ
 \DeclareUnicodeCharacter{1D56}{^p}	% ᵖ
 \DeclareUnicodeCharacter{02B3}{^r}	% ʳ
 \DeclareUnicodeCharacter{02E2}{^s}	% ˢ
 \DeclareUnicodeCharacter{1D57}{^t}	% ᵗ
+\DeclareUnicodeCharacter{1D58}{^u}	% ᵘ
+\DeclareUnicodeCharacter{1D5B}{^v}	% ᵛ
+\DeclareUnicodeCharacter{02B7}{^w}	% ʷ
 \DeclareUnicodeCharacter{02E3}{^x}	% ˣ
 \DeclareUnicodeCharacter{02B8}{^y}	% ʸ
+\DeclareUnicodeCharacter{1DBB}{^z}	% ᶻ
+\DeclareUnicodeCharacter{1D2C}{^A}	% ᴬ
+\DeclareUnicodeCharacter{1D2E}{^B}	% ᴮ
+\DeclareUnicodeCharacter{1D30}{^D}	% ᴰ
+\DeclareUnicodeCharacter{1D31}{^E}	% ᴱ
+\DeclareUnicodeCharacter{1D33}{^G}	% ᴳ
+\DeclareUnicodeCharacter{1D34}{^H}	% ᴴ
+\DeclareUnicodeCharacter{1D35}{^I}	% ᴵ
+\DeclareUnicodeCharacter{1D36}{^J}	% ᴶ
+\DeclareUnicodeCharacter{1D37}{^K}	% ᴷ
+\DeclareUnicodeCharacter{1D38}{^L}	% ᴸ
+\DeclareUnicodeCharacter{1D39}{^M}	% ᴹ
+\DeclareUnicodeCharacter{1D3A}{^N}	% ᴺ
+\DeclareUnicodeCharacter{1D3C}{^O}	% ᴼ
+\DeclareUnicodeCharacter{1D3E}{^P}	% ᴾ
+\DeclareUnicodeCharacter{1D3F}{^R}	% ᴿ
+%\DeclareUnicodeCharacter{1D40}{^T}	% ᵀ, abused for ^\top
+\DeclareUnicodeCharacter{1D41}{^U}	% ᵁ
+\DeclareUnicodeCharacter{2C7D}{^V}	% ⱽ
+\DeclareUnicodeCharacter{1D42}{^W}	% ᵂ
 \DeclareUnicodeCharacter{2080}{_0}	% ₀	subscripts
 \DeclareUnicodeCharacter{2081}{_1}	% ₁
 \DeclareUnicodeCharacter{2082}{_2}	% ₂
@@ -146,6 +179,7 @@
 
 %	math symbols
 \DeclareUnicodeCharacter{2027}{\cdot}		% ‧
+\DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
 \DeclareUnicodeCharacter{2032}{^\prime}		% ′
 \DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ 
 \DeclareUnicodeCharacter{2102}{\ensuremath{\mathbb C}}	% ℂ
@@ -225,8 +259,12 @@
 \DeclareUnicodeCharacter{22F1}{\ddots}		% ⋱
 \DeclareUnicodeCharacter{22F0}{\iddots}		% ⋰
 \DeclareUnicodeCharacter{2300}{\diameter}	% ⌀
-\DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ return symbol↵
+\DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ carriage return symbol↵␍
+\DeclareUnicodeCharacter{2424}{\\ }		% ␤ newline character
 \DeclareUnicodeCharacter{2423}{\, }		% ␣ small space indicator
+\DeclareUnicodeCharacter{27F8}{\impliedby}	% ⟸
+\DeclareUnicodeCharacter{27F9}{\implies}	% ⟹
+\DeclareUnicodeCharacter{27FA}{\iff}		% ⟺
 \DeclareUnicodeCharacter{2693}{\label}		% ⚓
 \DeclareUnicodeCharacter{1F517}{\eqref}		% 🔗
 \DeclareUnicodeCharacter{2768}{\left(}		% ❨ medium left parenthesis
