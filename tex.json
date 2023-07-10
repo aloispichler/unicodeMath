@@ -119,14 +119,12 @@
     },
     "Section": {
         "prefix": [ "\\section{}"],
-        "body": "%\t╭───────────────────────────────────────────────\n%\t│\t$1\n\\section{${1:Introduction}}\\label{sec:$1}\n$0",
+        "body": "%\t╭───────────────────────────────────────────────\n%\t│\t$1\n\\section{${1:Introduction}}\\label{sec:$1}$0",
         "description": "Insert a new section."
     },
     "Subsection": {
         "prefix": ["\\subsection{}"],
-        "body": [
-            "\\subsection{$1}\\label{sec:$1}\n$0"
-        ],
+        "body": "%\t╭───────────────────────────────────────────────\n\\subsection{${1:Title}}\\label{sec:$1}$0",
         "description": "Insert a new subsection."
     },
     "Header": {
@@ -162,23 +160,25 @@
     "Enumerate": {
         "prefix": ["-", "*", "\\begin{enumerate}\\end{enumerate}", "\\enumerateItemize", "\\enumerateDescription"],
         "body": [
-            "\\begin{enumerate}",
+            "\\begin{enumerate}%[nolistsep, noitemsep] %\\usepackage{enumitem}%\\setlist[enumerate,1]{label=(\\roman*)}  % 1st layer (i)",
             "\t\\item ${1:$TM_SELECTED_TEXT}",
             "\\end{enumerate}$0"
-        ]
+        ],
+        "description": "%\\usepackage{enumitem}\n%\\setlist[enumerate,1]{label=(\\roman*)}  % 1st layer (i)"
     },
     "Itemize": {
         "prefix": ["1. ", "\\begin{itemize}\\end{itemize}", "\\enumerateItemize"],
         "body": [
-            "\\begin{itemize}",
+            "\\begin{itemize}%[nolistsep, noitemsep] %\\usepackage{enumitem}",
             "\t\\item ${1:$TM_SELECTED_TEXT}",
             "\\end{itemize}$0"
-        ]
+        ],
+	"description": "options: [nolistsep, noitemsep]; package: \\usepackage{enumitem}"
     },
     "Description": {
         "prefix": ["\\begin{description}\\end{description}", "\\enumerateDescription", "\\itemizeDescription"],
         "body": [
-            "\\begin{description}",
+            "\\begin{description}%[nolistsep, noitemsep]%\\usepackage{enumitem}",
             "\t\\item[${1:one}]\t${2:$TM_SELECTED_TEXT}",
             "\\end{description}$0"
         ]
@@ -307,13 +307,18 @@
     },
     "includegraphics": {
         "prefix": ["\\includegraphics" ],
-        "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}$0"],
+        "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}"],
         "description": "Include a graphic."
     },
     "Frame": {
-        "prefix": ["\\begin{frame}\\end{frame}", "\\slide" ],
-        "body": ["\\begin{frame}{${1:Frame title}}\n\t\\framesubtitle{Subtitle}\n\tcontent\n\\end{frame}"],
+        "prefix": ["\\begin{frame}\\end{frame}", "\\begin{slide}" ],
+        "body": ["\\begin{frame}{${1:Frame title}}\n\t\\framesubtitle{$1}\n\tcontent\n\\end{frame}"],
         "description": "Create a new frame."
+    },
+    "FrameSubtitle": {
+        "prefix": ["\\framesubtitle", "\\subtitleframe"],
+        "body": ["\\framesubtitle{${1:Subtitle}}"],
+        "description": "Insert a subtitle."
     },
     "Highlight box": {
         "prefix": ["\\highlight", "\\hlbox" ],
@@ -488,8 +493,8 @@
         "prefix": ["\\begin{align}\\end{align}"],
         "body": [
             "\\begin{align}",
-            "\t$1\t&= ${2:$TM_SELECTED_TEXT}\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
-            "\t\t&= $3\t\\label{eq:${TM_LINE_NUMBER}}",
+            "\t$1\t&= ${1:$TM_SELECTED_TEXT}\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
+            "\t\t&= $2\t\\label{eq:${TM_LINE_NUMBER}}",
             "\\end{align}"
         ],
         "description": "Create an align environment."
