@@ -1,11 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{unicodeMath}[2023/05/01 unicode character input]
 
-%	mapping unicode characters to math
-%	created: 2023
-%	author©: Alois Pichler
-
-%	/usr/share/texmf-dist/tex/latex/unicodeMath/unicodeMath.sty
+%	mapping unicode characters to math created: 2023 author©: Alois Pichler /usr/share/texmf-dist/tex/latex/unicodeMath/unicodeMath.sty
 %		register the package with: sudo texhash
 %		\usepackage{~/Dropbox/LaTeXDocsAndPapers/myUnicode.sty}
 
@@ -28,7 +24,7 @@
   \RequirePackage{dsfont}
 
 %	Greek letters
-\DeclareUnicodeCharacter{0AC}{\ensuremath\neg}		% ¬
+\DeclareUnicodeCharacter{0AC}{\neg}			% ¬
 \DeclareUnicodeCharacter{3B1}{\ensuremath\alpha}	% α
 \DeclareUnicodeCharacter{3B2}{\ensuremath\beta}		% β
 \DeclareUnicodeCharacter{393}{\ensuremath\Gamma}	% Γ
@@ -71,17 +67,17 @@
 \DeclareUnicodeCharacter{3C9}{\ensuremath\omega}	% ω
 
 %	other letters, symbols and special characters
+\DeclareUnicodeCharacter{00A0}{~}	%  no-break space
 \DeclareUnicodeCharacter{2001}{\qquad}	%  2M space
 \DeclareUnicodeCharacter{2003}{\quad}	%  M space (= 18mu)
 \DeclareUnicodeCharacter{2002}{\ }	%  equivalent of regular space in normal text
-\DeclareUnicodeCharacter{2004}{~}	%  no-break space
 \DeclareUnicodeCharacter{2005}{\;}	%  thick space, short blank (= 3mu)
 \DeclareUnicodeCharacter{2006}{\:}	%  medium space, short blank (= 3mu)
-\DeclareUnicodeCharacter{2009}{\,}	%  thin space, short blank (= 3mu)
-\DeclareUnicodeCharacter{2011}{\nobreakdash-}	% ‑, non-breaking hyphen
+\DeclareUnicodeCharacter{202F}{\,}	%  thin space, narrow no-break space, short blank (= 3mu), as LyX
+\DeclareUnicodeCharacter{2011}{\nobreakdash-}	% ‑, non-breaking hyphen, as LyX
 \DeclareUnicodeCharacter{2013}{--}	% –, en dash
 \DeclareUnicodeCharacter{2014}{---}	% —, em dash
-\DeclareUnicodeCharacter{2022}{\boldsymbol\cdot}% bullet
+\DeclareUnicodeCharacter{2022}{\ifmmode\boldsymbol\cdot\else\item\fi}% item or bullet
 \DeclareUnicodeCharacter{25CF}{\bullet}	% bullet
 \DeclareUnicodeCharacter{2030}{\perthousand}	% ‰ permille
 \DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
@@ -274,7 +270,7 @@
 \DeclareUnicodeCharacter{2300}{\diameter}	% ⌀
 \DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ carriage return symbol↵␍
 \DeclareUnicodeCharacter{2424}{\\ }		% ␤ newline character
-\DeclareUnicodeCharacter{2423}{\, }		% ␣ small space indicator
+\DeclareUnicodeCharacter{2423}{\textvisiblespace{}}	% ␣ visible space
 \DeclareUnicodeCharacter{27F8}{\impliedby}	% ⟸
 \DeclareUnicodeCharacter{27F9}{\implies}	% ⟹
 \DeclareUnicodeCharacter{27FA}{\iff}		% ⟺
@@ -346,59 +342,59 @@
 \DeclareUnicodeCharacter{1D51B}{\ensuremath{\mathfrak X}}% 𝔛
 
 %	hat: substituted by mathematical italic
-\DeclareUnicodeCharacter{00C2}{{\hat A}}	% Â
-\DeclareUnicodeCharacter{1D5A1}{{\hat B}}	% 𝖡
-\DeclareUnicodeCharacter{0108}{{\hat C}}	% Ĉ
-\DeclareUnicodeCharacter{1D5A3}{{\hat D}}	% 𝖣
-\DeclareUnicodeCharacter{00CA}{{\hat E}}	% Ê
-\DeclareUnicodeCharacter{1D5A5}{{\hat F}}	% 𝖥
-\DeclareUnicodeCharacter{011C}{{\hat G}}	% Ĝ
-\DeclareUnicodeCharacter{0124}{{\hat H}}	% Ĥ
-\DeclareUnicodeCharacter{00CE}{{\hat I}}	% Î
-\DeclareUnicodeCharacter{0134}{{\hat J}}	% Ĵ
-\DeclareUnicodeCharacter{1D5AA}{{\hat K}}	% 𝖪
-\DeclareUnicodeCharacter{1D5AB}{{\hat L}}	% 𝖫
-\DeclareUnicodeCharacter{1D5AC}{{\hat M}}	% 𝖬
-\DeclareUnicodeCharacter{1D5AD}{{\hat N}}	% 𝖭
-\DeclareUnicodeCharacter{00D4}{{\hat O}}	% Ô
-\DeclareUnicodeCharacter{1D5AF}{{\hat P}}	% 𝖯
-\DeclareUnicodeCharacter{1D5B0}{{\hat Q}}	% 𝖰
-\DeclareUnicodeCharacter{1D5B1}{{\hat R}}	% 𝖱
-\DeclareUnicodeCharacter{015C}{{\hat S}}	% Ŝ
-\DeclareUnicodeCharacter{1D5B3}{{\hat T}}	% 𝖳
-\DeclareUnicodeCharacter{00DB}{{\hat U}}	% Û
-\DeclareUnicodeCharacter{1D5B5}{{\hat V}}	% 𝖵
-\DeclareUnicodeCharacter{0174}{{\hat W}}	% Ŵ
-\DeclareUnicodeCharacter{1D5B7}{{\hat X}}	% 𝖷
-\DeclareUnicodeCharacter{0176}{{\hat Y}}	% Ŷ
-\DeclareUnicodeCharacter{1D5B9}{{\hat Z}}	% 𝖹
+\DeclareUnicodeCharacter{00C2}{\ensuremath{\hat A}}	% Â
+\DeclareUnicodeCharacter{1D5A1}{\ensuremath{\hat B}}	% 𝖡
+\DeclareUnicodeCharacter{0108}{\ensuremath{\hat C}}	% Ĉ
+\DeclareUnicodeCharacter{1D5A3}{\ensuremath{\hat D}}	% 𝖣
+\DeclareUnicodeCharacter{00CA}{\ensuremath{\hat E}}	% Ê
+\DeclareUnicodeCharacter{1D5A5}{\ensuremath{\hat F}}	% 𝖥
+\DeclareUnicodeCharacter{011C}{\ensuremath{\hat G}}	% Ĝ
+\DeclareUnicodeCharacter{0124}{\ensuremath{\hat H}}	% Ĥ
+\DeclareUnicodeCharacter{00CE}{\ensuremath{\hat I}}	% Î
+\DeclareUnicodeCharacter{0134}{\ensuremath{\hat J}}	% Ĵ
+\DeclareUnicodeCharacter{1D5AA}{\ensuremath{\hat K}}	% 𝖪
+\DeclareUnicodeCharacter{1D5AB}{\ensuremath{\hat L}}	% 𝖫
+\DeclareUnicodeCharacter{1D5AC}{\ensuremath{\hat M}}	% 𝖬
+\DeclareUnicodeCharacter{1D5AD}{\ensuremath{\hat N}}	% 𝖭
+\DeclareUnicodeCharacter{00D4}{\ensuremath{\hat O}}	% Ô
+\DeclareUnicodeCharacter{1D5AF}{\ensuremath{\hat P}}	% 𝖯
+\DeclareUnicodeCharacter{1D5B0}{\ensuremath{\hat Q}}	% 𝖰
+\DeclareUnicodeCharacter{1D5B1}{\ensuremath{\hat R}}	% 𝖱
+\DeclareUnicodeCharacter{015C}{\ensuremath{\hat S}}	% Ŝ
+\DeclareUnicodeCharacter{1D5B3}{\ensuremath{\hat T}}	% 𝖳
+\DeclareUnicodeCharacter{00DB}{\ensuremath{\hat U}}	% Û
+\DeclareUnicodeCharacter{1D5B5}{\ensuremath{\hat V}}	% 𝖵
+\DeclareUnicodeCharacter{0174}{\ensuremath{\hat W}}	% Ŵ
+\DeclareUnicodeCharacter{1D5B7}{\ensuremath{\hat X}}	% 𝖷
+\DeclareUnicodeCharacter{0176}{\ensuremath{\hat Y}}	% Ŷ
+\DeclareUnicodeCharacter{1D5B9}{\ensuremath{\hat Z}}	% 𝖹
 
-\DeclareUnicodeCharacter{00E2}{{\hat a}}	% â
-\DeclareUnicodeCharacter{1D5BB}{{\hat b}}	% 𝖻
-\DeclareUnicodeCharacter{0109}{{\hat c}}	% ĉ
-\DeclareUnicodeCharacter{1D5BD}{{\hat d}}	% 𝖽
-\DeclareUnicodeCharacter{00EA}{{\hat e}}	% ê
-\DeclareUnicodeCharacter{1D5BF}{{\hat f}}	% 𝖿
-\DeclareUnicodeCharacter{011D}{{\hat g}}	% ĝ
-\DeclareUnicodeCharacter{0125}{{\hat h}}	% ĥ
-\DeclareUnicodeCharacter{00EE}{{\hat i}}	% î
-\DeclareUnicodeCharacter{0135}{{\hat j}}	% ĵ
-\DeclareUnicodeCharacter{1D5C4}{{\hat k}}	% 𝗄
-\DeclareUnicodeCharacter{1D5C5}{{\hat l}}	% 𝗅
-\DeclareUnicodeCharacter{1D5C6}{{\hat m}}	% 𝗆
-\DeclareUnicodeCharacter{1D5C7}{{\hat n}}	% 𝗇
-\DeclareUnicodeCharacter{00F4}{{\hat o}}	% ô
-\DeclareUnicodeCharacter{1D5C9}{{\hat p}}	% 𝗉
-\DeclareUnicodeCharacter{1D5CA}{{\hat q}}	% 𝗊
-\DeclareUnicodeCharacter{1D5CB}{{\hat r}}	% 𝗋
-\DeclareUnicodeCharacter{015D}{{\hat s}}	% ŝ
-\DeclareUnicodeCharacter{1D5CD}{{\hat t}}	% 𝗍
-\DeclareUnicodeCharacter{00FB}{{\hat u}}	% û
-\DeclareUnicodeCharacter{1D5CF}{{\hat v}}	% 𝗏
-\DeclareUnicodeCharacter{0175}{{\hat w}}	% ŵ
-\DeclareUnicodeCharacter{1D5D1}{{\hat x}}	% 𝗑
-\DeclareUnicodeCharacter{0177}{{\hat y}}	% ŷ
-\DeclareUnicodeCharacter{1D5D3}{{\hat z}}	% 𝗓
+\DeclareUnicodeCharacter{00E2}{\ensuremath{\hat a}}	% â
+\DeclareUnicodeCharacter{1D5BB}{\ensuremath{\hat b}}	% 𝖻
+\DeclareUnicodeCharacter{0109}{\ensuremath{\hat c}}	% ĉ
+\DeclareUnicodeCharacter{1D5BD}{\ensuremath{\hat d}}	% 𝖽
+\DeclareUnicodeCharacter{00EA}{\ensuremath{\hat e}}	% ê
+\DeclareUnicodeCharacter{1D5BF}{\ensuremath{\hat f}}	% 𝖿
+\DeclareUnicodeCharacter{011D}{\ensuremath{\hat g}}	% ĝ
+\DeclareUnicodeCharacter{0125}{\ensuremath{\hat h}}	% ĥ
+\DeclareUnicodeCharacter{00EE}{\ensuremath{\hat i}}	% î
+\DeclareUnicodeCharacter{0135}{\ensuremath{\hat j}}	% ĵ
+\DeclareUnicodeCharacter{1D5C4}{\ensuremath{\hat k}}	% 𝗄
+\DeclareUnicodeCharacter{1D5C5}{\ensuremath{\hat l}}	% 𝗅
+\DeclareUnicodeCharacter{1D5C6}{\ensuremath{\hat m}}	% 𝗆
+\DeclareUnicodeCharacter{1D5C7}{\ensuremath{\hat n}}	% 𝗇
+\DeclareUnicodeCharacter{00F4}{\ensuremath{\hat o}}	% ô
+\DeclareUnicodeCharacter{1D5C9}{\ensuremath{\hat p}}	% 𝗉
+\DeclareUnicodeCharacter{1D5CA}{\ensuremath{\hat q}}	% 𝗊
+\DeclareUnicodeCharacter{1D5CB}{\ensuremath{\hat r}}	% 𝗋
+\DeclareUnicodeCharacter{015D}{\ensuremath{\hat s}}	% ŝ
+\DeclareUnicodeCharacter{1D5CD}{\ensuremath{\hat t}}	% 𝗍
+\DeclareUnicodeCharacter{00FB}{\ensuremath{\hat u}}	% û
+\DeclareUnicodeCharacter{1D5CF}{\ensuremath{\hat v}}	% 𝗏
+\DeclareUnicodeCharacter{0175}{\ensuremath{\hat w}}	% ŵ
+\DeclareUnicodeCharacter{1D5D1}{\ensuremath{\hat x}}	% 𝗑
+\DeclareUnicodeCharacter{0177}{\ensuremath{\hat y}}	% ŷ
+\DeclareUnicodeCharacter{1D5D3}{\ensuremath{\hat z}}	% 𝗓
 
 \DeclareUnicodeCharacter{1D758}{\hat\Gamma}	% 𝝘
 \DeclareUnicodeCharacter{1D759}{\hat\Delta}	% 𝝙
