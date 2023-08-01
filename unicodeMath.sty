@@ -1,7 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{unicodeMath}[2023/05/01 unicode character input]
+\ProvidesPackage{unicodeMath}[2023/07/15 unicode character input]
 
-%	mapping unicode characters to math created: 2023 author©: Alois Pichler /usr/share/texmf-dist/tex/latex/unicodeMath/unicodeMath.sty
+%	mapping unicode characters to math
+%	created: 2023
+%	author©: Alois Pichler
+%
+%	/usr/share/texmf-dist/tex/latex/unicodeMath/unicodeMath.sty
 %		register the package with: sudo texhash
 %		\usepackage{~/Dropbox/LaTeXDocsAndPapers/myUnicode.sty}
 
@@ -191,17 +195,11 @@
 \DeclareUnicodeCharacter{2135}{\aleph}		% ℵ
 \DeclareUnicodeCharacter{215F}{\frac1}		% ⅟
 \DeclareUnicodeCharacter{2190}{\leftarrow}	% ←
-\DeclareUnicodeCharacter{21D0}{\Leftarrow}	% ⇐
 \DeclareUnicodeCharacter{2191}{\uparrow}	% ↑
-\DeclareUnicodeCharacter{21D1}{\Uparrow}	% ⇑
 \DeclareUnicodeCharacter{2192}{\to}		% →
-\DeclareUnicodeCharacter{21D2}{\Rightarrow}	% ⇒
 \DeclareUnicodeCharacter{2193}{\downarrow}	% ↓
-\DeclareUnicodeCharacter{21D3}{\Downarrow}	% ⇓
 \DeclareUnicodeCharacter{2194}{\leftrightarrow}	% ↔
-\DeclareUnicodeCharacter{21D4}{\Leftrightarrow}	% ⇔
 \DeclareUnicodeCharacter{2195}{\updownarrow}	% ↕
-\DeclareUnicodeCharacter{21D5}{\Updownarrow}	% ⇕
 \DeclareUnicodeCharacter{2196}{\nwarrow}	% ↖
 \DeclareUnicodeCharacter{2197}{\nearrow}	% ↗
 \DeclareUnicodeCharacter{2198}{\searrow}	% ↘
@@ -209,6 +207,12 @@
 \DeclareUnicodeCharacter{21A6}{\mapsto}		% ↦
 \DeclareUnicodeCharacter{21A9}{\hookrightarrow}	% ↩
 \DeclareUnicodeCharacter{21AA}{\hookrightarrow}	% ↪
+\DeclareUnicodeCharacter{21D0}{\Leftarrow}	% ⇐
+\DeclareUnicodeCharacter{21D1}{\Uparrow}	% ⇑
+\DeclareUnicodeCharacter{21D2}{\Rightarrow}	% ⇒
+\DeclareUnicodeCharacter{21D3}{\Downarrow}	% ⇓
+\DeclareUnicodeCharacter{21D4}{\Leftrightarrow}	% ⇔
+\DeclareUnicodeCharacter{21D5}{\Updownarrow}	% ⇕
 \DeclareUnicodeCharacter{2200}{{\forall}}	% ∀
 \DeclareUnicodeCharacter{2202}{{\partial}}	% ∂
 \DeclareUnicodeCharacter{2203}{{\exists}}	% ∃
@@ -265,8 +269,8 @@
 \DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \dots
 \DeclareUnicodeCharacter{22EE}{\vdots}		% ⋮
 \DeclareUnicodeCharacter{22EF}{\cdots}		% ⋯, cf. \cdots
-\DeclareUnicodeCharacter{22F1}{\ddots}		% ⋱
 \DeclareUnicodeCharacter{22F0}{\iddots}		% ⋰
+\DeclareUnicodeCharacter{22F1}{\ddots}		% ⋱
 \DeclareUnicodeCharacter{2300}{\diameter}	% ⌀
 \DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ carriage return symbol↵␍
 \DeclareUnicodeCharacter{2424}{\\ }		% ␤ newline character
@@ -293,8 +297,14 @@
 
 %	math characters
 \DeclareUnicodeCharacter{20AC}{\euro }		% €
-\DeclareUnicodeCharacter{216E}{\mathrm D}	% Ⅾ \sansD, römisch 500
+\DeclareUnicodeCharacter{216C}{\mathrm L}	% Ⅼ roman/ römisch 50
+\DeclareUnicodeCharacter{216D}{\mathrm C}	% Ⅽ roman/ römisch 100
+\DeclareUnicodeCharacter{216E}{\mathrm D}	% Ⅾ \sansD, roman römisch 500
+\DeclareUnicodeCharacter{216F}{\mathrm M}	% Ⅿ roman/ römisch 1000
+\DeclareUnicodeCharacter{217C}{\mathrm l}	% ⅼ roman/ römisch 50
+\DeclareUnicodeCharacter{217D}{\mathrm c}	% ⅽ roman/ römisch 100
 \DeclareUnicodeCharacter{217E}{\mathrm d}	% ⅾ \diff, \sansd, römisch 500
+\DeclareUnicodeCharacter{217F}{\mathrm m}	% ⅿ roman/ römisch 1000
 \DeclareUnicodeCharacter{1D53C}{\E}		% 𝔼, expectation, dsfont % \\usepackage{dsfont}
 \DeclareUnicodeCharacter{1D7D9}{\one}		% 𝟙, one, dsfont
 %	script font
@@ -339,7 +349,54 @@
 \DeclareUnicodeCharacter{1D4E9}{\ensuremath{\mathcal Z}}	% 𝓩
 
 %	mathematical fraktur
+\DeclareUnicodeCharacter{1D504}{\ensuremath{\mathfrak A}}% 𝔄
+\DeclareUnicodeCharacter{1D505}{\ensuremath{\mathfrak B}}% 𝔅
+\DeclareUnicodeCharacter{1D507}{\ensuremath{\mathfrak D}}% 𝔇
+\DeclareUnicodeCharacter{1D508}{\ensuremath{\mathfrak E}}% 𝔈
+\DeclareUnicodeCharacter{1D509}{\ensuremath{\mathfrak F}}% 𝔉
+\DeclareUnicodeCharacter{1D50A}{\ensuremath{\mathfrak G}}% 𝔊
+\DeclareUnicodeCharacter{1D50D}{\ensuremath{\mathfrak J}}% 𝔍
+\DeclareUnicodeCharacter{1D50E}{\ensuremath{\mathfrak K}}% 𝔎
+\DeclareUnicodeCharacter{1D50F}{\ensuremath{\mathfrak L}}% 𝔏
+\DeclareUnicodeCharacter{1D510}{\ensuremath{\mathfrak M}}% 𝔐
+\DeclareUnicodeCharacter{1D511}{\ensuremath{\mathfrak N}}% 𝔑
+\DeclareUnicodeCharacter{1D512}{\ensuremath{\mathfrak O}}% 𝔒
+\DeclareUnicodeCharacter{1D513}{\ensuremath{\mathfrak P}}% 𝔓
+\DeclareUnicodeCharacter{1D514}{\ensuremath{\mathfrak Q}}% 𝔔
+\DeclareUnicodeCharacter{1D516}{\ensuremath{\mathfrak S}}% 𝔖
+\DeclareUnicodeCharacter{1D517}{\ensuremath{\mathfrak T}}% 𝔗
+\DeclareUnicodeCharacter{1D518}{\ensuremath{\mathfrak U}}% 𝔘
+\DeclareUnicodeCharacter{1D519}{\ensuremath{\mathfrak V}}% 𝔙
+\DeclareUnicodeCharacter{1D51A}{\ensuremath{\mathfrak W}}% 𝔚
 \DeclareUnicodeCharacter{1D51B}{\ensuremath{\mathfrak X}}% 𝔛
+\DeclareUnicodeCharacter{1D51C}{\ensuremath{\mathfrak Y}}% 𝔜
+\DeclareUnicodeCharacter{1D51E}{\ensuremath{\mathfrak a}}% 𝔞
+\DeclareUnicodeCharacter{1D51F}{\ensuremath{\mathfrak b}}% 𝔟
+\DeclareUnicodeCharacter{1D520}{\ensuremath{\mathfrak c}}% 𝔠
+\DeclareUnicodeCharacter{1D521}{\ensuremath{\mathfrak d}}% 𝔡
+\DeclareUnicodeCharacter{1D522}{\ensuremath{\mathfrak e}}% 𝔢
+\DeclareUnicodeCharacter{1D523}{\ensuremath{\mathfrak f}}% 𝔣
+\DeclareUnicodeCharacter{1D524}{\ensuremath{\mathfrak g}}% 𝔤
+\DeclareUnicodeCharacter{1D525}{\ensuremath{\mathfrak h}}% 𝔥
+\DeclareUnicodeCharacter{1D526}{\ensuremath{\mathfrak i}}% 𝔦
+\DeclareUnicodeCharacter{1D527}{\ensuremath{\mathfrak j}}% 𝔧
+\DeclareUnicodeCharacter{1D528}{\ensuremath{\mathfrak k}}% 𝔨
+\DeclareUnicodeCharacter{1D529}{\ensuremath{\mathfrak l}}% 𝔩
+\DeclareUnicodeCharacter{1D52A}{\ensuremath{\mathfrak m}}% 𝔪
+\DeclareUnicodeCharacter{1D52B}{\ensuremath{\mathfrak n}}% 𝔫
+\DeclareUnicodeCharacter{1D52C}{\ensuremath{\mathfrak o}}% 𝔬
+\DeclareUnicodeCharacter{1D52D}{\ensuremath{\mathfrak p}}% 𝔭
+\DeclareUnicodeCharacter{1D52E}{\ensuremath{\mathfrak q}}% 𝔮
+\DeclareUnicodeCharacter{1D52F}{\ensuremath{\mathfrak r}}% 𝔯
+\DeclareUnicodeCharacter{1D530}{\ensuremath{\mathfrak s}}% 𝔰
+\DeclareUnicodeCharacter{1D531}{\ensuremath{\mathfrak t}}% 𝔱
+\DeclareUnicodeCharacter{1D532}{\ensuremath{\mathfrak u}}% 𝔲
+\DeclareUnicodeCharacter{1D533}{\ensuremath{\mathfrak v}}% 𝔳
+\DeclareUnicodeCharacter{1D534}{\ensuremath{\mathfrak w}}% 𝔴
+\DeclareUnicodeCharacter{1D535}{\ensuremath{\mathfrak x}}% 𝔵
+\DeclareUnicodeCharacter{1D536}{\ensuremath{\mathfrak y}}% 𝔶
+\DeclareUnicodeCharacter{1D537}{\ensuremath{\mathfrak z}}% 𝔷
+                         
 
 %	hat: substituted by mathematical italic
 \DeclareUnicodeCharacter{00C2}{\ensuremath{\hat A}}	% Â
