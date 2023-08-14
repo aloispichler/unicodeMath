@@ -167,7 +167,7 @@
         "description": "%\\usepackage{enumitem}\n%\\setlist[enumerate,1]{label=(\\roman*)}  % 1st layer (i)"
     },
     "Itemize": {
-        "prefix": ["1. ", "\\begin{itemize}\\end{itemize}", "\\enumerateItemize"],
+        "prefix": ["1. ", "\\begin{itemize}\\end{itemize}", "\\itemizeEnumerate"],
         "body": [
             "\\begin{itemize}%[nolistsep, noitemsep] %\\usepackage{enumitem}",
             "\t\\item ${1:$TM_SELECTED_TEXT}",
@@ -176,7 +176,7 @@
 	"description": "options: [nolistsep, noitemsep]; package: \\usepackage{enumitem}"
     },
     "Description": {
-        "prefix": ["\\begin{description}\\end{description}", "\\enumerateDescription", "\\itemizeDescription"],
+        "prefix": ["\\begin{description}\\end{description}", "\\descriptionEnumerate", "\\descriptionItemize"],
         "body": [
             "\\begin{description}%[nolistsep, noitemsep]%\\usepackage{enumitem}",
             "\t\\item[${1:one}]\t${2:$TM_SELECTED_TEXT}",
@@ -310,30 +310,30 @@
         "body": ["\\includegraphics[width=0.4\\textwidth, angle=0]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}"],
         "description": "Include a graphic."
     },
+    "FrameSubtitle": {
+        "prefix": ["\\subtitleframe", "\\framesubtitle" ],
+        "body": ["\\framesubtitle{${1:Subtitle}}"],
+        "description": "Insert a subtitle."
+    },
     "Frame": {
         "prefix": ["\\begin{frame}\\end{frame}", "\\begin{slide}" ],
         "body": ["\\begin{frame}{${1:Frame title}}\n\t\\framesubtitle{$1}\n\tcontent\n\\end{frame}"],
         "description": "Create a new frame."
     },
-    "FrameSubtitle": {
-        "prefix": ["\\framesubtitle", "\\subtitleframe"],
-        "body": ["\\framesubtitle{${1:Subtitle}}"],
-        "description": "Insert a subtitle."
-    },
     "Highlight box": {
         "prefix": ["\\highlight", "\\hlbox" ],
-        "body": ["\\hlbox${1:<1->}${2:[yellow]}{${3:Content}} $0"],
+        "body": ["\\hlbox<1->[yellow]${1:$TM_SELECTED_TEXT}"],
         "description": "Create a highlight box."
     },
     "Highlight tikz": {
         "prefix": ["\\highlight tikz", "\\hlbox tikz" ],
-        "body": ["\\tikz[baseline]\\node[xshift=0em,yshift=0em,rotate=0,rectangle, red,fill=yellow, rounded corners, inner sep=0.5em,anchor=base]{${1:includegraphics or text here}};"],
+        "body": ["\\tikz[baseline]\\node[xshift=0, yshift=0, rotate=0, rectangle, red,fill=yellow, rounded corners, inner sep=0.5, anchor=base]{${1:includegraphics or text here}};"],
         "description": "Create a highlight box."
     },
     "textlock": {
-        "prefix": ["\\textblock", "\\position"],
-        "body": ["\\begin{tikzpicture}[remember picture, overlay]\n\t\\node[xshift=0.0em,yshift=0.0em,scale=1.0, rotate=0, red,fill=yellow!50,rounded corners,opacity=1.0,anchor=west]\n\t{${1:includegraphics or text here}};\n\\end{tikzpicture}"],
-        "description": "Create a textblock."
+        "prefix": ["\\textblocktikz", "\\positiontikz"],
+        "body": ["\\tikz[baseline]\\node[xshift=0, yshift=0, overlay, anchor= west, remember picture]{${1:includegraphics or text here}};"],
+        "description": "Create and position a textblock."
     },
     "column": {
         "prefix": ["\\begin{column}\\end{column}" ],
@@ -342,7 +342,7 @@
     },
      "columns": {
         "prefix": ["\\begin{columns}\\end{columns" ],
-        "body": ["\\begin{columns}[t]%top, Top, center, bottom \n\t\\begin{column}{0.5\\textwidth}\n\t\t${1:content column 1}\n\t\\end{column}\n\t\\begin{column}{0.5\\textwidth}\n\t\tcontent column 2\n\t\\end{column}\n\\end{columns}"],
+        "body": ["\\begin{columns}[t]%Top, top, center, bottom \n\t\\begin{column}{0.5\\textwidth}\n\t\t${1:content column 1}\n\t\\end{column}\n\t\\begin{column}{0.5\\textwidth}\n\t\tcontent column 2\n\t\\end{column}\n\\end{columns}"],
         "description": "Columns environment"
     },
     "table": {

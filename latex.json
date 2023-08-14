@@ -243,6 +243,7 @@
 	"⟸":	{ "prefix": ["\\impliedby" , "\\Longleftarrow" ], "body": ["⟸"], "description": "\\impliedby" },
 	"⟹":	{ "prefix": ["\\implies", "\\Longrightarrow" ], "body": ["⟹"], "description": "\\implies" },
 	"⟺":	{ "prefix": ["\\if and only if", "\\equivalent"], "body": ["⟺"], "description": "\\iff" },
+	"label": { "prefix": ["\\label{}", "\\bookmark", "\\tag"], "body": ["\\label{eq:{1:$TM_LINE_NUMBER}}"], "description": "\\label" },
 	"🔖": { "prefix": ["\\label{}", "\\bookmark", "\\tag"], "body": ["🔖"], "description": "\\label" },
 	"🔗": { "prefix": ["\\eqref"], "body": ["🔗"], "description": "\\eqref" },
 	"left(":    { "prefix": "\\left(\\right)", "body": ["❨${1:$TM_SELECTED_TEXT}❩"], "description": "\\left(" },
