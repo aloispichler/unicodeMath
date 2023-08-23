@@ -144,18 +144,28 @@
     },
     "Italic Text": {
         "prefix": ["\\italic", "*"], 
-        "body": "\\textit{$1}$0",
+        "body": "\\textit{${1:$TM_SELECTED_TEXT}}$0",
         "description": "Insert italic text."
     },
     "Bold Text": {
         "prefix": ["\\bold", "\\textbf{}"],
-        "body": "\\textbf{$1}$0",
+        "body": "\\textbf{${1:$TM_SELECTED_TEXT}}$0",
         "description": "Insert bold text."
     },
     "Bold Italic Text": {
         "prefix": ["\\bolditalic", "***"],
-        "body": "\\textbf{\\textit{$1}}$0",
+        "body": "\\textbf{\\textit{${1:$TM_SELECTED_TEXT}}}$0",
         "description": "Insert bold italic text."
+    },
+    "Operator": {
+        "prefix": ["\\mathematicaloperatorname" ],
+        "body": "\\operatorname{${0:$TM_SELECTED_TEXT}}",
+        "description": "Mathematical operator within math text"
+    },
+    "DeclareMathOperator": {
+        "prefix": ["\\DeclareMathematicalOperator" ],
+        "body": "\\DeclareMathOperator{\\\\${1:$TM_SELECTED_TEXT}}{$0}\t% in preamble",
+        "description": "Declare mathematical operator in preamble."
     },
     "Enumerate": {
         "prefix": ["-", "*", "\\begin{enumerate}\\end{enumerate}", "\\enumerateItemize", "\\enumerateDescription"],
@@ -276,12 +286,12 @@
         "description": "array"
     },
     "stack": {
-        "prefix": ["\\stack", "\\above", "\\below" ],
-        "body": ["\\stackrel{${1:above}}{${2:below}} $0"],
+        "prefix": ["\\stack", "\\above", "\\below", "\\sub", "\\super" ],
+        "body": ["\\stackrel{${1:above smaller}}{${2:below larger}} $0"],
         "description": "stackrel"
     },
     "substack": {
-        "prefix": ["\\substack" ],
+        "prefix": ["\\substack", "\\multiline" ],
         "body": ["\\substack{${1:above}\\\\\\\\${2:below}} $0"],
         "description": "substack"
     },
@@ -352,12 +362,12 @@
     },
     "figure": {
         "prefix": "\\figure",
-        "body": ["\\begin{figure}[h]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}$0"],
+        "body": ["\\begin{figure}[ht]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}$0"],
         "description": "Create a figure."
     },
     "subfigure": {
         "prefix": ["\\subfigure", "\\subfloat" ],
-        "body": ["\\begin{figure}[h]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}$0"],
+        "body": ["\\begin{figure}[ht]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}$0"],
         "description": "Add a figure with subfigures."
     },
     "Create 2D Plot environment": {
@@ -489,7 +499,7 @@
         ],
         "description": "Plot a 3D Graph in the 3D graph environment created."
     },
-    "Create Align Environment in Text": {
+    "Create Align Environment": {
         "prefix": ["\\begin{align}\\end{align}"],
         "body": [
             "\\begin{align}",
@@ -498,6 +508,27 @@
             "\\end{align}"
         ],
         "description": "Create an align environment."
+    },
+    "Create Align Environment with leftshift": {
+        "prefix": ["\\begin{align}MoveShiftEqLeft"],
+        "body": [
+            "\\begin{align}",
+            "\t\\MoveEqLeft[2] LongFirstLine\t\\\\\\",
+            "\t\t={}\t& 2ndLine\t\\\\\\",
+            "\t\t\t&+ lastPart",
+            "\\end{align}"
+        ],
+        "description": "align environment with leftshifted line."
+    },
+    "Align Environment with intertext": {
+        "prefix": ["\\begin{align}shortintertext"],
+        "body": [
+            "\\begin{align}",
+            "\ta\t&=\tb\t\\shortintertext{short text in between}",
+            "\t\t&=\tc",
+            "\\end{align}"
+        ],
+        "description": "align environment with intertext."
     },
     "Signature": {
         "prefix": ["\\signature"], 
