@@ -81,8 +81,9 @@
 \DeclareUnicodeCharacter{2011}{\nobreakdash-}	% ‑, non-breaking hyphen, as LyX
 \DeclareUnicodeCharacter{2013}{--}	% –, en dash
 \DeclareUnicodeCharacter{2014}{---}	% —, em dash
-\DeclareUnicodeCharacter{2022}{\ifmmode\boldsymbol\cdot\else\item\fi}% item or bullet
-\DeclareUnicodeCharacter{25CF}{\bullet}	% bullet
+\DeclareUnicodeCharacter{2022}{\boldsymbol\cdot}% •, bullet
+\DeclareUnicodeCharacter{25CF}{\bullet}	% ●, bullet
+\DeclareUnicodeCharacter{25E6}{\item}	% ◦, item or bullet
 \DeclareUnicodeCharacter{2030}{\perthousand}	% ‰ permille
 \DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
 
@@ -98,7 +99,6 @@
 \DeclareUnicodeCharacter{2077}{^7}	% ⁷
 \DeclareUnicodeCharacter{2078}{^8}	% ⁸
 \DeclareUnicodeCharacter{2079}{^9}	% ⁹
-\DeclareUnicodeCharacter{1D40}{^\top}	% ᵀ, transpose
 \DeclareUnicodeCharacter{1D43}{^a}	% ᵃ
 \DeclareUnicodeCharacter{1D47}{^b}	% ᵇ
 \DeclareUnicodeCharacter{1D9C}{^c}	% ᶜ
@@ -141,7 +141,8 @@
 \DeclareUnicodeCharacter{1D3C}{^O}	% ᴼ
 \DeclareUnicodeCharacter{1D3E}{^P}	% ᴾ
 \DeclareUnicodeCharacter{1D3F}{^R}	% ᴿ
-%\DeclareUnicodeCharacter{1D40}{^T}	% ᵀ, abused for ^\top
+\DeclareUnicodeCharacter{1D40}{^T}	% ᵀ, cf. transpose
+\DeclareUnicodeCharacter{0A3E}{^\top}	% ਾ, transpose
 \DeclareUnicodeCharacter{1D41}{^U}	% ᵁ
 \DeclareUnicodeCharacter{2C7D}{^V}	% ⱽ
 \DeclareUnicodeCharacter{1D42}{^W}	% ᵂ
@@ -179,6 +180,7 @@
 \DeclareUnicodeCharacter{2027}{\cdot}		% ‧
 \DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
 \DeclareUnicodeCharacter{2032}{^\prime}		% ′
+\DeclareUnicodeCharacter{203E}{\overline}	% ‾
 \DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ 
 \DeclareUnicodeCharacter{2102}{\ensuremath{\mathbb C}}	% ℂ
 \DeclareUnicodeCharacter{210D}{\ensuremath{\mathbb H}}	% ℍ
@@ -299,6 +301,8 @@
 \DeclareUnicodeCharacter{2775}{\}}		% ❵
 \DeclareUnicodeCharacter{FF5B}{\left\{}		% ｛curly brackets pair
 \DeclareUnicodeCharacter{FF5D}{\right\}}	% ｝
+\DeclareUnicodeCharacter{33D1}{\ln}		% ㏑
+\DeclareUnicodeCharacter{33D2}{\log}		% ㏒
 
 %	math characters
 \DeclareUnicodeCharacter{20AC}{\euro }		% €
