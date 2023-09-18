@@ -29,6 +29,7 @@
 
 %	Greek letters
 \DeclareUnicodeCharacter{0AC}{\neg}			% ¬
+\DeclareUnicodeCharacter{0AD}{\-}			% ­, soft hyphen
 \DeclareUnicodeCharacter{3B1}{\ensuremath\alpha}	% α
 \DeclareUnicodeCharacter{3B2}{\ensuremath\beta}		% β
 \DeclareUnicodeCharacter{393}{\ensuremath\Gamma}	% Γ
@@ -81,9 +82,11 @@
 \DeclareUnicodeCharacter{2011}{\nobreakdash-}	% ‑, non-breaking hyphen, as LyX
 \DeclareUnicodeCharacter{2013}{--}	% –, en dash
 \DeclareUnicodeCharacter{2014}{---}	% —, em dash
+\DeclareUnicodeCharacter{2020}{\dagger}	% †, dagger
 \DeclareUnicodeCharacter{2022}{\boldsymbol\cdot}% •, bullet
 \DeclareUnicodeCharacter{25CF}{\bullet}	% ●, bullet
-\DeclareUnicodeCharacter{25E6}{\item}	% ◦, item or bullet
+\DeclareUnicodeCharacter{2023}{\item}	% ‣, item; cf. ◦
+\DeclareUnicodeCharacter{25E6}{\item}	% ◦, item; cf. ‣
 \DeclareUnicodeCharacter{2030}{\perthousand}	% ‰ permille
 \DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
 
@@ -179,8 +182,9 @@
 %	math symbols
 \DeclareUnicodeCharacter{2027}{\cdot}		% ‧
 \DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
-\DeclareUnicodeCharacter{2032}{^\prime}		% ′
+\DeclareUnicodeCharacter{2032}{^\prime}		% ′, derivative
 \DeclareUnicodeCharacter{203E}{\overline}	% ‾
+\DeclareUnicodeCharacter{204E}{_\ast}		% ⁎
 \DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ 
 \DeclareUnicodeCharacter{2102}{\ensuremath{\mathbb C}}	% ℂ
 \DeclareUnicodeCharacter{210D}{\ensuremath{\mathbb H}}	% ℍ
@@ -227,7 +231,7 @@
 \DeclareUnicodeCharacter{2211}{\sum}		% ∑
 \DeclareUnicodeCharacter{00B1}{\pm}		% ±
 \DeclareUnicodeCharacter{2213}{\mp}		% ∓
-\DeclareUnicodeCharacter{2215}{\over}		% ∕
+\DeclareUnicodeCharacter{2215}{\over}		% ∕, cf. ⁄
 \DeclareUnicodeCharacter{2216}{\setminus}	% ∖
 \DeclareUnicodeCharacter{2218}{\circ}		% ∘
 \DeclareUnicodeCharacter{221A}{\sqrt}		% √
@@ -239,8 +243,8 @@
 \DeclareUnicodeCharacter{2227}{\land}		% ∧
 \DeclareUnicodeCharacter{2228}{\lor}		% ∨
 \DeclareUnicodeCharacter{2225}{\|}		% ∥
-\DeclareUnicodeCharacter{2229}{\cap}		% ∩
-\DeclareUnicodeCharacter{222A}{\cup}		% ∪
+\DeclareUnicodeCharacter{2229}{\cap}		% ∩, cf. bigcap, intersect
+\DeclareUnicodeCharacter{222A}{\cup}		% ∪, cf. bigcup, union
 \DeclareUnicodeCharacter{222B}{\int}		% ∫
 \DeclareUnicodeCharacter{222C}{\iint}		% ∬
 \DeclareUnicodeCharacter{222D}{\iiint}		% ∭
@@ -264,11 +268,12 @@
 \DeclareUnicodeCharacter{2283}{\supset}		% ⊃
 \DeclareUnicodeCharacter{228A}{\subsetneqq}	% ⊊
 \DeclareUnicodeCharacter{228B}{\supsetneqq}	% ⊋
-\DeclareUnicodeCharacter{22C2}{\bigcap}		% ⋂
-\DeclareUnicodeCharacter{22C3}{\bigcup}		% ⋃
+\DeclareUnicodeCharacter{22C2}{\bigcap}		% ⋂, cf. cap
+\DeclareUnicodeCharacter{22C3}{\bigcup}		% ⋃, cf. cup
 \DeclareUnicodeCharacter{2297}{\otimes}		% ⊗
 \DeclareUnicodeCharacter{2299}{\odot}		% ⊙
-\DeclareUnicodeCharacter{2A2F}{\times}		% ⨯
+\DeclareUnicodeCharacter{2A2F}{\times}		% ⨯, cf. ✕
+\DeclareUnicodeCharacter{22A5}{\perp}		% ⊥
 \DeclareUnicodeCharacter{2025}{\ldots}		% ‥
 \DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \dots
 \DeclareUnicodeCharacter{22EE}{\vdots}		% ⋮
@@ -279,12 +284,15 @@
 \DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ \newline, carriage return symbol↵␍
 \DeclareUnicodeCharacter{2424}{\newline}	% ␤ glyph, \newline
 \DeclareUnicodeCharacter{2420}{\ifmmode\,\else~\fi}% ␠ visible space glyph, cf. 202F
-\DeclareUnicodeCharacter{2423}{~}		% ␣ visible no-break space
+\DeclareUnicodeCharacter{2423}{~}		% ⎵␣ visible no-break space
 \DeclareUnicodeCharacter{27F8}{\impliedby}	% ⟸
 \DeclareUnicodeCharacter{27F9}{\implies}	% ⟹
 \DeclareUnicodeCharacter{27FA}{\iff}		% ⟺
 \DeclareUnicodeCharacter{1F516}{\label}		% 🔖
 \DeclareUnicodeCharacter{1F517}{\eqref}		% 🔗
+\DeclareUnicodeCharacter{2713}{\checkmark}	% ✓
+\DeclareUnicodeCharacter{2714}{\ding{51}}	% ✔, requires \usepackage{pifont}
+\DeclareUnicodeCharacter{2718}{\ding{55}}	% ✘, cf. ✗, requires \usepackage{pifont}
 \DeclareUnicodeCharacter{208D}{\left}		% ₍
 \DeclareUnicodeCharacter{208E}{\right}		% ₎
 \DeclareUnicodeCharacter{2768}{\bigl(}		% ❨
