@@ -24,7 +24,7 @@
 \ifxetex\else
 \ifluatex\else% only for pdflatex 
   \RequirePackage[utf8]{inputenc}%	define the macro DeclareUnicodeCharacter
-  \RequirePackage{amsmath,mathtools,amssymb,nicefrac}
+  \RequirePackage{amsthm,mathtools,amssymb,nicefrac}
   \RequirePackage{dsfont}
 
 %	Greek letters
@@ -237,6 +237,7 @@
 \DeclareUnicodeCharacter{221A}{\sqrt}		% √
 \DeclareUnicodeCharacter{221D}{\propto}		% ∝ 
 \DeclareUnicodeCharacter{221E}{\infty}		% ∞
+\DeclareUnicodeCharacter{035A}{_\infty}		% ͚
 \DeclareUnicodeCharacter{1AB2}{^\infty}		% ᪲
 \DeclareUnicodeCharacter{2223}{\mid}		% ∣
 \DeclareUnicodeCharacter{2224}{\nmid}		% ∤
@@ -272,7 +273,8 @@
 \DeclareUnicodeCharacter{22C3}{\bigcup}		% ⋃, cf. cup
 \DeclareUnicodeCharacter{2297}{\otimes}		% ⊗
 \DeclareUnicodeCharacter{2299}{\odot}		% ⊙
-\DeclareUnicodeCharacter{2A2F}{\times}		% ⨯, cf. ✕
+\DeclareUnicodeCharacter{0D7}{\ifmmode\times\else\texttimes\fi}	% ×, cf. ⨯, ✕
+\DeclareUnicodeCharacter{2A2F}{\times}		% ⨯, cf. ×, ✕
 \DeclareUnicodeCharacter{22A5}{\perp}		% ⊥
 \DeclareUnicodeCharacter{2025}{\ldots}		% ‥
 \DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \dots
