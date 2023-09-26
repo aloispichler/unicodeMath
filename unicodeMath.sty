@@ -180,7 +180,8 @@
 \DeclareUnicodeCharacter{2093}{_x}	% ₓ
 
 %	math symbols
-\DeclareUnicodeCharacter{2027}{\cdot}		% ‧
+\DeclareUnicodeCharacter{2027}{\cdot}		% ‧, cf. ·
+\DeclareUnicodeCharacter{0B7}{\ifmmode\cdot\else\textperiodcentered\fi}% ·, cf. ‧
 \DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
 \DeclareUnicodeCharacter{2032}{^\prime}		% ′, derivative
 \DeclareUnicodeCharacter{203E}{\overline}	% ‾
@@ -243,7 +244,9 @@
 \DeclareUnicodeCharacter{2224}{\nmid}		% ∤
 \DeclareUnicodeCharacter{2227}{\land}		% ∧
 \DeclareUnicodeCharacter{2228}{\lor}		% ∨
-\DeclareUnicodeCharacter{2225}{\|}		% ∥
+\DeclareUnicodeCharacter{2016}{\|}		% ‖
+\DeclareUnicodeCharacter{2225}{\parallel}	% ∥
+\DeclareUnicodeCharacter{2226}{\nparallel}	% ∦
 \DeclareUnicodeCharacter{2229}{\cap}		% ∩, cf. bigcap, intersect
 \DeclareUnicodeCharacter{222A}{\cup}		% ∪, cf. bigcup, union
 \DeclareUnicodeCharacter{222B}{\int}		% ∫
@@ -295,8 +298,8 @@
 \DeclareUnicodeCharacter{2713}{\checkmark}	% ✓
 \DeclareUnicodeCharacter{2714}{\ding{51}}	% ✔, requires \usepackage{pifont}
 \DeclareUnicodeCharacter{2718}{\ding{55}}	% ✘, cf. ✗, requires \usepackage{pifont}
-\DeclareUnicodeCharacter{208D}{\left}		% ₍
-\DeclareUnicodeCharacter{208E}{\right}		% ₎
+\DeclareUnicodeCharacter{208D}{\left}		% ₍▹
+\DeclareUnicodeCharacter{208E}{\right}		% ₎◃
 \DeclareUnicodeCharacter{2768}{\bigl(}		% ❨
 \DeclareUnicodeCharacter{2769}{\bigr)}		% ❩
 \DeclareUnicodeCharacter{276A}{\left(}		% ❪ medium left parenthesis
@@ -633,7 +636,7 @@
 \DeclareUnicodeCharacter{1D71A}{\tilde\varrho}	% 𝜚
 \DeclareUnicodeCharacter{1D71B}{\tilde\varpi}	% 𝜛
 
-% bold Capital
+% bold Capital (enable with \usepackage{bm})
 \DeclareUnicodeCharacter{1D400}{\bm A}	% 𝐀
 \DeclareUnicodeCharacter{1D401}{\bm B}	% 𝐁
 \DeclareUnicodeCharacter{1D402}{\bm C}	% 𝐂
