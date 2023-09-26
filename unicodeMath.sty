@@ -11,6 +11,8 @@
 
 %	references:
 %		https://unicode.scarfboy.com/
+%		https://github.com/wspr/unicode-math/blob/master/unicode-math-table.tex
+%		https://texdoc.org/serve/unimath-symbols.pdf/0
 %		https://jwodder.github.io/kbits/posts/unicode-latex/
 %		https://docs.julialang.org/en/v1/manual/unicode-input/
 %		https://www.compart.com/en/unicode/
@@ -180,8 +182,8 @@
 \DeclareUnicodeCharacter{2093}{_x}	% ₓ
 
 %	math symbols
-\DeclareUnicodeCharacter{2027}{\cdot}		% ‧, cf. ·
-\DeclareUnicodeCharacter{0B7}{\ifmmode\cdot\else\textperiodcentered\fi}% ·, cf. ‧
+\DeclareUnicodeCharacter{0B7}{\ifmmode\cdotp\else\textperiodcentered\fi}% ·, cf. ‧
+\DeclareUnicodeCharacter{22C5}{\cdot}		% ⋅, cf. ·‧
 \DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
 \DeclareUnicodeCharacter{2032}{^\prime}		% ′, derivative
 \DeclareUnicodeCharacter{203E}{\overline}	% ‾
@@ -277,12 +279,12 @@
 \DeclareUnicodeCharacter{2297}{\otimes}		% ⊗
 \DeclareUnicodeCharacter{2299}{\odot}		% ⊙
 \DeclareUnicodeCharacter{0D7}{\ifmmode\times\else\texttimes\fi}	% ×, cf. ⨯, ✕
-\DeclareUnicodeCharacter{2A2F}{\times}		% ⨯, cf. ×, ✕
+\DeclareUnicodeCharacter{2A2F}{\vectimes}	% ⨯, cf. ×, ✕
 \DeclareUnicodeCharacter{22A5}{\perp}		% ⊥
 \DeclareUnicodeCharacter{2025}{\ldots}		% ‥
-\DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \dots
+\DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \cdots
 \DeclareUnicodeCharacter{22EE}{\vdots}		% ⋮
-\DeclareUnicodeCharacter{22EF}{\cdots}		% ⋯, cf. \cdots
+\DeclareUnicodeCharacter{22EF}{\cdots}		% ⋯, cf. \dots, ⵈ
 \DeclareUnicodeCharacter{22F0}{\iddots}		% ⋰
 \DeclareUnicodeCharacter{22F1}{\ddots}		% ⋱
 \DeclareUnicodeCharacter{2300}{\diameter}	% ⌀
