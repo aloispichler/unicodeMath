@@ -1,73 +1,88 @@
 {
     "Template": {
-        "prefix": ["template", "\\template"], 
+        "prefix": ["\\article" ], 
         "body": [
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\documentclass{article}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\usepackage{geometry}", 
-            "\\usepackage{graphicx}", 
-            "\\usepackage{amssymb}", 
-            "\\usepackage{amsmath}", 
-            "\\usepackage{amsthm}", 
-            "\\usepackage{empheq}", 
-            "\\usepackage{mdframed}", 
-            "\\usepackage{booktabs}", 
-            "\\usepackage{lipsum}", 
-            "\\usepackage{graphicx}", 
-            "\\usepackage{color}", 
-            "\\usepackage{psfrag}", 
-            "\\usepackage{pgfplots}", 
-            "\\usepackage{bm}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "${3:% Other Settings}", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\geometry{a4paper}", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\definecolor{ocre}{RGB}{243,102,25}", 
-            "\\definecolor{mygray}{RGB}{243,243,244}", 
-            "\\definecolor{deepGreen}{RGB}{26,111,0}",
-            "\\definecolor{shallowGreen}{RGB}{235,255,255}",
-            "\\definecolor{deepBlue}{RGB}{61,124,222}",
-            "\\definecolor{shallowBlue}{RGB}{235,249,255}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\newcommand\\orangebox[1]{\\fcolorbox{ocre}{mygray}{\\hspace{1em}#1\\hspace{1em}}}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}", 
-            "\\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}", 
-            "\\theoremstyle{mytheoremstyle}", 
-            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]", 
-            "\\theoremstyle{mytheoremstyle}", 
-            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]", 
-            "\\theoremstyle{myproblemstyle}", 
-            "\\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\usepgfplotslibrary{colorbrewer}", 
-            "\\pgfplotsset{width=8cm,compat=1.9}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\title{${1:Title}}", 
-            "\\author{${2:Haoyun Qin}}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "\\begin{document}",
-            "    \\maketitle",
-            "    $0",
-            "\\end{document}"
-        ],
-        "description": "Use the default template which includes a variety of packages and declared-commands. The template will also automatically generate the title and author, as well as date, and will format the document."
+	"\\documentclass[english, 10pt, a4paper]{article}", 
+	"\\usepackage[verbose, a4paper, hcentering]{geometry}	% customize page layout",
+	"\\usepackage{amsthm, mathtools, amssymb, nicefrac}	%\\usepackage{unicodeMath}",
+	"\\mathtoolsset{showonlyrefs}",
+	"\\usepackage{xcolor}",
+	"\\definecolor{ForestGreen}{HTML}{005F50}	% 228B22; TU Chemnitz: 005F50",
+	"\\usepackage{newtxtext, newtxmath}%	replaces Springer like postscript (PS)",
+	"\\usepackage{microtype}	% after fonts, for typographical perfection",
+
+	"\\usepackage[inline, shortlabels]{enumitem}",
+	"\\setlist[enumerate,1]{label=(\\roman*)}	%1st layer (i)",
+	"\\usepackage[bookmarks=true, backref=page, % include back-reference in references\n\tpdftitle={$0},\n\tpdfauthor={Alois Pichler},\n\tcolorlinks=true, citecolor=ForestGreen, urlcolor=darkgray,linkcolor=ForestGreen]{hyperref}	% load as last package",
+
+	"\\usepackage[round]{natbib}	 % references: round, numbers",
+	"\\usepackage{doi}		% provides proper doi-links in references: load after hyperref",
+	"\\usepackage{orcidlink}",
+	"\n%	╭────	Textclass specific LaTeX commands	────────────",
+	"\\numberwithin{equation}{section}\n\t\\theoremstyle{plain}\n\t\\newtheorem{theorem}{Theorem}[section]\n\t\\newtheorem{corollary}[theorem]{Corollary}\n\t\\newtheorem{lemma}[theorem]{Lemma}\n\t\\newtheorem{proposition}[theorem]{Proposition}\n\\theoremstyle{definition}\n\t\\newtheorem{definition}[theorem]{Definition}\n\\theoremstyle{remark}\n\t\\newtheorem{remark}[theorem]{Remark}\n\t\\newtheorem{example}[theorem]{Example}\n\t\\newtheorem{problem}[theorem]{Problem}\n",
+	"%	╭────	my commands	────────────",
+	"\\DeclareMathOperator{\\E}{{\\mathds E}}	% \\usepackage{dsfont}",
+	"\\DeclareMathOperator{\\one}{{\\mathds 1}}\n",
+	"\\DeclareMathOperator{\\AVaR}{{AV@R}}\t\t\t% average Value-at-Risk",
+	"\\DeclareMathOperator{\\argmax}{{arg\\,max}}\t% argmax",
+
+	"\n%	╭───────────────────────────────────────────────",
+	"%	│	document",
+	"\\title{${0:Title}}",
+	"\\author{",
+	"\tNomen Nominandi%",
+	"\t\t\\thanks{Chemnitz, University of Technology, \\href{https://www.tu-chemnitz.de/mathematik/fima}{https://www.tu-chemnitz.de/mathematik/fima}}",
+	"\t\\and",
+	"\tAlois Pichler%",
+	"\t\t\\footnotemark[1]~\\,%",
+	"\t\t\\thanks{\\orcidlink{0000-0001-8876-2429}~\\href{https://orcid.org/0000-0001-8876-2429}{orcid.org/0000-0001-8876-2429}. Contact: \\href{mailto:alois.pichler@math.tu-chemnitz.de}{alois.pichler@math.tu-chemnitz.de}}\n}\n",
+	"\\begin{document}\n\\maketitle",
+		"\t\\begin{abstract}\n\t\tsomething.\\medskip\n",
+		"\t\t\\noindent\\textbf{Keywords:} Quantization · Quantization\n",
+		"\t\t\\noindent\\textbf{Classification:} 94A17, 81S20, 40A25",
+		"\t\\end{abstract}",
+	"%	╭───────────────────────────────────────────────",
+	"%	│	Introduction",
+	"\\section{Introduction}",
+	"In what follows we consider \\cite{abramowitz+stegun}.",
+	"\\bibliographystyle{abbrvnat}\n\\bibliography{/home/alopi/Dropbox/Literatur/LiteraturAlois}",
+	"\\end{document}"
+	],
+        "description": "Default template"
+    },
+    "response": {
+	"prefix": ["\\responseLetter"],
+	"body": [ "%	╭───────────────────────────────────────────────",
+	"%	│	copy to the main response document:",
+	"%\\definecolor{coAuthor}{RGB}{0, 0, 255}	% blue",
+	"%\\definecolor{Alois}{RGB}{0, 95, 80}	% green",
+	"%\\newcommand{\\rev}[2][coAuthor]{{\\color{#1}#2}}	% command",
+	"%\\newenvironment{revise}[1][coAuthor]{\\color{#1}}{}	% environment",
+	"%	╰───────────────────────────────────────────────",
+	"\\documentclass[english, 11pt, final]{letter}",
+	"\\usepackage[a4paper]{geometry}",
+	"\\usepackage{amssymb, amsmath, mathtools}",
+	"%\\usepackage{xcolor}",
+	"\\usepackage{todonotes}",
+	"\\newenvironment{thebibliography}[1]{}{}	% dummy, let natbib redefine",
+	"\\newcommand\\newblock{\\hskip .11em\\@plus.33em\\@minus.0.07em}",
+	"\\usepackage[round]{natbib}	% references: round, numbers",
+	"\\let\\bibsection\\relax",
+	"\\usepackage[unicode=true, pdfusetitle, citecolor=blue, colorlinks=true]{hyperref}",
+	"\\newenvironment{response}[1][blue]{\\par\\color{#1}\\vspace{0.3em}\\itshape\\textbf{Response: }}{\\par}\n",
+	"\\begin{document}",
+	"\t\\address{Co~author,\\\\\\ Alois~Pichler}",
+	"\t\\signature{Coauthor,\\\\\\ Alois Pichler}",
+	"\\begin{letter}{Optimization Letters (OL)\\\\\\ \\textbf{\\jobname, review 1}}",
+	"\n\\opening{\\textbf{\\large{Dear editor and reviewers,}}}",
+	"We thank the associate editor and the referees for their careful reading of the manuscript, which lead to the decision \\textbf{Encourage resubmission after revisions}.\nThank you very much for your valuable feedback and suggestions which helped to improve the submission.\nBased on your suggestions, we have restructure and changed the text substantially.\nIn what follows, we repeat your concerns, comment on each specific point raised in the reports and detail the changes we have made in the revised manuscript to address these issues.\n",
+	"\\bigskip\\textbf{\\large Associate editor}\\par",
+	"\\begin{description}",
+	"\t\\item[1.1] Overall impressions",
+	"\t\t\\begin{response}\n\t\t\t\tThank you indeed for your overall positive assessment.\n\t\t\\end{response}",
+	"\\end{description}", "Thank you for your recommendations which helped improve the paper significantly.",
+	"\\closing{Yours sincerely,}\n\\cc{Editor}\n\\encl{Revised manuscript}\n%bibliographystyle{abbrvnat}\n\\vfill\n%bibliography{./LiteraturAlois}\n\\end{letter}", "\\end{document}"],
+	"description": "response letter"
     },
     "href": {
         "prefix": ["\\href{}"],
@@ -79,23 +94,23 @@
         "body": [ "\\sum_{${1:i=1}}^${2:\\infty}$3" ],
         "description": "Insert an inline summation notation."
     },
-    "Inline Math": {
-        "prefix": ["$$", "\\mathinline"],
-        "body": [ "$${1:$TM_SELECTED_TEXT}$" ],
-        "description": "Inline Math Environment."
+    "inline Math": {
+        "prefix": [ "\\$\\$", "\\inlinemath"],
+        "body": [ "\\$${1:$TM_SELECTED_TEXT}\\$" ],
+        "description": "inline math environment."
     },
     "Centered Math": {
         "prefix": ["\\[\\]", "\\mathcentered"],
         "body": [ "\\[\t${1:$TM_SELECTED_TEXT} \\]\n" ],
-        "description": "Insert centered Math Environment."
+        "description": "Insert centered math environment."
     },
     "subequation": {
         "prefix": [ "\\begin{subequation}\\end{subequation}"],
         "body": [
             "\\begin{subequation}",
             "\t\\begin{align}",
-            "\t\t$1\t&= $2\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
-            "\t\t\t&= $3\t\\label{eq:${TM_LINE_NUMBER}}",
+            "\t\t\t&=\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
+            "\t\t\t&=\t\\label{eq:${TM_LINE_NUMBER}}",
             "\t\\end{align}",
             "\\end{subequation}"
         ],
@@ -108,14 +123,14 @@
             "\t${1:$TM_SELECTED_TEXT}",
             "\\end{equation}"
         ],
-        "description": "Equation environment."
+        "description": "Equation environment"
     },
      "environment": {
         "prefix": ["\\begin{environment}" ],
         "body": [
-            "\\begin{${1:equation}}\n\t${0:$TM_SELECTED_TEXT}\n\\end{$1}"
+            "\\begin{${1:environment}}\n\t${0:$TM_SELECTED_TEXT}\n\\end{$1}"
         ],
-        "description": "Environment."
+        "description": "Environment"
     },
     "Section": {
         "prefix": [ "\\section{}"],
@@ -140,7 +155,7 @@
     "emphasize": {
         "prefix": ["\\emph", "*"], 
         "body": "\\emph{${1:$TM_SELECTED_TEXT}}$0",
-        "description": "Emphasize text."
+        "description": "Emphasize text"
     },
     "Italic Text": {
         "prefix": ["\\italic", "*"], 
@@ -171,8 +186,8 @@
         "prefix": ["-", "*", "\\begin{enumerate}\\end{enumerate}", "\\enumerateItemize", "\\enumerateDescription"],
         "body": [
             "\\begin{enumerate}%[nolistsep, noitemsep] %\\usepackage{enumitem}%\\setlist[enumerate,1]{label=(\\roman*)}  % 1st layer (i)",
-            "\t\\item ${1:$TM_SELECTED_TEXT}",
-            "\\end{enumerate}$0"
+            "\t\\item ${0:$TM_SELECTED_TEXT}",
+            "\\end{enumerate}"
         ],
         "description": "%\\usepackage{enumitem}\n%\\setlist[enumerate,1]{label=(\\roman*)}  % 1st layer (i)"
     },
@@ -180,8 +195,8 @@
         "prefix": ["1. ", "\\begin{itemize}\\end{itemize}", "\\itemizeEnumerate"],
         "body": [
             "\\begin{itemize}%[nolistsep, noitemsep] %\\usepackage{enumitem}",
-            "\t\\item ${1:$TM_SELECTED_TEXT}",
-            "\\end{itemize}$0"
+            "\t\\item ${0:$TM_SELECTED_TEXT}",
+            "\\end{itemize}"
         ],
 	"description": "options: [nolistsep, noitemsep]; package: \\usepackage{enumitem}"
     },
@@ -189,8 +204,8 @@
         "prefix": ["\\begin{description}\\end{description}", "\\descriptionEnumerate", "\\descriptionItemize"],
         "body": [
             "\\begin{description}%[nolistsep, noitemsep]%\\usepackage{enumitem}",
-            "\t\\item[${1:one}]\t${2:$TM_SELECTED_TEXT}",
-            "\\end{description}$0"
+            "\t\\item[${1:one}]\t${0:$TM_SELECTED_TEXT}",
+            "\\end{description}"
         ]
     },
     "Theorem": {
@@ -362,12 +377,12 @@
     },
     "figure": {
         "prefix": "\\figure",
-        "body": ["\\begin{figure}[ht]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}$0"],
+        "body": ["\\begin{figure}[ht]% here, Here, top, page, bottom, (!) override\n\t%\\centering\n\t\\includegraphics[width=\\textwidth]{${0:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\n\t\\caption{Caption\\label{fig:0}}\n\\end{figure}"],
         "description": "Create a figure."
     },
     "subfigure": {
         "prefix": ["\\subfigure", "\\subfloat" ],
-        "body": ["\\begin{figure}[ht]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${1:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}$0"],
+        "body": ["\\begin{figure}[ht]% hHtpb!; \\usepackage{subfig, graphicx}\n\t\\centering\n\t\\subfloat[][Caption Figure a]\n\t{\t\\includegraphics[width=0.49\\textwidth]{${0:~/Dropbox/VortrageUndPrasentationen/postit.pdf}}\\label{fig:a}}\\hfill\n\t\\subfloat[][Caption Figure b]\n\t{\t\\includegraphics[width=0.49\\textwidth]{~/Dropbox/VortrageUndPrasentationen/postit.pdf}\\label{fig:b}}\n\t\\caption{Caption\\label{fig:ab}}\n\\end{figure}"],
         "description": "Add a figure with subfigures."
     },
     "Create 2D Plot environment": {
@@ -503,8 +518,8 @@
         "prefix": ["\\begin{align}\\end{align}"],
         "body": [
             "\\begin{align}",
-            "\t$1\t&= ${1:$TM_SELECTED_TEXT}\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
-            "\t\t&= $2\t\\label{eq:${TM_LINE_NUMBER}}",
+            "\t\t&=\t${1:$TM_SELECTED_TEXT}\t\\label{eq:${TM_LINE_INDEX}}\\\\\\",
+            "\t\t&=\t\\label{eq:${TM_LINE_NUMBER}}",
             "\\end{align}"
         ],
         "description": "Create an align environment."
@@ -514,7 +529,7 @@
         "body": [
             "\\begin{align}",
             "\t\\MoveEqLeft[2] LongFirstLine\t\\\\\\",
-            "\t\t={}\t& 2ndLine\t\\\\\\",
+            "\t\t&=\t& 2ndLine\t\\\\\\",
             "\t\t\t&+ lastPart",
             "\\end{align}"
         ],
