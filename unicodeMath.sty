@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{unicodeMath}[2023/07/15 unicode character input]
+\ProvidesPackage{unicodeMath}[2023/10/05 unicode character input]
 
 %	mapping unicode characters to math
 %	created: 2023
@@ -89,6 +89,7 @@
 \DeclareUnicodeCharacter{25CF}{\bullet}	% ●, bullet
 \DeclareUnicodeCharacter{2023}{\item}	% ‣, item; cf. ◦
 \DeclareUnicodeCharacter{25E6}{\item}	% ◦, item; cf. ‣
+\DeclareUnicodeCharacter{25C1}{\lhd}	% ◁
 \DeclareUnicodeCharacter{2030}{\perthousand}	% ‰ permille
 \DeclareUnicodeCharacter{2031}{\pertenthousand}	% ‱    bip
 
@@ -186,7 +187,12 @@
 \DeclareUnicodeCharacter{22C5}{\cdot}		% ⋅, cf. ·‧
 \DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
 \DeclareUnicodeCharacter{2032}{^\prime}		% ′, derivative
-\DeclareUnicodeCharacter{203E}{\overline}	% ‾
+\DeclareUnicodeCharacter{0302}{\hat}		% ̂
+\DeclareUnicodeCharacter{0303}{\tilde}		% ̃,
+\DeclareUnicodeCharacter{0304}{\bar}		% ̄
+\DeclareUnicodeCharacter{0305}{\overline}	% ̅ , cf. ‾
+\DeclareUnicodeCharacter{0307}{\dot}		% ̇
+\DeclareUnicodeCharacter{0332}{\underline}	% ̲ 
 \DeclareUnicodeCharacter{204E}{_\ast}		% ⁎
 \DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ 
 \DeclareUnicodeCharacter{2102}{\ensuremath{\mathbb C}}	% ℂ
@@ -230,11 +236,13 @@
 \DeclareUnicodeCharacter{2207}{\nabla}		% ∇
 \DeclareUnicodeCharacter{2208}{\in}		% ∈
 \DeclareUnicodeCharacter{2209}{\notin}		% ∉
+\DeclareUnicodeCharacter{220E}{\qed}		% ∎
 \DeclareUnicodeCharacter{220F}{\prod}		% ∏
 \DeclareUnicodeCharacter{2211}{\sum}		% ∑
 \DeclareUnicodeCharacter{00B1}{\pm}		% ±
 \DeclareUnicodeCharacter{2213}{\mp}		% ∓
 \DeclareUnicodeCharacter{2215}{\over}		% ∕, cf. ⁄
+\DeclareUnicodeCharacter{2044}{\over}		% ⁄, cf. ∕
 \DeclareUnicodeCharacter{2216}{\setminus}	% ∖
 \DeclareUnicodeCharacter{2218}{\circ}		% ∘
 \DeclareUnicodeCharacter{221A}{\sqrt}		% √
@@ -752,5 +760,4 @@
 \DeclareUnicodeCharacter{1D7D6}{\bm 8}	% 𝟖
 \DeclareUnicodeCharacter{1D7D7}{\bm 9}	% 𝟗
 
-% bold letters
 \fi\fi

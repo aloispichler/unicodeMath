@@ -296,7 +296,7 @@
         "description": "vector"
     },
     "matrix": {
-        "prefix": ["\\begin{matrix}"],
+        "prefix": ["\\begin{matrix}", "\\begin{array}" ],
         "body": ["\\left(\\begin{array}{rrr}\n\t$1 & \\dots & $1 \\\\\\\\\n\t\\vdots & \\ddots & \\vdots\\\\\\\\\n\t$1 & \\dots & $1\n\\end{array}\\right)$0"],
         "description": "array"
     },
@@ -312,7 +312,7 @@
     },
     "cases": {
         "prefix": ["\\begin{cases}\\end{cases}"],
-        "body": ["\\begin{cases}\n\t$1 & ${2:\\text{if }} \\\\\\\\\n\t$3 & ${4:\\text{else}}\n\\end{cases}$0"],
+        "body": ["\\begin{cases}\n\t$0 &\t \\text{if } \\\\\\\\\n\t &\t \\text{else}\n\\end{cases}"],
         "description": "cases"
     },
     "si": {
@@ -337,12 +337,12 @@
     },
     "FrameSubtitle": {
         "prefix": ["\\subtitleframe", "\\framesubtitle" ],
-        "body": ["\\framesubtitle{${1:Subtitle}}"],
+        "body": ["\\framesubtitle{${0:Subtitle}}"],
         "description": "Insert a subtitle."
     },
     "Frame": {
         "prefix": ["\\begin{frame}\\end{frame}", "\\begin{slide}" ],
-        "body": ["\\begin{frame}{${1:Frame title}}\n\t\\framesubtitle{$1}\n\tcontent\n\\end{frame}"],
+        "body": ["%\t╭────	$1	────────────────────\n\\begin{frame}{${1:Frame title}}\n\t\\framesubtitle{$1}\n\t\n\\end{frame}"],
         "description": "Create a new frame."
     },
     "Highlight box": {
@@ -362,12 +362,12 @@
     },
     "column": {
         "prefix": ["\\begin{column}\\end{column}" ],
-        "body": ["\\begin{column}{0.5\\textwidth}\n\t${1:content}\n\\end{column}"],
+        "body": ["\\begin{column}{0.5\\textwidth}\n\t${0:content}\n\\end{column}"],
         "description": "add a new column"
     },
      "columns": {
         "prefix": ["\\begin{columns}\\end{columns" ],
-        "body": ["\\begin{columns}[t]%Top, top, center, bottom \n\t\\begin{column}{0.5\\textwidth}\n\t\t${1:content column 1}\n\t\\end{column}\n\t\\begin{column}{0.5\\textwidth}\n\t\tcontent column 2\n\t\\end{column}\n\\end{columns}"],
+        "body": ["\\begin{columns}[t]%Top, top, center, bottom \n\t\\begin{column}{0.5\\textwidth}\n\t\t${0:column 1}\n\t\\end{column}\n\t\\begin{column}{0.5\\textwidth}\n\t\tcolumn 2\n\t\\end{column}\n\\end{columns}"],
         "description": "Columns environment"
     },
     "table": {
