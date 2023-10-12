@@ -153,7 +153,7 @@
         "description": "Insert a subsection without index."
     },
     "emphasize": {
-        "prefix": ["\\emph", "*"], 
+        "prefix": ["\\emph", "*", "\\€mph" ], 
         "body": "\\emph{${1:$TM_SELECTED_TEXT}}$0",
         "description": "Emphasize text"
     },
@@ -186,7 +186,7 @@
         "prefix": ["-", "*", "\\begin{enumerate}\\end{enumerate}", "\\enumerateItemize", "\\enumerateDescription"],
         "body": [
             "\\begin{enumerate}%[nolistsep, noitemsep] %\\usepackage{enumitem}%\\setlist[enumerate,1]{label=(\\roman*)}  % 1st layer (i)",
-            "\t\\item ${0:$TM_SELECTED_TEXT}",
+            "\t\\item\t${0:$TM_SELECTED_TEXT}",
             "\\end{enumerate}"
         ],
         "description": "%\\usepackage{enumitem}\n%\\setlist[enumerate,1]{label=(\\roman*)}  % 1st layer (i)"
@@ -195,7 +195,7 @@
         "prefix": ["1. ", "\\begin{itemize}\\end{itemize}", "\\itemizeEnumerate"],
         "body": [
             "\\begin{itemize}%[nolistsep, noitemsep] %\\usepackage{enumitem}",
-            "\t\\item ${0:$TM_SELECTED_TEXT}",
+            "\t\\item\t${0:$TM_SELECTED_TEXT}",
             "\\end{itemize}"
         ],
 	"description": "options: [nolistsep, noitemsep]; package: \\usepackage{enumitem}"
@@ -303,12 +303,12 @@
     "stack": {
         "prefix": ["\\stack", "\\above", "\\below", "\\sub", "\\super" ],
         "body": ["\\stackrel{${1:above smaller}}{${2:below larger}} $0"],
-        "description": "stackrel"
+        "description": "\\stackrel"
     },
     "substack": {
-        "prefix": ["\\substack", "\\multiline" ],
-        "body": ["\\substack{${1:above}\\\\\\\\${2:below}} $0"],
-        "description": "substack"
+        "prefix": ["\\substack", "\\multiline", "\\above" ],
+        "body": ["\\substack{${1:above}\\\\\\\\ ${2:below}} $0"],
+        "description": "\\substack"
     },
     "cases": {
         "prefix": ["\\begin{cases}\\end{cases}"],
