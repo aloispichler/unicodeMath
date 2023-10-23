@@ -74,7 +74,6 @@
 \DeclareUnicodeCharacter{3C9}{\ensuremath\omega}	% ω
 
 %	other letters, symbols and special characters
-\DeclareUnicodeCharacter{0A3E}{^\top}	% ਾ, transpose, cf. ⊤
 \DeclareUnicodeCharacter{00A0}{~}	%  no-break space
 \DeclareUnicodeCharacter{2001}{\qquad}	%  2M space
 \DeclareUnicodeCharacter{2003}{\quad}	%  M space (= 18mu)
@@ -106,6 +105,9 @@
 \DeclareUnicodeCharacter{2077}{^7}	% ⁷
 \DeclareUnicodeCharacter{2078}{^8}	% ⁸
 \DeclareUnicodeCharacter{2079}{^9}	% ⁹
+\DeclareUnicodeCharacter{207A}{^+}	% ⁺
+\DeclareUnicodeCharacter{207B}{^-}	% ⁻
+\DeclareUnicodeCharacter{207C}{^=}	% ⁼
 \DeclareUnicodeCharacter{1D43}{^a}	% ᵃ
 \DeclareUnicodeCharacter{1D47}{^b}	% ᵇ
 \DeclareUnicodeCharacter{1D9C}{^c}	% ᶜ
@@ -135,8 +137,10 @@
 \DeclareUnicodeCharacter{1DBB}{^z}	% ᶻ
 \DeclareUnicodeCharacter{1D2C}{^A}	% ᴬ
 \DeclareUnicodeCharacter{1D2E}{^B}	% ᴮ
+\DeclareUnicodeCharacter{A7F2}{^C}	% ꟲ
 \DeclareUnicodeCharacter{1D30}{^D}	% ᴰ
 \DeclareUnicodeCharacter{1D31}{^E}	% ᴱ
+\DeclareUnicodeCharacter{A7F3}{^F}	% ꟳ
 \DeclareUnicodeCharacter{1D33}{^G}	% ᴳ
 \DeclareUnicodeCharacter{1D34}{^H}	% ᴴ
 \DeclareUnicodeCharacter{1D35}{^I}	% ᴵ
@@ -147,17 +151,17 @@
 \DeclareUnicodeCharacter{1D3A}{^N}	% ᴺ
 \DeclareUnicodeCharacter{1D3C}{^O}	% ᴼ
 \DeclareUnicodeCharacter{1D3E}{^P}	% ᴾ
+\DeclareUnicodeCharacter{A7F4}{^Q}	% ꟴ
 \DeclareUnicodeCharacter{1D3F}{^R}	% ᴿ
 \DeclareUnicodeCharacter{1D40}{^T}	% ᵀ, cf. transpose
 \DeclareUnicodeCharacter{1D41}{^U}	% ᵁ
 \DeclareUnicodeCharacter{2C7D}{^V}	% ⱽ
 \DeclareUnicodeCharacter{1D42}{^W}	% ᵂ
-\DeclareUnicodeCharacter{1D64}{_u}	% ᵤ
-\DeclareUnicodeCharacter{1D65}{_v}	% ᵥ
 \DeclareUnicodeCharacter{1D45}{^\alpha}	% ᵅ
 \DeclareUnicodeCharacter{1D5D}{^\beta}	% ᵝ
 \DeclareUnicodeCharacter{1D5E}{^\gamma}	% ᵞ
 \DeclareUnicodeCharacter{1D5F}{^\delta}	% ᵟ
+\DeclareUnicodeCharacter{1D4B}{^\varepsilon}% ᵋ
 \DeclareUnicodeCharacter{1D60}{^\varphi}% ᵠ
 \DeclareUnicodeCharacter{1D61}{^\chi}	% ᵡ
 \DeclareUnicodeCharacter{1DA5}{^\iota}	% ᶥ
@@ -166,7 +170,6 @@
 \DeclareUnicodeCharacter{1D66}{_\beta}	% ᵦ
 \DeclareUnicodeCharacter{1D67}{_\gamma}	% ᵧ
 \DeclareUnicodeCharacter{1D68}{_\rho}	% ᵨ
-\DeclareUnicodeCharacter{1D5E}{^\gamma}	% ᵞ
 \DeclareUnicodeCharacter{1D69}{_\varphi}% ᵩ
 \DeclareUnicodeCharacter{1D6A}{_\chi}	% ᵪ
 \DeclareUnicodeCharacter{2080}{_0}	% ₀	subscripts
@@ -195,6 +198,8 @@
 \DeclareUnicodeCharacter{1D63}{_r}	% ᵣ
 \DeclareUnicodeCharacter{209B}{_s}	% ₛ
 \DeclareUnicodeCharacter{209C}{_t}	% ₜ
+\DeclareUnicodeCharacter{1D64}{_u}	% ᵤ
+\DeclareUnicodeCharacter{1D65}{_v}	% ᵥ
 \DeclareUnicodeCharacter{2093}{_x}	% ₓ
 
 %	math symbols
@@ -244,6 +249,8 @@
 \DeclareUnicodeCharacter{21D4}{\Leftrightarrow}	% ⇔
 \DeclareUnicodeCharacter{21D5}{\Updownarrow}	% ⇕
 \DeclareUnicodeCharacter{2200}{{\forall}}	% ∀
+\DeclareUnicodeCharacter{2201}{\complement}	% ∁, cf. complement ʿ
+\DeclareUnicodeCharacter{02BF}{^{\mathsf c}}	% ʿ, cf. complement ∁ (or ^c, ^\complement)
 \DeclareUnicodeCharacter{2202}{{\partial}}	% ∂
 \DeclareUnicodeCharacter{2203}{{\exists}}	% ∃
 \DeclareUnicodeCharacter{2204}{{\nexists}}	% ∄
@@ -251,6 +258,7 @@
 \DeclareUnicodeCharacter{2207}{\nabla}		% ∇
 \DeclareUnicodeCharacter{2208}{\in}		% ∈
 \DeclareUnicodeCharacter{2209}{\notin}		% ∉
+\DeclareUnicodeCharacter{220B}{\ni}		% ∋
 \DeclareUnicodeCharacter{220E}{\qed}		% ∎
 \DeclareUnicodeCharacter{220F}{\prod}		% ∏
 \DeclareUnicodeCharacter{2211}{\sum}		% ∑
@@ -307,8 +315,11 @@
 \DeclareUnicodeCharacter{2299}{\odot}		% ⊙
 \DeclareUnicodeCharacter{0D7}{\ifmmode\times\else\texttimes\fi}	% ×, cf. ⨯, ✕
 \DeclareUnicodeCharacter{2A2F}{\vectimes}	% ⨯, cf. ×, ✕
-\DeclareUnicodeCharacter{22A4}{\top}		% ⊤, cf. ਾ
-\DeclareUnicodeCharacter{27C2}{\perp}		% ⟂, cf. ⊥
+\DeclareUnicodeCharacter{142A}{^\top}		% ᐪ, transpose cf. ਾ, ⊤
+\DeclareUnicodeCharacter{A717}{^{-1}}		% ꜗ, inverse
+\DeclareUnicodeCharacter{22A4}{\top}		% ⊤, cf. ⊥, ⟂
+\DeclareUnicodeCharacter{22A5}{\bot}		% ⊥, cf. ⊤, ⟂
+\DeclareUnicodeCharacter{27C2}{\perp}		% ⟂, cf. ⊤, ⊥
 \DeclareUnicodeCharacter{2025}{\ldots}		% ‥
 \DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \cdots
 \DeclareUnicodeCharacter{22EE}{\vdots}		% ⋮
