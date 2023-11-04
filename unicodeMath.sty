@@ -205,16 +205,17 @@
 %	math symbols
 \DeclareUnicodeCharacter{0B7}{\ifmmode\cdotp\else\textperiodcentered\fi}% ·, cf. ‧
 \DeclareUnicodeCharacter{22C5}{\cdot}		% ⋅, cf. ·‧
-\DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
 \DeclareUnicodeCharacter{2032}{^\prime}		% ′, derivative
+%\DeclareUnicodeCharacter{0315}{^\prime}		% ̕ combining comma above
 \DeclareUnicodeCharacter{0302}{\hat}		% ̂
-\DeclareUnicodeCharacter{0303}{\tilde}		% ̃,
+\DeclareUnicodeCharacter{0303}{\tilde}		% ̃
 \DeclareUnicodeCharacter{0304}{\bar}		% ̄
 \DeclareUnicodeCharacter{0305}{\overline}	% ̅ , cf. ‾
 \DeclareUnicodeCharacter{0307}{\dot}		% ̇
 \DeclareUnicodeCharacter{0332}{\underline}	% ̲ 
 \DeclareUnicodeCharacter{204E}{_\ast}		% ⁎
-\DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ 
+\DeclareUnicodeCharacter{20F0}{^\ast}		% ⃰ , cf. 𝆯
+\DeclareUnicodeCharacter{1D1AF}{^\ast}		% 𝆯, cf. ⃰
 \DeclareUnicodeCharacter{2102}{\ensuremath{\mathbb C}}	% ℂ
 \DeclareUnicodeCharacter{210D}{\ensuremath{\mathbb H}}	% ℍ
 \DeclareUnicodeCharacter{2111}{\Im}		% ℑ, imaginary part
@@ -266,7 +267,7 @@
 \DeclareUnicodeCharacter{2213}{\mp}		% ∓
 \DeclareUnicodeCharacter{2044}{\over}		% ⁄, cf. ∕
 \DeclareUnicodeCharacter{2215}{\over}		% ∕, cf. ⁄
-\DeclareUnicodeCharacter{2216}{\setminus}	% ∖
+\DeclareUnicodeCharacter{2216}{\setminus}	% ∖, cf. ＼
 \DeclareUnicodeCharacter{2218}{\circ}		% ∘
 \DeclareUnicodeCharacter{221A}{\sqrt}		% √
 \DeclareUnicodeCharacter{221D}{\propto}		% ∝ 
@@ -281,7 +282,7 @@
 \DeclareUnicodeCharacter{2225}{\parallel}	% ∥
 \DeclareUnicodeCharacter{2226}{\nparallel}	% ∦
 \DeclareUnicodeCharacter{2229}{\cap}		% ∩, cf. bigcap, intersect
-\DeclareUnicodeCharacter{222A}{\cup}		% ∪, cf. bigcup, union
+\DeclareUnicodeCharacter{222A}{\cup}		% ∪, cf. bigcup, union, ⨃
 \DeclareUnicodeCharacter{222B}{\int}		% ∫
 \DeclareUnicodeCharacter{222C}{\iint}		% ∬
 \DeclareUnicodeCharacter{222D}{\iiint}		% ∭
@@ -316,7 +317,8 @@
 \DeclareUnicodeCharacter{0D7}{\ifmmode\times\else\texttimes\fi}	% ×, cf. ⨯, ✕
 \DeclareUnicodeCharacter{2A2F}{\vectimes}	% ⨯, cf. ×, ✕
 \DeclareUnicodeCharacter{142A}{^\top}		% ᐪ, transpose cf. ਾ, ⊤
-\DeclareUnicodeCharacter{A71C}{^{-1}}		% ꜜ, inverse; cf. ꜗ
+\DeclareUnicodeCharacter{231D}{^{-1}}		% ⌝, inverse; cf. ꜜ, ꜗ, ˺
+\DeclareUnicodeCharacter{A71C}{^{-1}}		% ꜜ, inverse; cf. ⌝, ꜗ, ˺ 
 \DeclareUnicodeCharacter{22A4}{\top}		% ⊤, cf. ⊥, ⟂
 \DeclareUnicodeCharacter{22A5}{\bot}		% ⊥, cf. ⊤, ⟂
 \DeclareUnicodeCharacter{27C2}{\perp}		% ⟂, cf. ⊤, ⊥
@@ -327,10 +329,17 @@
 \DeclareUnicodeCharacter{22F0}{\iddots}		% ⋰
 \DeclareUnicodeCharacter{22F1}{\ddots}		% ⋱
 \DeclareUnicodeCharacter{2300}{\diameter}	% ⌀
+\DeclareUnicodeCharacter{2308}{\lceil}		% ⌈
+\DeclareUnicodeCharacter{2309}{\rceil}		% ⌉
+\DeclareUnicodeCharacter{230A}{\lfloor}		% ⌊
+\DeclareUnicodeCharacter{230B}{\rfloor}		% ⌋
 \DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ \newline, carriage return symbol↵␍
 \DeclareUnicodeCharacter{2424}{\newline}	% ␤ glyph, \newline
 \DeclareUnicodeCharacter{2420}{\ifmmode\,\else~\fi}% ␠ visible space glyph, cf. 202F
 \DeclareUnicodeCharacter{2423}{~}		% ⎵␣ visible no-break space
+\DeclareUnicodeCharacter{266D}{\flat}		% ♭
+\DeclareUnicodeCharacter{266E}{\natural}	% ♮
+\DeclareUnicodeCharacter{266F}{\sharp}		% ♯
 \DeclareUnicodeCharacter{27F8}{\impliedby}	% ⟸
 \DeclareUnicodeCharacter{27F9}{\implies}	% ⟹
 \DeclareUnicodeCharacter{27FA}{\iff}		% ⟺
@@ -340,8 +349,8 @@
 \DeclareUnicodeCharacter{2713}{\checkmark}	% ✓
 \DeclareUnicodeCharacter{2714}{\ding{51}}	% ✔, requires \usepackage{pifont}
 \DeclareUnicodeCharacter{2718}{\ding{55}}	% ✘, cf. ✗, requires \usepackage{pifont}
-\DeclareUnicodeCharacter{208D}{\left}		% ₍▹
-\DeclareUnicodeCharacter{208E}{\right}		% ₎◃
+\DeclareUnicodeCharacter{208D}{\left}		% ₍◃‹
+\DeclareUnicodeCharacter{208E}{\right}		% ₎▹›
 \DeclareUnicodeCharacter{2768}{\bigl(}		% ❨
 \DeclareUnicodeCharacter{2769}{\bigr)}		% ❩
 \DeclareUnicodeCharacter{276A}{\left(}		% ❪ medium left parenthesis

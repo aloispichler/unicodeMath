@@ -312,7 +312,7 @@
     },
     "cases": {
         "prefix": ["\\begin{cases}\\end{cases}"],
-        "body": ["\\begin{cases}\n\t$0 &\t \\text{if } \\\\\\\\\n\t &\t \\text{else}\n\\end{cases}"],
+        "body": ["\\begin{cases}\n\t$0 &\t \\text{if } ,\\\\\\\\\n\t &\t \\text{else}\n\\end{cases}"],
         "description": "cases"
     },
     "si": {
