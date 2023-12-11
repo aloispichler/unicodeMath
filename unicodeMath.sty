@@ -75,12 +75,15 @@
 
 %	other letters, symbols and special characters
 \DeclareUnicodeCharacter{00A0}{~}	%  no-break space
-\DeclareUnicodeCharacter{2001}{\qquad}	%  2M space
-\DeclareUnicodeCharacter{2003}{\quad}	%  M space (= 18mu)
-\DeclareUnicodeCharacter{2002}{\ }	%  equivalent of regular space in normal text
-\DeclareUnicodeCharacter{2005}{\;}	%  thick space, short blank (= 3mu)
-\DeclareUnicodeCharacter{2006}{\:}	%  medium space, short blank (= 3mu)
-\DeclareUnicodeCharacter{202F}{\,}	%  thin space, narrow no-break space, short blank (= 3mu), as LyX, cf. 2420
+\DeclareUnicodeCharacter{2001}{\qquad}	%  2em space
+\DeclareUnicodeCharacter{2003}{\quad}	%  1em space (= 18mu)
+\DeclareUnicodeCharacter{2002}{\ }	%  control space, equivalent of regular space in normal text
+\DeclareUnicodeCharacter{2004}{\;}	%  thickspace, narrow no-break space, (= 3mu), as LyX; cf. 202F, 2420
+\DeclareUnicodeCharacter{2005}{\:}	%  medspace, (= 4mu)
+\DeclareUnicodeCharacter{2006}{\,}	%  thinspace, (in LaTeX 5mu)
+\DeclareUnicodeCharacter{202F}{\,}	%  thin space, narrow no-break space
+\DeclareUnicodeCharacter{2420}{\ifmmode\,\else~\fi}% ␠ visible space glyph, cf. 202F
+\DeclareUnicodeCharacter{2423}{~}	% ⎵␣ visible no-break space
 \DeclareUnicodeCharacter{2011}{\nobreakdash-}	% ‑, non-breaking hyphen, as LyX
 \DeclareUnicodeCharacter{2013}{--}	% –, en dash
 \DeclareUnicodeCharacter{2014}{---}	% —, em dash
@@ -153,7 +156,7 @@
 \DeclareUnicodeCharacter{1D3E}{^P}	% ᴾ
 \DeclareUnicodeCharacter{A7F4}{^Q}	% ꟴ
 \DeclareUnicodeCharacter{1D3F}{^R}	% ᴿ
-\DeclareUnicodeCharacter{1D40}{^T}	% ᵀ, cf. transpose
+\DeclareUnicodeCharacter{1D40}{^T}	% ᵀ, cf. \top, transpose
 \DeclareUnicodeCharacter{1D41}{^U}	% ᵁ
 \DeclareUnicodeCharacter{2C7D}{^V}	% ⱽ
 \DeclareUnicodeCharacter{1D42}{^W}	% ᵂ
@@ -227,7 +230,7 @@
 \DeclareUnicodeCharacter{1D54F}{\ensuremath{\mathbb X}}	% 𝕏
 \DeclareUnicodeCharacter{2124}{\ensuremath{\mathbb Z}}	% ℤ, integers
 \DeclareUnicodeCharacter{2135}{\aleph}		% ℵ
-\DeclareUnicodeCharacter{215F}{\frac1}		% ⅟
+\DeclareUnicodeCharacter{215F}{\nicefrac1}	% ⅟
 \DeclareUnicodeCharacter{2190}{\leftarrow}	% ←
 \DeclareUnicodeCharacter{2191}{\uparrow}	% ↑
 \DeclareUnicodeCharacter{2192}{\to}		% →
@@ -319,9 +322,9 @@
 \DeclareUnicodeCharacter{142A}{^\top}		% ᐪ, transpose cf. ਾ, ⊤
 \DeclareUnicodeCharacter{231D}{^{-1}}		% ⌝, inverse; cf. ꜜ, ꜗ, ˺
 \DeclareUnicodeCharacter{A71C}{^{-1}}		% ꜜ, inverse; cf. ⌝, ꜗ, ˺ 
-\DeclareUnicodeCharacter{22A4}{\top}		% ⊤, cf. ⊥, ⟂
-\DeclareUnicodeCharacter{22A5}{\bot}		% ⊥, cf. ⊤, ⟂
-\DeclareUnicodeCharacter{27C2}{\perp}		% ⟂, cf. ⊤, ⊥
+\DeclareUnicodeCharacter{22A4}{\top}		% ⊤, cf. ᐪ, ਾ
+\DeclareUnicodeCharacter{22A5}{\bot}		% ⊥, cf. ⟂
+\DeclareUnicodeCharacter{27C2}{\perp}		% ⟂, cf. ⊥
 \DeclareUnicodeCharacter{2025}{\ldots}		% ‥
 \DeclareUnicodeCharacter{2026}{\dots}		% …, cf. \cdots
 \DeclareUnicodeCharacter{22EE}{\vdots}		% ⋮
@@ -335,11 +338,12 @@
 \DeclareUnicodeCharacter{230B}{\rfloor}		% ⌋
 \DeclareUnicodeCharacter{23CE}{\\ }		% ⏎ \newline, carriage return symbol↵␍
 \DeclareUnicodeCharacter{2424}{\newline}	% ␤ glyph, \newline
-\DeclareUnicodeCharacter{2420}{\ifmmode\,\else~\fi}% ␠ visible space glyph, cf. 202F
-\DeclareUnicodeCharacter{2423}{~}		% ⎵␣ visible no-break space
 \DeclareUnicodeCharacter{266D}{\flat}		% ♭
 \DeclareUnicodeCharacter{266E}{\natural}	% ♮
 \DeclareUnicodeCharacter{266F}{\sharp}		% ♯
+\DeclareUnicodeCharacter{27F5}{\longleftarrow}	% ⟵
+\DeclareUnicodeCharacter{27F6}{\longrightarrow}	% ⟶
+\DeclareUnicodeCharacter{27F7}{\longleftrightarrow}% ⟷
 \DeclareUnicodeCharacter{27F8}{\impliedby}	% ⟸
 \DeclareUnicodeCharacter{27F9}{\implies}	% ⟹
 \DeclareUnicodeCharacter{27FA}{\iff}		% ⟺
@@ -349,8 +353,8 @@
 \DeclareUnicodeCharacter{2713}{\checkmark}	% ✓
 \DeclareUnicodeCharacter{2714}{\ding{51}}	% ✔, requires \usepackage{pifont}
 \DeclareUnicodeCharacter{2718}{\ding{55}}	% ✘, cf. ✗, requires \usepackage{pifont}
-\DeclareUnicodeCharacter{208D}{\left}		% ₍◃‹
-\DeclareUnicodeCharacter{208E}{\right}		% ₎▹›
+\DeclareUnicodeCharacter{208D}{\left}		% ₍◃‹⊣⫞
+\DeclareUnicodeCharacter{208E}{\right}		% ₎▹›⊢
 \DeclareUnicodeCharacter{2768}{\bigl(}		% ❨
 \DeclareUnicodeCharacter{2769}{\bigr)}		% ❩
 \DeclareUnicodeCharacter{276A}{\left(}		% ❪ medium left parenthesis
