@@ -25,18 +25,18 @@ As well, the packages provides snippets for VS-Code and (n)vim.
 			   𝐱   &↦ fᵣ(‖𝐱‖)
 		\end{align}
 		is
-		\[	{∂∕∂xᵢ}f(𝐱)= fᵣ′(𝐱){xᵢ ⁄‖𝐱‖}.\]
+		\[	{∂∕∂xᵢ}f(𝐱)= fᵣ′(𝐱){xᵢ ⁄ ‖𝐱‖}.\]
 		The density of the Gaussian distribution with parameters $μ$ and $σ²$ is
-		\[	φ(x| μ,σ²)= {1 ⁄√{2πσ²}} e^{-{(x-μ)² ⁄2σ²}}.\]
+		\[	φ(x| μ,σ²)= {1 ⁄ √{2πσ²}} e^{-{(x-μ)² ⁄ 2σ²}}.\]
 		The solutions of the quadratic equation
 		\[	α x²+ β x+ γ= 0 \]
 		are
-		\[	x_± = {-β ± √{β²- 4αγ} ⁄2α}.\]
+		\[	x_± = {-β ± √{β²- 4αγ} ⁄ 2α}.\]
 		For $s∈ ℂ$ and $ℜ (s)> 1$, it holds that
-		\[	ζ(s)Γ(s)= ∫₀᪲ {x^{s-1} ⁄eˣ-1} ⅾx,\]
+		\[	ζ(s)Γ(s)= ∫₀᪲ {x^{s-1} ⁄ eˣ-1} ⅾx,\]
 		where Euler’s integral of the second kind is
 		\[	Γ(s)= ∫₀᪲ x^{s-1} e^{-x} ⅾx,\]
 		and
-		\[	ζ(s)= ∑_{n∈ℕ} {1 ⁄nˢ}\]
+		\[	ζ(s)= ∑_{n∈ℕ} {1 ⁄ nˢ}\]
 		is Riemann’s $ζ$‑function.
 	\end{document}
